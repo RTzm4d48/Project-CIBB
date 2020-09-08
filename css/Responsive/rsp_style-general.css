@@ -1,0 +1,24 @@
+@media (max-width: 1024px) {
+  body .container_body {
+    /* toolbar right */ }
+    body .container_body .toolbar_in_fullscreen {
+      display: none; }
+    body .container_body .min_screen {
+      width: 100%;
+      background: #000;
+      left: 0px; }
+    body .container_body-espace-toolbar_top img {
+      height: 20px;
+      margin: auto 15px;
+      /* background: #000; */ }
+    body .container_body-espace-toolbar_top .x {
+      display: none; }
+    body .container_body-espace-toolbar_top .bar {
+      display: block; }
+    body .container_body-espace-container {
+      background: #e214143f; }
+      body .container_body-espace-container .container {
+        width: 100%;
+        background: salmon; } }
+
+/*# sourceMappingURL=rsp_style-general.css.map */

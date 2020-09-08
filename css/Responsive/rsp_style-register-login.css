@@ -1,0 +1,56 @@
+@media (max-width: 1024px) {
+  body {
+    margin: 0px;
+    background: linear-gradient(70deg, #315CB0, #63C2E2);
+    display: flex; }
+    body .container {
+      width: 100%;
+      height: 100vh;
+      /* background: mediumspringgreen; */ }
+      body .container_img-rsp {
+        display: block; }
+      body .container_img {
+        display: none; }
+      body .container_body {
+        width: 100%;
+        height: 100%;
+        /* background: #02253b6c; */
+        position: absolute;
+        top: 0px;
+        display: flex;
+        flex-direction: column; }
+        body .container_body_logoCIBB {
+          width: 150px;
+          height: 50px;
+          /* background: darkorange; */
+          margin: 10px auto;
+          position: relative;
+          top: 5%; }
+
+  .container-register-login {
+    width: 300px;
+    min-height: 100px;
+    max-height: 600px;
+    /*  background: salmon; */
+    margin: 50px auto; }
+    .container-register-login_body {
+      width: 300px;
+      height: auto;
+      /* background: #ff69b442; */
+      top: 120px;
+      margin: 15px auto; }
+      .container-register-login_body_titulo {
+        font-size: 11px; }
+      .container-register-login_body_space-box {
+        /* background: darkgreen; */
+        margin: 5px auto; }
+        .container-register-login_body_space-box p {
+          font-size: 9px; }
+      .container-register-login_body button {
+        height: 35px; }
+        .container-register-login_body button:focus {
+          outline: none; }
+      .container-register-login_body a {
+        font-size: 10px; } }
+
+/*# sourceMappingURL=rsp_style-register-login.css.map */

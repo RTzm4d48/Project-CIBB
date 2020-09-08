@@ -1,0 +1,39 @@
+@media (max-width: 1024px){
+    @import "colors";
+body{
+    .container_body{
+        /* toolbar right */
+        .toolbar_in_fullscreen{
+            display: none;
+        }
+        .min_screen{
+            width: 100%;
+            background: #000;
+            left: 0px;
+        }
+        &-espace{
+            &-toolbar_top{
+                img{
+                    height: 20px;
+                    margin: auto 15px;
+                    /* background: #000; */
+                }
+                .x{
+                    display: none;
+                }
+                .bar{
+                    display: block;
+                }
+            }
+            &-container{
+                background: #e214143f;
+
+                .container{
+                    width: 100%;
+                    background: salmon;
+                }
+            }
+        }
+    }
+}
+}

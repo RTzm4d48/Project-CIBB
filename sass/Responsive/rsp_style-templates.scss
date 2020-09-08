@@ -1,0 +1,53 @@
+@media (max-width: 1024px){
+    @import "colors";
+    body{
+        .toolbar{
+    
+            &_edgarAggre{
+                width: 100px;
+                height: 50%;
+                margin: auto 5px;
+                p{
+                    font-size: 12px;
+                }
+
+            }
+            &_login{
+                width: 100px;
+                height: 100%;
+
+            }
+        }
+        .container{
+            width: 100%;
+            height: 100vh; 
+            &_img-rsp{
+                display: flex;
+                opacity: 1;
+            }
+            &_img{
+                display: none;
+            }
+            /* &_body{
+              
+    
+                &_logoCIBB{
+                    
+                }
+                &_description{
+                
+                }
+                &_register{
+                   
+                    &:hover{
+                        
+                    }
+                    &:focus{
+                       
+                    }
+                }
+    
+            } */
+        }
+    }
+}

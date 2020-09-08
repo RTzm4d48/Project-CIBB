@@ -1,0 +1,84 @@
+body {
+  margin: 0px;
+  background: linear-gradient(70deg, #315CB0, #63C2E2);
+  display: flex; }
+  body .toolbar {
+    width: 100%;
+    height: 40px;
+    background: #36393F;
+    position: fixed;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between; }
+    body .toolbar_edgarAggre {
+      width: 150px;
+      height: 70%;
+      margin: auto 0px;
+      opacity: 0.8;
+      /* background: #000; */
+      display: flex;
+      justify-content: center; }
+      body .toolbar_edgarAggre p {
+        color: #fff;
+        margin: auto 0px;
+        font-family: Arial; }
+      body .toolbar_edgarAggre img {
+        width: auto;
+        height: 100%; }
+    body .toolbar_login {
+      width: 150px;
+      height: 100%;
+      background: #45A1E5;
+      border: none;
+      color: #fff;
+      cursor: pointer; }
+      body .toolbar_login:hover {
+        opacity: 0.8; }
+      body .toolbar_login:focus {
+        outline: none; }
+  body .container {
+    width: 100%;
+    height: 100vh;
+    /* background: mediumspringgreen; */ }
+    body .container_img-rsp {
+      display: none; }
+    body .container_img {
+      opacity: 0.6; }
+    body .container_body {
+      width: 100%;
+      height: 100%;
+      /* background: rgba(0, 100, 0, 0.425); */
+      position: absolute;
+      top: 0px;
+      display: flex;
+      flex-direction: column; }
+      body .container_body_logoCIBB {
+        width: 180px;
+        height: auto;
+        /* background: darkorange; */
+        margin: 40vh auto 5px auto; }
+      body .container_body_description {
+        width: 300px;
+        height: 20px;
+        /* background: red; */
+        margin: 5px auto;
+        display: flex; }
+        body .container_body_description p {
+          color: #fff;
+          font-family: Arial, Helvetica, sans-serif;
+          margin: 0px auto; }
+      body .container_body_register {
+        margin: 5px auto;
+        width: 150px;
+        height: 45px;
+        background: radial-gradient(#A4DF4A, #8EDF4A);
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer; }
+        body .container_body_register:hover {
+          opacity: 0.8; }
+        body .container_body_register:focus {
+          outline: none; }
+
+/*# sourceMappingURL=style-templates.css.map */

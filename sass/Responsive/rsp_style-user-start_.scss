@@ -1,0 +1,84 @@
+@import "colors";
+@media (max-width: 1024px){
+
+    .font_containers{
+    }
+    .container{
+        
+        /* property in styles-general.scss */
+    
+    
+        &-perfil{
+            width: calc(100% - 10px);
+            height: 250px;
+            margin: 10px auto;
+            display: flex;
+            flex-direction: column;
+    
+            img{
+                margin: 10px auto;
+                width: 100px;
+                height: 100px;
+               
+            }
+            &-data{
+                width: 95%;
+                height: auto;
+                margin: auto 10px;
+                text-align: center;
+                /* border: 1px solid rgb(63, 245, 54); */
+                h3{
+                    margin: 0px;
+                }
+                p{
+                    margin: 0px;
+                }
+            }
+        }
+    
+        &-date{
+            .area{
+                display: flex;
+                margin: auto 10px;
+                font-size: 10px;
+            
+                p{
+                    
+                }
+                .p_dinamic{
+                   
+                }
+            }
+        }
+    
+        &-subcontainer{
+           
+            
+            
+        }
+    
+    
+    }
+    .box{
+        width: calc(100% - 10px);
+      
+    }
+    /*  */
+    .event{
+        width: calc(100% - 10px);
+        
+    }
+    
+    .ranking{
+        width: calc(100% - 10px);
+        
+    }
+    
+    .fo{
+        width: calc(100% - 10px);
+       
+    }
+    
+    
+}
+   

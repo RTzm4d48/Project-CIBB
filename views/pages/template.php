@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styles-general_.css">
-    <link rel="stylesheet" href="/css/responsive/rsp_style-general.css">
+    <link rel="stylesheet" href="/css/responsive/rsp_style-general_.css">
     
     <title>@nameUser</title>
 </head>
@@ -75,7 +75,8 @@
             
             <div class="container_body-espace-container">
                 <!-- my-body-container -->
-                <?php include "pages-template/user-start.php"; ?>
+                <?php include "pages-template/user-start.php"; ?> 
+              
             </div>
 
         </div>

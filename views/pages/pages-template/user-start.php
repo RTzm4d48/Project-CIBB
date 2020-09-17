@@ -1,5 +1,6 @@
 
-<link rel="stylesheet" href="/css/style-user-start.css">
+<link rel="stylesheet" href="/css/style-user-start____.css">
+<link rel="stylesheet" href="/css/Responsive/rsp_style-user-start_.css">
 <div class="container">
     <div class="container-perfil font_containers">
         <img src="/img/user-img.jpg" alt="">
@@ -31,51 +32,10 @@
         </div>
     </div>
     <div class="container-subcontainer">
-        <div class="box font_containers">
-            <div class="titulo">
-                <h1>Nuevo Evento</h1>
-                <div class="time">
-                    <div class="unit">
-                        <h3 class="num">21</h3>
-                        <p class="text">día</p>
-                    </div>
-                    <div class="slash">
-                        <img src="/svg/slash.svg" alt="">
-                    </div>
-                    <div class="unit">
-                        <h3 class="num">21</h3>
-                        <p class="text">Horas</p>
-                    </div>
-                    <div class="slash">
-                        <img src="/svg/slash.svg" alt="">
-                    </div>
-                    <div class="unit">
-                        <h3 class="num">21</h3>
-                        <p class="text">Minutos</p>
-                    </div>
-                    <div class="slash">
-                        <img src="/svg/slash.svg" alt="">
-                    </div>
-                    <div class="unit">
-                        <h3 class="num">21</h3>
-                        <p class="text">Segundos</p>
-                    </div>
-                </div>
-            </div>
-            <div class="cat_and_des">
-                <div class="categoria">
-                    <p class="name">Categoria:</p>
-                    <p>Recoleccion de ifo</p>
-                </div>
-                <div class="descripcion">
-                    <p class="name">Descripcion:</p>
-                    <p>Este evento sera algo estricto y no quero gente warra en esto joder, disfrutenlo.</p>
-                </div>
-            </div>
-            <button class="btn">Participar</button>
-        </div>
-        <div class="box font_containers"></div>
-        <div class="box font_containers"></div>
-        <div class="box font_containers"></div>
+        <!-- box -->
+        <?php include "user-start/event.php" ?>
+        <?php include "user-start/ranking.php" ?>
+        <?php include "user-start/fo.php" ?>
+        <?php include "user-start/setingsUsers.php" ?>
     </div>
 </div>

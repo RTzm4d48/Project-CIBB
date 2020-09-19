@@ -1,0 +1,118 @@
+.container {
+  width: 100%;
+  height: auto;
+  background: #36393f98; }
+  .container .header_cibb {
+    width: 100%;
+    height: 150px;
+    background: #36393f98;
+    display: flex; }
+    .container .header_cibb img {
+      width: 200px;
+      margin: auto; }
+
+.formBody {
+  width: 100%;
+  height: auto;
+  /*  background: rgba(149, 247, 130, 0.165); */
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  display: flex;
+  flex-direction: column; }
+  .formBody h1 {
+    margin: 10px auto;
+    font-size: 25px; }
+  .formBody .description {
+    margin: 0px auto;
+    font-size: 14px;
+    opacity: 0.6; }
+  .formBody .contImg {
+    width: 200px;
+    height: 200px;
+    /* background: #000; */
+    margin: 20px auto;
+    display: flex; }
+    .formBody .contImg img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      margin: auto; }
+  .formBody .semi-circulo {
+    width: 200px;
+    height: 100px;
+    background: #0000008a;
+    position: absolute;
+    margin: 100px auto auto auto;
+    -moz-border-radius: 0 0 100px 100px;
+    -webkit-border-radius: 0 0 100px 100px;
+    border-radius: 0 0 100px 100px;
+    cursor: pointer;
+    display: flex; }
+    .formBody .semi-circulo:hover {
+      background: #000000c6; }
+    .formBody .semi-circulo label {
+      margin: auto;
+      cursor: pointer;
+      position: relative;
+      top: -5px; }
+      .formBody .semi-circulo label:hover {
+        transform: scale(1.2); }
+  .formBody .section {
+    width: 100%;
+    min-height: 50px;
+    max-height: 200px;
+    /* background: #000; */
+    margin: 30px auto 0px auto;
+    display: flex;
+    justify-content: center; }
+    .formBody .section p {
+      margin: auto 15px;
+      /* background: red; */
+      width: 15%;
+      display: flex;
+      justify-content: flex-end; }
+    .formBody .section .p2 {
+      margin: 5px 15px; }
+    .formBody .section input[type=text] {
+      width: 60%;
+      height: 25px;
+      margin: auto 15px;
+      border-radius: 4px;
+      border: none;
+      color: #545454; }
+      .formBody .section input[type=text]:focus {
+        outline: 0; }
+    .formBody .section textarea {
+      max-width: 60%;
+      min-width: 60%;
+      max-height: 80px;
+      min-height: 80px;
+      margin: auto 15px;
+      border-radius: 4px;
+      color: #545454;
+      border: none; }
+      .formBody .section textarea:focus {
+        outline: 0; }
+  .formBody .explication {
+    width: 100%;
+    height: auto;
+    /* background: rgb(255, 176, 140); */
+    display: flex; }
+    .formBody .explication p {
+      position: relative;
+      left: 32.5%;
+      font-size: 13px;
+      width: 60%;
+      top: 0px;
+      margin: 0px;
+      opacity: 0.7; }
+  .formBody input[type=submit] {
+    background: radial-gradient(#A4DF4A, #8EDF4A);
+    margin: 80px auto;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer; }
+
+/*# sourceMappingURL=style-create-fo.css.map */

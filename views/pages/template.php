@@ -75,7 +75,8 @@
             
             <div class="container_body-espace-container">
                 <!-- my-body-container -->
-                <?php include "pages-template/user-start.php"; ?> 
+                <!-- <php include "pages-template/user-start.php"; ?>  -->
+                <?php include "pages-template/create-fo.php"; ?>
               
             </div>
 

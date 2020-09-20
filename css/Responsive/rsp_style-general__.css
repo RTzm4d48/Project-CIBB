@@ -1,7 +1,7 @@
 @media (max-width: 1024px) {
   body .container_body {
     /* toolbar right */ }
-    body .container_body .toolbar_in_fullscreen {
+    body .container_body .minn_screen {
       display: none; }
     body .container_body .min_screen {
       width: 100%;
@@ -22,4 +22,4 @@
         /* background: salmon; */
         margin: 50px auto 0px auto; } }
 
-/*# sourceMappingURL=rsp_style-general_.css.map */
+/*# sourceMappingURL=rsp_style-general__.css.map */

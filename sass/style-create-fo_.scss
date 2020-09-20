@@ -92,7 +92,7 @@
 
         p{
             margin: auto 15px;
-            /* background: red; */
+           /*  background: red; */
             width: 15%;
             display: flex;
             justify-content: flex-end;
@@ -129,25 +129,42 @@
     }
 
     .explication{
-        width: 100%;
+        width: 60%;
         height: auto;
         /* background: rgb(255, 176, 140); */
+        position: relative;
+        left: calc(9%);
+        margin: 0px auto;
         display: flex;
 
         p{
-            position: relative;
-            left: 32.5%;
             font-size: 13px;
-            width: 60%;
+            width: 100%;
             top: 0px;
             margin: 0px;
             opacity: 0.7;
         }
     }
-
+    @media(max-width: 414px){
+        .explication{
+            left: calc(11%);
+        }
+    }
+    .alert{
+        width: 100%;
+        height: 20px;
+        /* background: #000; */
+        display: flex;
+        margin: 60px 0px 5px 0px;
+        p{
+            color: red;
+            margin: 0px auto;
+            font-size: 14px;
+        }
+    }
     input[type=submit]{
         background: radial-gradient(#{$light-green-01}, #{$light-green-02});
-        margin: 80px auto;
+        margin: 5px auto 60px auto;
         border: none;
         padding: 10px 20px;
         border-radius: 5px;
@@ -177,12 +194,13 @@
 
         h2{
             color: yellow;
-            font-size: 30px;
+            font-size: 20px;
             margin: 5px 10px;
         }
         h3{
             color: skyblue;
             margin: 0px 10px;
+            font-size: 17px;
         }
 
         .rule{
@@ -251,4 +269,71 @@
     }   
 
     
+}
+
+.loading_creation_fo{
+    width: 100%;
+    height: auto;
+    /* background: rgba(149, 247, 130, 0.165); */
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+
+    h1{
+        margin: 5px auto;
+        text-align: center;
+    }
+
+    img{
+        width: 100px;
+        margin: 5px auto;
+    }
+    .direcction{
+        display: flex;
+        width: 50%;
+        height: 30px;
+        background: #{$gray};
+        margin: 10px auto;
+        padding: 0px 5px;
+        border-radius: 5px;
+
+        p{
+            width: 20%;
+            /* background: red; */
+            text-align: center;
+            margin: auto 0px;
+            opacity: 0.5;
+        }
+
+        input[type=text]{
+            margin: auto 0px;
+            width: 60%;
+            background: none;
+            color: white;
+            border:none;
+        }
+
+        .copiar{
+            width: 20%;
+            margin: auto 0px;
+            text-align: center;
+            color: #48a7ff;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 12px;
+
+        }
+    }
+    a{
+        margin: 5px auto;
+        padding: 10px 20px;
+        border-radius: 5px;
+        background: #{$light-blue};
+        text-decoration: none;
+        color: white;
+        
+    }
 }

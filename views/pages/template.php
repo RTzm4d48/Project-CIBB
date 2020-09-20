@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="/css/styles-general_.css">
-    <link rel="stylesheet" href="/css/responsive/rsp_style-general_.css">
+    <link rel="stylesheet" href="/css/responsive/rsp_style-general__.css">
     
     <title>@nameUser</title>
 </head>
@@ -13,14 +14,16 @@
 <form  method="post">
     <div class="container_body">
         <!-- toolbar -->
-        <div id="toolbar_right">
+        <style>
+            .no{
+                display: none;
+            }
+        </style>
+        <div id="toolbar_right" class="minn_screen">
         <div class="toolbar_in_fullscreen">
             <?php include "pages-template/toolbar-right.php"; ?>
         </div>
         </div>
-        
-        <!-- include "pages-template/toolbar-right.php"; -->
-       
         <div id="espace" class="container_body-espace min_screen">
             
             <div id="toolbar_top" class="container_body-espace-toolbar_top min_screen">
@@ -46,7 +49,8 @@
                          success: function(respuesta){
                             $("#espace").removeClass("min_screen");
                             $("#toolbar_top").removeClass("min_screen");
-                            $("#toolbar_right").text(respuesta);
+                            /* $("#toolbar_right").text(respuesta); */
+                            $("#toolbar_right").addClass("no");
                             /* console.log(respuesta); */
                             $("#espace").addClass("extend_full");
                             $("#toolbar_top").addClass("extend_full");
@@ -61,7 +65,9 @@
                          success: function(respuesta){
                             $("#espace").removeClass("min_screen");
                             $("#toolbar_top").removeClass("min_screen");
-                            $("#toolbar_right").html(respuesta);
+                            /* $("#toolbar_right").html(respuesta); */
+                            $("#toolbar_right").removeClass("no");
+                            $("#toolbar_right").removeClass("minn_screen");
                             /* console.log(respuesta); */
                             $("#espace").removeClass("extend_full");
                             $("#toolbar_top").removeClass("extend_full")

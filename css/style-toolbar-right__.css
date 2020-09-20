@@ -33,7 +33,7 @@
     width: 50px;
     height: auto;
     border-radius: 50px;
-    margin: 0px auto;
+    margin: 5px auto;
     background: #36393f98;
     display: flex;
     flex-direction: column; }
@@ -56,4 +56,4 @@
         opacity: 0.6;
         transform: scale(0.9); }
 
-/*# sourceMappingURL=style-toolbar-right_.css.map */
+/*# sourceMappingURL=style-toolbar-right__.css.map */

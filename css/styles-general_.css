@@ -76,5 +76,7 @@ body {
           margin: 70px auto 0px auto;
           display: flex;
           flex-direction: column; }
+  body .no {
+    display: none; }
 
 /*# sourceMappingURL=styles-general_.css.map */

@@ -55,6 +55,8 @@
             <p>Esta opcion no es obligatoria, pero si tienes un audio o musica que quieres que la gente pueda escuchar al visitar tu F.O, puedes hacerlo</p>
         </div>
 
+        <div class="alert"><p></p></div>
+
         <input type="submit" value="Siguiente" id="" >
     
 

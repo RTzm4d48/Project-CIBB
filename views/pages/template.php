@@ -1,3 +1,8 @@
+<?php
+
+session_start(); 
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,8 +15,6 @@
     <title>@nameUser</title>
 </head>
 <body>
-
-<form  method="post">
     <div class="container_body">
         <!-- toolbar -->
         <style>
@@ -82,14 +85,24 @@
             <div class="container_body-espace-container">
                 <!-- my-body-container -->
                 <!-- <php include "pages-template/user-start.php"; ?>  -->
-                <?php include "pages-template/create-fo.php"; ?>
-              
+                <?php 
+                
+                if(isset($_GET['pagina'])){
+                    include "pages-template/f_o.php";
+                }else if(isset($_GET['new_fo'])){
+                    include "pages-template/create-fo.php"; 
+                }else if(isset($_GET['address'])){
+                    include "pages-template/f_o.php";
+                }else{
+                    include "pages-template/user-start.php"; 
+                }
+
+                ?>
             </div>
 
         </div>
     </div>
-   
-    </form>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
 </html>

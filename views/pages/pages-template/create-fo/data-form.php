@@ -6,20 +6,19 @@
 
     
     <!-- /views/pages/pages-template/create-fo.php -->
-<form action="" method="POST" enctype="multipart/form-data">
+    <form action="" method="POST" enctype="multipart/form-data">
 
         <div class="contImg">
             <img src="/img/img-fo.jpg" id="imagePreview" alt="">
             <div class="semi-circulo">
-                <input type="file" name="imgFO" id="inpFile" hidden>
+                <input type="file" name="image" accept="image/jpeg, image/png" id="inpFile" hidden>
                 <label for="inpFile">Cambiar</label>
-            
             </div>
         </div>
-    
+       
         <div class="section">
             <p>Nombre*</p>
-            <input type="text" maxlength="15" name="namefok" id="txtName" required>  
+            <input type="text" maxlength="15" name="namee" id="txtName" required>  
         </div>
         <div class="section">
             <p class="p2">Descripcion*</p>
@@ -54,12 +53,13 @@
         <div class="explication">
             <p>Esta opcion no es obligatoria, pero si tienes un audio o musica que quieres que la gente pueda escuchar al visitar tu F.O, puedes hacerlo</p>
         </div>
-
-        <div class="alert"><p></p></div>
-
+        
+        <div class="alert"><p id="alert"></p></div>
+        <center>
         <input type="submit" value="Siguiente" id="" >
-    
+        </center>
 
+    </form>
 
 <script>
         const inpFile = document.getElementById("inpFile");
@@ -80,6 +80,6 @@
         });
 
     </script>
-</form>
+
 
 </div>

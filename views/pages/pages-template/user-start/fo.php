@@ -14,7 +14,7 @@
     <div class="container_principal notFo ">
         <div class="buttons">
             <a href=""><img src="/svg/search-solid.svg" alt=""> Buscar Fuerzas Operativas</a>
-            <a class="a2" href=""><img src="/svg/plus-solid.svg" alt=""> Crear Fuerza Operative</a>
+            <a class="a2" href="/views/pages/template.php?new_fo=start"><img src="/svg/plus-solid.svg" alt=""> Crear Fuerza Operative</a>
        </div>
     </div>
 </div>

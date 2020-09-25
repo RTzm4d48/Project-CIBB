@@ -5,19 +5,17 @@
     </div>
 
     <?php
-    if(isset($_POST['namefok'])){
-        include "create-fo/rules-fo.php";
+    require_once($_SERVER['DOCUMENT_ROOT'].'/controllers/crud.controller.php');
+    $ex = new VALIDATIONS();
+
+    if(isset($_POST['namee'])){
+        $ex -> val_insert_fo();
+    }else if(isset($_POST['rule_1']) && isset($_POST['prohibition_1'])){
+        $ex -> val_insert_rules();
     }else{
-        if(isset($_POST['rule_1'])){
-            include "create-fo/loading_creation_fo.php";
-        }else{
-            include "create-fo/data-form.php";
-             /*  echo "<script>
-                if(window.history.replaceState ){
-                    window.history.replaceState(null, null, window.location.href );
-                }
-              </script>"; */
+        include "create-fo/data-form.php";   
+        /* include ($_SERVER['DOCUMENT_ROOT']."/views/pages/pages-template/create-fo/rules-fo.php"); */
         }
-    }
+    
     ?>
 </div>

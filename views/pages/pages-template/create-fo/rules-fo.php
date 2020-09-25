@@ -1,4 +1,6 @@
+<form action="" method="POST">
 <div class="rulesFo">
+
 <h1>Reglas de la Fuerza Operativa</h1>
 <div class="section">
     <h2>REGRAS DE LA FUERZA OPERATIVA</h2>
@@ -13,7 +15,12 @@
     <div class="plus" onclick="plus_normative(1);"></div>
     </div>
 </div>
-
+<div id="num_rule_">
+    <input type='text' name='num_rule' value='1' id='num_rule'>
+</div>
+<div id="num_prohibition_">
+    <input type='text' name='num_prohibition' value='1' id='num_prohibition'>
+</div>
 <!--  -->
 <div class="section"> 
     <h2>PROHIBICIONES</h2>
@@ -28,46 +35,10 @@
     <div class="plus" onclick="plus_expulsion(1);"></div>
     </div>
 </div>
-
-<script>
-    function plus_normative(i){
-        if(i<=4){
-        i++;
-        $("#normative").append("<div id='rule_"+i+"' class='rule'> <img src='/svg/rules-true.svg' alt=''><input type='text' name='rule_"+i+"' id=''></div> ");
-        $("#bottons_normative").html("<div class='plus' onclick='plus_normative("+i+");'></div>  <div class='plus minus' onclick='minus_normative("+i+");'></div>");
-        }else{
-
-        }
-    }
-    function minus_normative(i){
-        $("#rule_"+i).remove();
-        i--;
-        if(i==1){
-            $("#bottons_normative").html("<div class='plus' onclick='plus_normative("+i+");'>");
-        }else{
-        $("#bottons_normative").html("<div class='plus' onclick='plus_normative("+i+");'></div>  <div class='plus minus' onclick='minus_normative("+i+");'></div>");
-        }
-    }
-
-    function plus_expulsion(i){
-        if(i<=4){
-        i++;
-        $("#expulsion").append("<div id='prohibition_"+i+"' class='rule'><img src='/svg/rules-false.svg' alt=''><input type='text' name='prohibition_"+i+"' id=''></div>");
-        $("#bottons_expulsion").html("<div class='plus' onclick='plus_expulsion("+i+");'></div> <div class='plus minus' onclick='minus_expulsion("+i+");'></div>");
-        }else{
-
-        }
-    }
-    function minus_expulsion(i){
-        $("#prohibition_"+i).remove();
-        i--;
-        if(i==1){
-            $("#bottons_expulsion").html("<div class='plus' onclick='plus_expulsion("+i+");'></div>");
-        }else{
-            $("#bottons_expulsion").html("<div class='plus' onclick='plus_expulsion("+i+");'></div> <div class='plus minus' onclick='minus_expulsion("+i+");'></div>");
-        }
-    }
-</script>
-
+<div class="alert"><p id="alert"></p></div>
 <input type="submit" value="Siguiente" id="" >
+
 </div>
+</form>
+
+<script src="/js/rules_fo_plus_minus.js"></script>

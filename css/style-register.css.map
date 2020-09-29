@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,IAAI;EACA,UAAU,EAAE,MAAM",
-"sources": ["../sass/style-register.scss"],
-"names": [],
-"file": "style-register.css"
-}

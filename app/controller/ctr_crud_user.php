@@ -1,4 +1,6 @@
 <?php
+require_once(URL_PROJECT.'/app/model/crud_user.php');
+
 class VALIDATIONS{
 
     function __construct(){
@@ -6,12 +8,12 @@ class VALIDATIONS{
     }
 
     static function val_register_user(){
-        echo 'hola';
-        echo '<br>';
-        if(isset($_POST['gmail'])) echo $_POST['gmail'];
-        echo '<br>';
-        if(isset($_POST['user'])) echo $_POST['user']; 
-        echo '<br>';
-        if(isset($_POST['password'])) echo $_POST['password']; 
+        $ex = new CRUD();
+        $Row = $ex->validate_gmail();
+        if($Row != 'error'){
+            $ex->register_user();
+        }else{
+            echo 'La cuenta de gmail ya esta usada';
+        }
     }
 }

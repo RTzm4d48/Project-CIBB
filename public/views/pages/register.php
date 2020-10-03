@@ -21,33 +21,36 @@
                     <div class="container-register-login_body_titulo register-size"><h1>Crear Cuenta</h1></div>
                     <div class="container-register-login_body_space-box">
                         <p>CORREO ELECTRONICO</p>
-                        <input type="text" placeholder="Name@gmail.com" name='gmail'>
+                        <input type="text" placeholder="Name@gmail.com" name='gmail' required>
                     </div>
                     <div class="container-register-login_body_space-box">
                         <p>NOMBRE DE USUARIO</p>
-                        <input type="text" name='user'>
+                        <input type="text" name='user' required>
                     </div>
                     <div class="container-register-login_body_space-box">
                         <p>CONTRASEÑA</p>
-                        <input type="password" name='password'>
+                        <input type="password" name='password' required>
                     </div>
-                    <p class="container-register-login_body_alert">La contraseña es incorrecta</p>
+                    <p class="container-register-login_body_alert">
+                    
+                    <?php
+                    require_once ($_SERVER['DOCUMENT_ROOT']. '/app/config/config.php');
+                    require_once(URL_PROJECT.'/app/controller/ctr_crud_user.php');
+                    $ex = new VALIDATIONS();
+
+                    if(isset($_POST['registrar_user'])){
+                        $ex -> val_register_user();
+                    }else{}
+        
+                    ?>
+                    
+                    </p>
                     <button id="btn-continuar">Continuar</button>
                     <input type="submit" name="registrar_user" value="OK">
                     <a href="/views/pages/login.php">¿ya tienes una cuenta?</a>
                 </div>
             </div>
         </div>
-        <?php
-        require_once ($_SERVER['DOCUMENT_ROOT']. '/app/config/config.php');
-        require_once(URL_PROJECT.'/app/controller/ctr_crud_user.php');
-        $ex = new VALIDATIONS();
-
-        if(isset($_POST['registrar_user'])){
-            $ex -> val_register_user();
-        }else{}
-        
-        ?>
     </div>
     </form>
 </body>

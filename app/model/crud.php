@@ -3,7 +3,6 @@ require_once ($_SERVER['DOCUMENT_ROOT']. '/app/config/config.php');
 require_once (URL_PROJECT. '/app/libs/console.php');
 require_once (URL_PROJECT. '/app/model/connection.php');
 
-
 /* -- */
 
 class CRUD extends Connection{
@@ -15,16 +14,15 @@ class CRUD extends Connection{
     }
 
     public function execute($query){
-        
-        $Row = null;
-        
+
         try{
-        $rpt = sqlsrv_query($this->conn, $query);
-        if($rpt)
-        {
-            console('execute success');
-        }else{
-            console('execute faill');
+        $rpt = mysqli_query($this->conn, $query);
+        if ($rpt) {
+            console("New record created successfully");
+            return $rpt;
+        } else {
+            console("ERROR in create new record");
+            return 'error';
         }
         }catch (PDOException $e) {
 
@@ -35,14 +33,9 @@ class CRUD extends Connection{
     }
 
     function obtain_id(){
-        $sql_select_id = "select SCOPE_IDENTITY() as id ;";
-        
-        console("the insertion is successful");
-        $scope = sqlsrv_query($this->conn, $sql_select_id); 
-        $Row = sqlsrv_fetch_array($scope);
-        
-        $_SESSION['sess_id'] = $Row['id'];
-        console($_SESSION['sess_id']);
+        $id = mysqli_insert_id($this->conn);
+        console("Inser ID: ".$id);
+        $_SESSION['sess_id'] = $id;
     }
 
     public function insert_fo(){
@@ -76,8 +69,8 @@ class CRUD extends Connection{
         }
         //$ex = obtain_id();
         //insert
-        $sql = "insert f_o (fo_img_little, fo_img_big, fo_name, fo_description, fo_tag, fo_url_w_a, fo_url_b_b_f, fo_url_m, fo_photo_1, fo_photo_2, fo_photo_3)
-        values ('".$image_little_bits."', '".$image_big_bits."','".$name."','".$description."','".$tag."','".$url_w_a."','".$url_b_b_f."','".$url_m."',null,null,null);";
+        $sql = "INSERT INTO `f_o`(`fo_img_little`, `fo_img_big`, `fo_name`, `fo_description`, `fo_tag`, `fo_url_w_a`, `fo_url_b_b_f`, `fo_url_m`, `fo_photo_1`, `fo_photo_2`, `fo_photo_3`)
+        VALUES ('".$image_little_bits."', '".$image_big_bits."','".$name."','".$description."','".$tag."','".$url_w_a."','".$url_b_b_f."','".$url_m."',null,null,null);";
         $this->execute($sql);
         $this->obtain_id();
 
@@ -90,28 +83,40 @@ class CRUD extends Connection{
 
         for($iv = 1; $iv <= $num_rules; $iv++){
             console($_POST['rule_'.$iv]);
-            $sql = "insert rules_fo (fo_id, rf_rule) VALUES (".$_SESSION['sess_id'].", '".$_POST['rule_'.$iv]."');";
+            /* $sql = "insert rules_fo (fo_id, rf_rule) VALUES (".$_SESSION['sess_id'].", '".$_POST['rule_'.$iv]."');"; */
+            $sql = "INSERT INTO `rules_fo`(`fo_id`, `rf_rule`) VALUES (".$_SESSION['sess_id'].", '".$_POST['rule_'.$iv]."');";
             $this->execute($sql);
         }
         for($iv = 1; $iv <= $num_prohibitions; $iv++){
             console($_POST['prohibition_'.$iv]);
-            $sql= "insert prohibition_fo (fo_id, pf_prohibition) VALUES (".$_SESSION['sess_id'].", '".$_POST['prohibition_'.$iv]."');";
+            /* $sql= "insert prohibition_fo (fo_id, pf_prohibition) VALUES (".$_SESSION['sess_id'].", '".$_POST['prohibition_'.$iv]."');"; */
+            $sql = "INSERT INTO `prohibition_fo`(`fo_id`, `pf_prohibition`) VALUES (".$_SESSION['sess_id'].", '".$_POST['prohibition_'.$iv]."');";
             $this->execute($sql);
         }
     }
 
     function select_code(){
 
-        $sql_select_code = "select fo_code from f_o where fo_id = ".$_SESSION['sess_id'].";";
-        $rpt = sqlsrv_query($this->conn, $sql_select_code);
+        /* $sql_select_code = "select fo_code from f_o where fo_id = ".$_SESSION['sess_id'].";"; */
+        $sql_select_code = "SELECT fo_code FROM `f_o` WHERE fo_id = ".$_SESSION['sess_id'].";";
+        $rpt = mysqli_query($this->conn, $sql_select_code);
         if(!$rpt){
             console("error en obtencioon de codigo");
         }else{
-            $code = sqlsrv_fetch_array($rpt);
-            console("code: ".$code['fo_code']);
-            $_SESSION['sess_code'] = $code['fo_code'];
+            while($row = mysqli_fetch_assoc($rpt)){
+                $_SESSION['sess_code'] = $row['fo_code']; 
+            }
+        }
+    }
+
+    public function select_datos_fo(){
+        if(isset($_GET['C'])){
+            $code = $_GET['C'];
+            $sql5 = "SELECT * FROM f_o WHERE fo_code = '". $code ."';";
+            $rpt = $this->execute($sql5);
+
+            return $Row = sqlsrv_fetch_array($rpt);
             
-            console("code_2: ".$_SESSION['sess_code']);
         }
     }
 

@@ -1,4 +1,6 @@
 <?php
+require_once(URL_PROJECT.'/app/model/crud.php');
+
 class VALIDATIONS{
 
     function val_insert_fo(){
@@ -38,12 +40,20 @@ class VALIDATIONS{
             include URL_PROJECT."/public/views/pages/pages-page_base/create-fo/rules-fo.php";
             echo "<script>console.log('espera');</script>";
             echo "<script>document.getElementById('alert').innerHTML='Tienes que esperar 3 dias desde la ultima ves que creaste una F_O';</script>";
-    }
+        }
     }
 
-    public static function prueba(){
+    static function val_select_datos_fo(){
+        $ex = new CRUD();
+        $Row = $ex->select_datos_fo();
 
-        
+        return $Row;
+        /* echo '<pre>';
+        print_r($Row);
+        echo '</pre>'; */
+    }
+
+    public static function prueba(){  
         return URL_PROJECT.'/app/controller/test.php';
     }
 

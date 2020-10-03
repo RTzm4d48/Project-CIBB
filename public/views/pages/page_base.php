@@ -1,6 +1,6 @@
 <?php
 
-session_start(); 
+session_start();
 include_once ($_SERVER['DOCUMENT_ROOT']. '/app/config/config.php');
 
 ?>
@@ -46,11 +46,7 @@ include_once ($_SERVER['DOCUMENT_ROOT']. '/app/config/config.php');
                 <script>
                     /* "/controllers/template.controller.php" */
                  function cerrar_toolbar(){
-                     $.ajax({
-                         url:'/controllers/template.controller.php',
-                         type: "post",
-                         data: {valor: false},
-                         success: function(respuesta){
+                     
                             $("#espace").removeClass("min_screen");
                             $("#toolbar_top").removeClass("min_screen");
                             /* $("#toolbar_right").text(respuesta); */
@@ -58,15 +54,10 @@ include_once ($_SERVER['DOCUMENT_ROOT']. '/app/config/config.php');
                             /* console.log(respuesta); */
                             $("#espace").addClass("extend_full");
                             $("#toolbar_top").addClass("extend_full");
-                         }
-                     });
+                         
                       }
                 function abrir_toolbar(){
-                     $.ajax({
-                         url:'/controllers/template.controller.php',
-                         type: "post",
-                         data: {valor: true},
-                         success: function(respuesta){
+                    
                             $("#espace").removeClass("min_screen");
                             $("#toolbar_top").removeClass("min_screen");
                             /* $("#toolbar_right").html(respuesta); */
@@ -75,8 +66,7 @@ include_once ($_SERVER['DOCUMENT_ROOT']. '/app/config/config.php');
                             /* console.log(respuesta); */
                             $("#espace").removeClass("extend_full");
                             $("#toolbar_top").removeClass("extend_full")
-                         }
-                     });
+                        
                       }
                     </script>
                     
@@ -92,8 +82,8 @@ include_once ($_SERVER['DOCUMENT_ROOT']. '/app/config/config.php');
                     include "pages-page_base/f_o.php";
                 }else if(isset($_GET['new_fo'])){
                     include "pages-page_base/create-fo.php"; 
-                }else if(isset($_GET['address'])){
-                    include "pages-page_base/f_o.php";
+                }else if(isset($_GET['C'])){
+                    include URL_PROJECT. "/public/views/fo/home.php";
                 }else{
                     include "pages-page_base/user-start.php"; 
                 }
@@ -103,7 +93,6 @@ include_once ($_SERVER['DOCUMENT_ROOT']. '/app/config/config.php');
 
         </div>
     </div>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
 </html>

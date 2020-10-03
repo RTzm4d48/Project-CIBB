@@ -13,12 +13,12 @@ class Connection{
     }
 
     public function connect(){
-        $connectionInfo = array('Database'=>DB_NAME, 'UID'=>DB_USER, 'PWD'=>DB_PASSWORD);
-        $this->conn = sqlsrv_connect(DB_HOST, $connectionInfo);
-        if($this->conn){
-            return $this->conn;
+        $this->conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+        if (!$this->conn) {
+            console("Connection failed: " . mysqli_connect_error());
         }else{
-            console(print_r(sqlsrv_errors(), true));
+            console("Connected successfully");
+            return $this->conn;
         }
     }
 }

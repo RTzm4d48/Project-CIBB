@@ -39,15 +39,15 @@ class CRUD extends Connection{
     }
 
     public function insert_fo(){
-        $image = (isset($_FILES['image'])) ? $_FILES['image']['tmp_name'] : 'null';
-        $image_type = (isset($_FILES['image'])) ? $_FILES['image']['type'] : 'null';
-        $img = ($image != '') ? $_FILES['image']['tmp_name'] : 'null';
-        $name = (isset($_POST['namee']) && $_POST['namee'] != '') ? $_POST['namee'] : 'null';
-        $description = (isset($_POST['description']) && $_POST['description'] != '') ? $_POST['description'] : 'null';
-        $tag = (isset($_POST['tag']) && $_POST['tag'] != '') ? $_POST['tag'] : 'null';
-        $url_w_a = (isset($_POST['UrlWebAlternative']) && $_POST['UrlWebAlternative'] != '') ? $_POST['UrlWebAlternative'] : 'null';
-        $url_b_b_f = (isset($_POST['UrlFo']) && $_POST['UrlFo'] != '') ? $_POST['UrlFo'] : 'null';
-        $url_m = (isset($_POST['UrlMusic']) && $_POST['UrlMusic'] != '') ? $_POST['UrlMusic'] : 'null';
+        $image = $_SESSION['image'];
+        $image_type = $_SESSION['image_type'];
+        $img = $_SESSION['img'];
+        $name = $_SESSION['name'];
+        $description = $_SESSION['description'];
+        $tag = $_SESSION['tag'];
+        $url_w_a = $_SESSION['url_w_a'];
+        $url_b_b_f = $_SESSION['url_b_b_f'];
+        $url_m = $_SESSION['url_m'];
 
         if($image != ''){
             require_once URL_PROJECT.'/app/libs/resize_img.php';
@@ -69,9 +69,16 @@ class CRUD extends Connection{
         }
         //$ex = obtain_id();
         //insert
-        $sql = "INSERT INTO `f_o`(`fo_img_little`, `fo_img_big`, `fo_name`, `fo_description`, `fo_tag`, `fo_url_w_a`, `fo_url_b_b_f`, `fo_url_m`, `fo_photo_1`, `fo_photo_2`, `fo_photo_3`)
-        VALUES ('".$image_little_bits."', '".$image_big_bits."','".$name."','".$description."','".$tag."','".$url_w_a."','".$url_b_b_f."','".$url_m."',null,null,null);";
-        $this->execute($sql);
+        $pr = $this->conn->prepare("INSERT INTO `f_o`(`fo_img_little`, `fo_img_big`, `fo_name`, `fo_description`, `fo_tag`, `fo_url_w_a`, `fo_url_b_b_f`, `fo_url_m`, `fo_photo_1`, `fo_photo_2`, `fo_photo_3`)
+        VALUES ('".$image_little_bits."', '".$image_big_bits."',?,?,?,?,?,?,null,null,null);");
+        $pr->bind_param("ssssss", $name, $description, $tag, $url_w_a, $url_b_b_f, $url_m);
+
+        if($pr->execute()){
+            console("New record created successfully");
+        }else{
+            exit('Error al realizar la consulta: '.$pr->close());
+        }
+
         $this->obtain_id();
 
     }
@@ -82,31 +89,60 @@ class CRUD extends Connection{
         $num_prohibitions = $_POST['num_prohibition'];
 
         for($iv = 1; $iv <= $num_rules; $iv++){
-            console($_POST['rule_'.$iv]);
-            /* $sql = "insert rules_fo (fo_id, rf_rule) VALUES (".$_SESSION['sess_id'].", '".$_POST['rule_'.$iv]."');"; */
-            $sql = "INSERT INTO `rules_fo`(`fo_id`, `rf_rule`) VALUES (".$_SESSION['sess_id'].", '".$_POST['rule_'.$iv]."');";
-            $this->execute($sql);
+
+            $pr = $this->conn->prepare("INSERT INTO `rules_fo`(`fo_id`, `rf_rule`) VALUES (?,?);");
+            $pr->bind_param("is", $_SESSION['sess_id'], $_POST['rule_'.$iv]);
+
+            if($pr->execute()){
+                console("Inser Rule Exit");
+            }else{
+                exit('Error al realizar la consulta: '.$pr->close());
+            }
+
         }
         for($iv = 1; $iv <= $num_prohibitions; $iv++){
-            console($_POST['prohibition_'.$iv]);
-            /* $sql= "insert prohibition_fo (fo_id, pf_prohibition) VALUES (".$_SESSION['sess_id'].", '".$_POST['prohibition_'.$iv]."');"; */
-            $sql = "INSERT INTO `prohibition_fo`(`fo_id`, `pf_prohibition`) VALUES (".$_SESSION['sess_id'].", '".$_POST['prohibition_'.$iv]."');";
-            $this->execute($sql);
+
+            $pr = $this->conn->prepare("INSERT INTO `prohibition_fo`(`fo_id`, `pf_prohibition`) VALUES (?,?);");
+            $pr->bind_param("is", $_SESSION['sess_id'], $_POST['prohibition_'.$iv]);
+
+            if($pr->execute()){
+                console("Inser Rule Exit");
+            }else{
+                exit('Error al realizar la consulta: '.$pr->close());
+            }
+
         }
     }
 
     function select_code(){
+        $pr = $this->conn->prepare("SELECT fo_code FROM `f_o` WHERE fo_id = ?");
+        $pr->bind_param("i", $_SESSION['sess_id']);
 
-        /* $sql_select_code = "select fo_code from f_o where fo_id = ".$_SESSION['sess_id'].";"; */
-        $sql_select_code = "SELECT fo_code FROM `f_o` WHERE fo_id = ".$_SESSION['sess_id'].";";
-        $rpt = mysqli_query($this->conn, $sql_select_code);
-        if(!$rpt){
-            console("error en obtencioon de codigo");
-        }else{
-            while($row = mysqli_fetch_assoc($rpt)){
-                $_SESSION['sess_code'] = $row['fo_code']; 
+        if($pr->execute()){
+            $pr->store_result();
+            $pr->bind_result($fo_code);
+
+            //obtenemos el resultado
+	        while($pr->fetch()){
+                $_SESSION['sess_code'] = $fo_code; 
             }
+
+            $pr->close();
+        }else{
+            exit('Error al realizar la consulta: '.$pr->close());
         }
+    }
+
+    function rank_user_leader(){
+        $pr = $this->conn->prepare("UPDATE `the_user` SET `us_rank`= ?, `fo_id`= ? WHERE us_id = ?");
+        $rank = 'leader';
+        $pr->bind_param("sii", $rank, $_SESSION['sess_id'], $_COOKIE['id_user']);
+        if($pr->execute()){
+            console('rank user finished');
+        } else {
+            exit('Error al realizar la consulta: '.$pr->close());
+        }
+
     }
 
     public function select_datos_fo(){

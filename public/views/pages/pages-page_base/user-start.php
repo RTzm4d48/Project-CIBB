@@ -1,12 +1,18 @@
-
+<?php
+require_once ($_SERVER['DOCUMENT_ROOT']. '/app/config/config.php');
+require_once(URL_PROJECT.'/app/controller/ctr_crud_user.php');
+$ex = new VALIDATIONS();
+$ex->val_select_data_user();
+$username = 'name';
+?>
 <link rel="stylesheet" href="/css/style-user-start____.css">
 <link rel="stylesheet" href="/css/Responsive/rsp_style-user-start_.css">
 <div class="container">
     <div class="container-perfil font_containers">
-        <img src="/img/user-img.jpg" alt="">
+        <img src="<?php echo "/public/tmp/users/directori_". $_COOKIE['id_user'] ."/img_perfil.jpg" ?>" alt="">
         <div class="container-perfil-data">
             <h3>NOMBRE DE USUARIO</h3>
-            <p>dgar Aggre</p>
+            <p><?php echo $username; ?></p>
             <br>
             <h3>ESTADO</h3>
             <p>Creo en que con dedicasion perseverancia y trabajo todos los sueños son posibles</p>

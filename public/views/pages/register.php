@@ -1,3 +1,10 @@
+<?php
+
+$x = false;
+if(isset($_COOKIE["id_user"])) $x = true;
+if($x == true) header('Location: '.'/');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,9 +48,8 @@
                     if(isset($_POST['registrar_user'])){
                         $ex -> val_register_user();
                     }else{}
-        
                     ?>
-                    
+
                     </p>
                     <button id="btn-continuar">Continuar</button>
                     <input type="submit" name="registrar_user" value="OK">

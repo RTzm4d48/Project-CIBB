@@ -25,7 +25,8 @@ function user_without_fo(){
             
             <div class="toolbar_right-user">
                 <img src="/img/user-img.jpg" class="img-user" alt="">
-                <img src="/svg/setings.svg" class="setings-user" alt="">
+                
+                <a href="/?settings=set"><img src="/svg/setings.svg" class="setings-user" alt=""></a>
             </div>
         </div>
 <?php

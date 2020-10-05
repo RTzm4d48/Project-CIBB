@@ -1,3 +1,10 @@
+<?php
+
+$x = false;
+if(isset($_COOKIE["id_user"])) $x = true;
+if($x == true) header('Location: '.'/');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +15,7 @@
     <title>Registrarse</title>
 </head>
 <body> 
+<form action="" method="POST">
     <div class="container">
         <img src="/svg/fondo.svg" class="container_img"alt="">
         <div class="container_body">
@@ -20,15 +28,27 @@
                     <div class="container-register-login_body_titulo"><h1>¡Hola, bienvenido!</h1></div>
                     <div class="container-register-login_body_space-box">
                         <p>NOMBRE DE USUARIO</p>
-                        <input type="text">
+                        <input type="text" name="user">
                     </div>
                     <div class="container-register-login_body_space-box">
                         <p>CONTRASEÑA</p>
-                        <input type="password">
+                        <input type="password" name="password">
                         <a href="">¿Has olvidado tu contraseña?</a>
                     </div>
-                    <p class="container-register-login_body_alert">La contraseña es incorrecta</p>
+                    <p class="container-register-login_body_alert">
+
+                    <?php
+                    require_once ($_SERVER['DOCUMENT_ROOT']. '/app/config/config.php');
+                    require_once(URL_PROJECT.'/app/controller/ctr_crud_user.php');
+
+                    if(isset($_POST['login_user'])){
+                        $ex = VALIDATIONS::val_login_user();
+                    }else{}
+                    ?>
+
+                    </p>
                     <button id="btn-continuar">Continuar</button>
+                    <input type="submit" value="Continuar" name="login_user">
                     <p class="container-register-login_body_question">¿Necesitas una cuenta? <a href="/views/pages/register">Registrarse</a></p>
                 </div>
             </div>
@@ -36,5 +56,6 @@
 
             
     </div>
+    </form>
 </body>
 </html>

@@ -84,6 +84,8 @@ include_once ($_SERVER['DOCUMENT_ROOT']. '/app/config/config.php');
                     include "pages-page_base/create-fo.php"; 
                 }else if(isset($_GET['C'])){
                     include URL_PROJECT. "/public/views/fo/home.php";
+                }else if(isset($_GET['settings'])){
+                    include "pages-page_base/user-settings.php";
                 }else{
                     include "pages-page_base/user-start.php"; 
                 }

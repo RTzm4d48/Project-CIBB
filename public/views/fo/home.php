@@ -1,28 +1,33 @@
 <?php
 require_once(URL_PROJECT.'/app/controller/crud.controller.php');
+$Row = VALIDATIONS::val_select_datos_fo();
 ?>
-<link rel="stylesheet" href= "/public/css/style-fo_home____.css">
-<link rel="stylesheet" href= "/public/css/Responsive/rsp_style-fo_home.css">
+<link rel="stylesheet" href= "/public/css/style-fo_home_____.css">
+<link rel="stylesheet" href= "/public/css/Responsive/rsp_style-fo_home_.css">
 <div class="container_">
     <div class="section_1">
     <!-- "/public/views/fo/default_big.jpg" -->
-        <img id="img_foo" src="/public/views/fo/default_big.jpg" alt="">
+        <img id="img_foo" src="<?php echo "/public/tmp/f_o/directori_".$Row['fo_id']."/fo_img_big.jpg" ?>" alt="">
+        <div class="container_responsi_img">
+            <img class="fondo" src="<?php echo "/public/tmp/f_o/directori_".$Row['fo_id']."/fo_img_big.jpg" ?>" alt="">
+            <img class="fo_i_m_g" src="<?php echo "/public/tmp/f_o/directori_".$Row['fo_id']."/fo_img_big.jpg" ?>" alt="">
+        </div>
         <div class="info">
             <p class='title'>Fuerza Operativa</p>
-            <h1 class="tag_fo">FRIHETS</h1>
+            <h1 class="tag_fo"><?php echo $Row['name'] ?></h1>
             <div class="leadfor">
                 <p>Liderado por:</p>
-                <img id="img_leader" src="/public/views/fo/default_big.jpg" alt="">
-                <h1 id="name_leader">#Edgar_X</h1>
+                <img id="img_leader" src="<?php echo "/public/tmp/f_o/directori_".$Row['fo_id']."/leader_img.jpg" ?>" alt="">
+                <h1 id="name_leader"><?php echo $Row[0]['user_leader']/* echo'<pre>'; print_r($Row); echo '<pre>'; */?></h1>
             </div>
             <div class="url_w_a">
                 <img src="/public/svg/link-solid.svg" alt="">
-                <a href="">edgar.somee.com</a>
+                <a href=""><?php echo $Row['fo_url_w_a'] ?></a>
             </div>
             <div class="tag">
                 <img src="/public/svg/tag-solid.svg" alt="">
                 <p>Name</p>
-                <p class="text_tag">[FRS]</p>
+                <p class="text_tag"><?php echo $Row['fo_tag'] ?></p>
                 <img class="imgtag" src="/public/svg/copy-solid.svg" alt="">
 
             </div>
@@ -32,23 +37,28 @@ require_once(URL_PROJECT.'/app/controller/crud.controller.php');
             <canvas id="myChart" style="font-size: 20px;"></canvas>
             </div>
             <button>Acceder a la F.O</button>
+            <a href="/h?access=G52157c215">Acceder a la F.O</a>
         </div>
     </div>
     <div class="section_2">
         <div class="bisection_1">
             <div class="description">
-                <h5>Descripción</h5>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate.</p>
+                <span>
+                <i class="icono"></i><h5>Descripción</h5>
+                </span>
+                <span>
+                <div class="line"></div><p><?php echo $Row['description'] ?></p>
+                </span>
             </div>
 
             <video controls="" name="media"><source src="/public/img/Feet_YKVGVU.mp3" type="audio/mpeg"></video>
             
         </div>
-        <!-- <div class="bisection_2">
+        <div class="bisection_2">
             <img src="" alt="">
             <img src="" alt="">
             <img src="" alt="">
-        </div> -->
+        </div>
     </div>
 </div>
 <script src="/public/js/Chart.js"></script>

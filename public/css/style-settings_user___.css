@@ -1,0 +1,125 @@
+.container_user_settings {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* background:salmon; */ }
+  .container_user_settings .img_name {
+    display: flex;
+    height: 100px;
+    /*  background:red; */
+    margin: 10px 80px;
+    color: white; }
+    .container_user_settings .img_name img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%; }
+    .container_user_settings .img_name .name {
+      /* background: pink; */
+      margin: auto 10px;
+      height: 50%; }
+      .container_user_settings .img_name .name h1 {
+        margin: 0px; }
+      .container_user_settings .img_name .name label {
+        margin: 0px;
+        text-decoration: none;
+        color: #28cdff;
+        cursor: pointer; }
+  .container_user_settings .body_form {
+    display: flex;
+    height: auto;
+    /* background:red; */
+    margin: 20px 10px;
+    color: white;
+    display: flex;
+    flex-direction: column; }
+    .container_user_settings .body_form .space {
+      display: flex;
+      /* background: green; */
+      height: auto;
+      width: 100%;
+      margin: 5px 0px; }
+      .container_user_settings .body_form .space p {
+        margin: 2px 0px;
+        /* background: #000; */
+        width: 120px;
+        text-align: right; }
+      .container_user_settings .body_form .space input[type="text"], .container_user_settings .body_form .space input[type="email"] {
+        margin: 0px 0px 0px 40px;
+        width: 50%;
+        height: 30px;
+        border-radius: 4px;
+        border: none;
+        color: #505050;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bolder; }
+        .container_user_settings .body_form .space input[type="text"]:focus, .container_user_settings .body_form .space input[type="email"]:focus {
+          outline: none; }
+      .container_user_settings .body_form .space textarea {
+        margin: 0px 0px 0px 40px;
+        min-width: 50%;
+        max-width: 50%;
+        min-height: 60px;
+        max-height: 60px;
+        border-radius: 4px;
+        color: #636363;
+        font-weight: bolder;
+        border: none;
+        font-family: Arial, Helvetica, sans-serif; }
+        .container_user_settings .body_form .space textarea:focus {
+          outline: none; }
+  .container_user_settings input[type="submit"] {
+    background: #8EDF4A;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    color: white;
+    margin: 10px auto;
+    cursor: pointer; }
+
+.container_user_settings {
+  /* background: green; */ }
+  .container_user_settings .changpass_name {
+    /* background: #000; */
+    margin: 20px 0px 0px 20px;
+    height: auto; }
+  .container_user_settings .body_form .pass {
+    flex-direction: column;
+    margin: 15px 0px; }
+    .container_user_settings .body_form .pass p {
+      /* background: #000; */
+      text-align: left;
+      margin: 0px 40px;
+      width: auto; }
+    .container_user_settings .body_form .pass input[type="password"] {
+      margin: 0px 0px 0px 40px;
+      width: 50%;
+      height: 30px;
+      border-radius: 4px;
+      border: none;
+      color: #505050;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bolder; }
+      .container_user_settings .body_form .pass input[type="password"]:focus {
+        outline: none; }
+  .container_user_settings .Salir {
+    display: flex;
+    flex-direction: column;
+    /* background: #000; */
+    margin: 5px 20px; }
+    .container_user_settings .Salir p {
+      margin: 0px; }
+    .container_user_settings .Salir input[type="submit"] {
+      width: 200px;
+      margin: 10px 50px;
+      background: red;
+      margin: 20px 0px; }
+      .container_user_settings .Salir input[type="submit"]:focus {
+        outline: none; }
+      .container_user_settings .Salir input[type="submit"]:hover {
+        background: #d10b0b; }
+  .container_user_settings input[type="submit"] {
+    width: 200px;
+    margin: 10px 50px; }
+
+/*# sourceMappingURL=style-settings_user___.css.map */

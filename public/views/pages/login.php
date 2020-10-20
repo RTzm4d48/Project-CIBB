@@ -1,9 +1,7 @@
 <?php
-
 $x = false;
 if(isset($_COOKIE["id_user"])) $x = true;
 if($x == true) header('Location: '.'/');
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +30,7 @@ if($x == true) header('Location: '.'/');
                     </div>
                     <div class="container-register-login_body_space-box">
                         <p>CONTRASEÑA</p>
-                        <input type="password" name="password">
+                        <input type="password" maxlength="20" name="password">
                         <a href="">¿Has olvidado tu contraseña?</a>
                     </div>
                     <p class="container-register-login_body_alert">
@@ -40,12 +38,10 @@ if($x == true) header('Location: '.'/');
                     <?php
                     require_once ($_SERVER['DOCUMENT_ROOT']. '/app/config/config.php');
                     require_once(URL_PROJECT.'/app/controller/ctr_crud_user.php');
-
                     if(isset($_POST['login_user'])){
-                        $ex = VALIDATIONS::val_login_user();
+                        $ex = VALIDATIONS_U::val_login_user();
                     }else{}
                     ?>
-
                     </p>
                     <button id="btn-continuar">Continuar</button>
                     <input type="submit" value="Continuar" name="login_user">

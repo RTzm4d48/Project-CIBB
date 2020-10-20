@@ -1,0 +1,53 @@
+@media (max-width: 1024px) {
+  .container {
+    width: 100%;
+    height: 100%;
+    background: #36393f98;
+    /* background: rgb(171, 210, 30); */ }
+    .container .header_cibb {
+      width: 100%;
+      height: 150px;
+      background: #36393f98;
+      display: flex; }
+      .container .header_cibb img {
+        width: 200px;
+        margin: auto; }
+
+  .container_body-espace-container {
+    height: calc(100% - 200px); }
+
+  .theconteiner {
+    /* background: rgb(130, 250, 114); */
+    width: 100%;
+    /* height: calc(100vh - 200px); */
+    height: 700px;
+    display: flex;
+    flex-direction: column; }
+    .theconteiner .left_tool {
+      height: auto;
+      width: 100%;
+      background: #36393F; }
+      .theconteiner .left_tool ul {
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+        display: flex;
+        width: 100%; }
+      .theconteiner .left_tool ul li {
+        text-align: center;
+        display: flex; }
+    .theconteiner .active {
+      border-bottom: 3px solid white;
+      border-left: none; }
+    .theconteiner ul li a {
+      margin: auto; }
+    .theconteiner .right_tool {
+      width: calc(100%);
+      /* background: green; */ } }
+/* @media(max-width: 360px){
+    .theconteiner{
+        height: auto;
+    }
+}  */
+
+/*# sourceMappingURL=rsp_style-settings____.css.map */

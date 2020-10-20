@@ -1,0 +1,168 @@
+@import 'colors';
+.container_search{
+    width: 100%;
+    min-height: calc(100vh - 50px);
+    max-height: 300vh;
+    margin: 50px 0px 0px 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    /* background: rgb(235, 93, 93); */
+
+    .bar_search{
+        width: 50%;
+        height: 40px;
+        /* background: rgb(35, 223, 57); */
+        margin: 70px auto;
+        display: flex;
+    }
+    .wraper_f_o_s{
+        width: 85%;
+        height: auto;
+        /* background: salmon; */
+        margin: 0px auto;
+        display: flex;
+        flex-wrap: wrap;
+
+        .without_results{
+            margin: auto;
+            /* background:green; */
+            text-align: center;
+            color: white;
+
+            label{
+                font-size: 30px;
+            }
+        }
+        .wraper_fo{
+            width: 45%;
+            margin: 2.5%;
+            height: 250px;
+            background: #{$transparent-gray};
+            border-radius: 7px;
+            display: flex;
+
+            .cont_fo{
+                width: 500px;
+                height: calc(500px / 2.9);
+                /* background: #000; */
+                background-image: url(/svg/font_fo.svg);
+                background-size: 100% 100%;
+                margin: auto;
+                display: flex;
+               
+                .badge{
+                    width: 120px;
+                    height: 120px;
+                    /* background: #000; */
+                    margin: auto 15px auto 40px;
+        
+                    &-img{
+                        width: 120px;
+                        height: 120px;
+                        position: absolute;
+                        z-index: 1;
+                        transform: scale(0.7);
+                        border-radius: 50%;
+                    }
+                    &-ornaments{
+                        width: 120px;
+                        height: 120px;
+                        z-index: 2;
+                        position: absolute;
+                    }
+                }
+                .properties{
+                    width: calc(100% - 190px);
+                    height: 120px;
+                    /* background: rgb(53, 211, 58); */
+                    margin: auto 5px;
+                    color: white;
+
+                    h1{
+                        font-size: 35px;
+                        margin: 0px;
+                    }
+                    p{
+                        margin: 0px;
+                        font-size: 13px;
+                        width: 100%;
+                        /* background: salmon; */
+                    }
+                    .activity{
+                        color: #4f4f4f;
+                        font-size: 15px;
+                        margin: 5px 0px;
+                    }
+                    a{
+                        text-decoration: none;
+                        width: auto;
+                        border-radius: 5px;
+                        height: auto;
+                        display: inline-block;
+                        padding: 5px 10px;
+                        background: #{$light-green-01};
+                        color: white;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+.no{
+    display: none;
+}
+
+
+
+//Vars 
+:root {
+    --rad: .7rem;
+    --dur: .3s;
+    --color-dark: #2f2f2f;
+    --color-light: #fff;
+    --color-brand: #{$light-green-02};
+    --font-fam: 'Lato', sans-serif;
+    --height: 5rem;
+    --btn-width: 6rem;
+    --bez: cubic-bezier(0, 0, 0.43, 1.49);
+  }
+  input, button {
+    height: var(--height);
+    font-family: var(--font-fam);
+    border: 0;
+    color: var(--color-dark);
+    font-size: 1.0rem;
+  }
+  input[type="search"] {
+    outline: 0; // <-- shold probably remove this for better accessibility, adding for demo aesthetics for now.
+    width: 100%;
+    background: var(--color-light);
+    padding: 0 1.6rem;
+    border-radius: var(--rad);
+    appearance: none; //for iOS input[type="search"] roundedness issue. border-radius alone doesn't work
+    transition: all var(--dur) var(--bez);
+    transition-property: width, border-radius;
+    z-index: 1;
+    position: relative;
+    height: 100%;
+  }
+  button {
+    display: none; // prevent being able to tab to it
+    right: 0;
+    width: var(--btn-width);
+    font-weight: bold;
+    background: var(--color-brand);
+    border-radius: 0 var(--rad) var(--rad) 0;
+    height: 100%;
+    color: white;
+    cursor: pointer;
+  }
+  input:not(:placeholder-shown) {
+    border-radius: var(--rad) 0 0 var(--rad);
+    width: calc(100% - var(--btn-width));
+    + button {
+      display: block;
+    }
+  }
+
+  

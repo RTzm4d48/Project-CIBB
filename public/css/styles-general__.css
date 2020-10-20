@@ -1,0 +1,84 @@
+body {
+  background: #5693DB;
+  margin: 0px; }
+  body .container_body {
+    width: 100%;
+    min-height: 100vh;
+    max-height: 300vh;
+    background: linear-gradient(to right, #ffffff00, #ffffff2d, #ffffff00);
+    display: flex;
+    /* espace from toolbar */ }
+    body .container_body .extend_full {
+      width: 100%;
+      left: 0px; }
+    body .container_body-espace {
+      width: calc(100% - 60px);
+      min-height: 100vh;
+      max-height: 300vh;
+      position: relative;
+      left: 60px; }
+      body .container_body-espace-toolbar_top {
+        width: calc(100% - 60px);
+        height: 50px;
+        background: #36393F;
+        display: flex;
+        justify-content: space-between;
+        position: fixed;
+        z-index: 3;
+        left: 60px;
+        /* --------------------- radio --------------------- */
+        /* --------------------- radio --------------------- */ }
+        body .container_body-espace-toolbar_top a {
+          margin: auto 0px; }
+        body .container_body-espace-toolbar_top input[type="radio"] {
+          display: none; }
+        body .container_body-espace-toolbar_top label {
+          margin: auto 15px;
+          /* background: rgb(118, 206, 46); */
+          height: 30px; }
+          body .container_body-espace-toolbar_top label img {
+            margin: 0px; }
+        body .container_body-espace-toolbar_top .bar {
+          display: none; }
+        body .container_body-espace-toolbar_top .x {
+          display: blok;
+          transform: scale(0.7);
+          position: relative;
+          left: -5px; }
+        body .container_body-espace-toolbar_top #show1:checked ~ .x {
+          display: none; }
+        body .container_body-espace-toolbar_top #show1:checked ~ .bar {
+          display: block; }
+        body .container_body-espace-toolbar_top #show2:checked ~ .x {
+          display: block; }
+        body .container_body-espace-toolbar_top #show2:checked ~ .bar {
+          display: none; }
+        body .container_body-espace-toolbar_top img {
+          height: 50%;
+          margin: auto 15px;
+          cursor: pointer;
+          width: 20px;
+          height: 20px;
+          padding: 5px;
+          border-radius: 5px; }
+        body .container_body-espace-toolbar_top img:hover {
+          background: rgba(0, 0, 0, 0.452); }
+      body .container_body-espace-container {
+        width: 100%;
+        min-height: calc(100% - 50px);
+        max-height: 300%;
+        display: flex;
+        /* background: #000; */
+        /* padding: 60px 0px; */ }
+        body .container_body-espace-container .container {
+          width: 60%;
+          min-height: calc(100% - 20px);
+          max-height: 2000px;
+          /* background: red; */
+          margin: 70px auto 0px auto;
+          display: flex;
+          flex-direction: column; }
+  body .no {
+    display: none; }
+
+/*# sourceMappingURL=styles-general__.css.map */

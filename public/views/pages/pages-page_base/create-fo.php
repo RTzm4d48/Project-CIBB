@@ -1,3 +1,5 @@
+<?php
+?>
 <link rel="stylesheet" href="/css/style-create-fo_.css">
 <div class="container">
     <div class="header_cibb">
@@ -9,11 +11,15 @@
     </div>
 
     <?php
-    require_once(URL_PROJECT.'/app/controller/crud.controller.php');
-    $ex = new VALIDATIONS();
+    require_once(URL_PROJECT.'/app/controller/ctr_create_f_o.php');
+    $ex = new CTR_CREATE_F_O();
 
    if(isset($_POST['sb_data'])){
-        $ex -> val_insert_fo();
+     if($_COOKIE['user_id_fo'] != 'none'){
+          header('Location: /');
+     }else{
+          $ex -> val_insert_fo();
+     }
    }
    else if(isset($_POST['sb_rules'])){
         $ex -> val_insert_rules();

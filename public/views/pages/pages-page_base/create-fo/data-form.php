@@ -1,11 +1,7 @@
 <div class="formBody">
-
-
     <h1>Crear una Fuerza Operativa</h1>
     <p class="description">¡los cimientos de una buena fuerza operativa comienza aquí!</p>
-
     <form action="" method="POST" enctype="multipart/form-data">
-
         <div class="contImg">
             <img src="/img/img-fo.jpg" id="imagePreview" alt="">
             <div class="semi-circulo">
@@ -13,7 +9,6 @@
                 <label for="inpFile">Cambiar</label>
             </div>
         </div>
-       
         <div class="section">
             <p>Nombre*</p>
             <input type="text" maxlength="15" name="namee" id="txtName" required>  
@@ -51,33 +46,10 @@
         <div class="explication">
             <p>Esta opcion no es obligatoria, pero si tienes un audio o musica que quieres que la gente pueda escuchar al visitar tu F.O, puedes hacerlo</p>
         </div>
-        
         <div class="alert"><p id="alert"></p></div>
         <center>
         <input type="submit" name="sb_data" value="Siguiente" id="" >
         </center>
-
     </form>
-
-<script>
-        const inpFile = document.getElementById("inpFile");
-        const previewImage = document.getElementById("imagePreview");
-
-        inpFile.addEventListener("change", function(){
-            const file = this.files[0];
-
-            if(file){
-                const reader = new FileReader();
-
-                reader.addEventListener("load", function(){
-                    console.log(this);
-                    previewImage.setAttribute("src", this.result);
-                });
-                reader.readAsDataURL(file);
-                }
-        });
-
-    </script>
-
-
+    <script src="/public/js/view_img.js"></script>
 </div>

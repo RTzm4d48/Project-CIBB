@@ -1,0 +1,162 @@
+@import "colors";
+@media (max-width: 1024px){
+    .container_search{
+    
+    
+        .bar_search{
+            width: 90%;
+        
+        }
+        .wraper_f_o_s{
+            width: 97%;
+            height: auto;
+            /* background: salmon; */
+      
+    
+            .without_results{
+             
+    
+                label{
+                  
+                }
+            }
+            .wraper_fo{
+                width: 100%;
+                margin: 2.5% 0px;
+                height: 200px;
+          
+                .cont_fo{
+                   /*  width: 100%; */
+                    
+                    .badge{
+                        width: 100px;
+                        height: 100px;
+                        margin: auto 5px auto 35px;
+            
+                        &-img{
+                            width: 100px;
+                            height: 100px;
+                        }
+                        &-ornaments{
+                            width: 100px;
+                            height: 100px;
+                        }
+                    }
+                    .properties{
+                     
+                        height: auto;
+                        /* background: #000; */
+                    
+    
+                        h1{
+                            font-size: 25px;
+                            margin: 0px;
+                        }
+                        p{
+                            margin: 0px;
+                            font-size: 10px;
+                            width: 100%;
+                            /* background: salmon; */
+                        }
+                        span{
+                            display: flex;
+                            margin: 5px 0px;
+
+                        .activity{
+                            font-size: 12px;
+                            width: auto;
+                            
+                        }
+                        a{
+                            margin: auto 10px;
+                            padding: auto;
+                            height: 15px;
+                            font-size: 12px;
+                        }
+                    }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 320px){
+    .container_search{
+    
+    
+        .bar_search{
+            width: 90%;
+        
+        }
+        .wraper_f_o_s{
+            width: 97%;
+            height: auto;
+            /* background: salmon; */
+      
+    
+            .without_results{
+             
+    
+                label{
+                  
+                }
+            }
+            .wraper_fo{
+                width: 100%;
+                margin: 2.5% 0px;
+                height: 200px;
+          
+                .cont_fo{
+                   /*  width: 100%; */
+                    
+                    .badge{
+                        width: 50px;
+                        height: 50px;
+                        margin: auto 5px auto 35px;
+            
+                        &-img{
+                            width: 50px;
+                            height: 50px;
+                        }
+                        &-ornaments{
+                            width: 50px;
+                            height: 50px;
+                        }
+                    }
+                    .properties{
+                     
+                        height: auto;
+                        width: calc(100% - 100px);
+    
+                        h1{
+                            font-size: 20px;
+                            margin: 0px;
+                        }
+                        p{
+                            margin: 0px;
+                            font-size: 9px;
+                            width: 100%;
+                            /* background: salmon; */
+                        }
+                        span{
+                            display: flex;
+                            margin: 0px 0px;
+
+                        .activity{
+                            font-size: 12px;
+                            width: auto;
+                            
+                        }
+                        a{
+                            margin: auto 10px;
+                            padding: auto;
+                            height: 15px;
+                            font-size: 12px;
+                        }
+                    }
+                    }
+                }
+            }
+        }
+    }
+}

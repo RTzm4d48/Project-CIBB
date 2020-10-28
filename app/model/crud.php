@@ -45,7 +45,6 @@ class CRUD extends Connection{
         }
 
     }
-
     public function select_datos_fo(){
         if(isset($_GET['C'])){
             $code = $_GET['C'];
@@ -56,9 +55,9 @@ class CRUD extends Connection{
 
             if($pr->execute()){
                 $pr->store_result();
-                if($pr->num_rows == 0){
+                if($pr->num_rows==0){
                     $pr->close();
-                    echo "<div style='color: white;font-family:Arial;text-align:center;width:100%'><br><br><br><br><br><br>";
+                    echo"<div style='color: white;font-family:Arial;text-align:center;width:100%'><br><br><br><br><br><br>";
                     exit('<h1>No existe ninguan fuerza operativa afianxada a la URL</h1>');
                     echo "</div>";
                 }

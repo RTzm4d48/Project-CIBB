@@ -1,8 +1,9 @@
 <?php
 require_once(URL_PROJECT.'/app/controller/ctr_querys_fo.php');
+require_once(URL_PROJECT.'/app/controller/ctr_querys_user.php');
 ?>
-<link rel="stylesheet" href="/css/style-create-fo_.css">
-<link rel="stylesheet" href="/css/style-settings___.css">
+<link rel="stylesheet" href="/css/style-create-fo__.css">
+<link rel="stylesheet" href="/css/style-settings______.css">
 <div class="container">
     <div class="header_cibb">
         <img src="/svg/CIBB.svg" alt="">
@@ -13,11 +14,12 @@ require_once(URL_PROJECT.'/app/controller/ctr_querys_fo.php');
         <form action="" id="myForm" method="GET">
         <div class="left_tool">
            <ul>
+           <?php ?>
                <li class="<?php if(isset($_GET['edit']))echo'active';?>"><a href="/?settings_fo=set&edit=set">Editar</a></li>
                <li class="<?php if(isset($_GET['photo']))echo'active';?>"><a href="/?settings_fo=set&photo=set">Fotos</a></li>
                <li class="<?php if(isset($_GET['rules']))echo'active';?>"><a href="/?settings_fo=set&rules=set">Reglas</a></li>
                <li class="<?php if(isset($_GET['fo']))echo'active'?>"><a href="/?settings_fo=set&fo=set">Fuerza Operativa</a></li>
-               
+               <!-- LAS OPACIONES DEL LIDER (recordatorio)-->
            </ul> 
         </div>
         </form>

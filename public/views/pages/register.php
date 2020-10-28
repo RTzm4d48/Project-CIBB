@@ -44,7 +44,6 @@ if($x == true) header('Location: '.'/');
                     require_once ($_SERVER['DOCUMENT_ROOT']. '/app/config/config.php');
                     require_once(URL_PROJECT.'/app/controller/ctr_crud_user.php');
                     $ex = new VALIDATIONS_U();
-
                     if(isset($_POST['registrar_user'])){
                         $ex -> val_register_user();
                     }else{}

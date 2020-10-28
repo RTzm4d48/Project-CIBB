@@ -10,7 +10,7 @@ class CRUD_QUERYS_F_O extends Connection{
     }
     function get_out_fo(){
         $pr=$this->conn->prepare("UPDATE `the_user` SET `us_rank`= ?, `fo_id`= ? WHERE us_id = ?");
-        $rank='Sin rango';
+        $rank='sin rango';
         $fo_id=null;
         $pr->bind_param("sii", $rank, $fo_id, $_COOKIE['id_user']);
         if($pr->execute()){
@@ -69,6 +69,22 @@ class CRUD_QUERYS_F_O extends Connection{
             while($pr->fetch()){
                 return$fo_name;
             }
+        }
+    }
+    function crud_obtain_id_fo(){
+        $pr=$this->conn->prepare("SELECT fo_id FROM `f_o` WHERE fo_code=?;");
+        $code=(isset($_GET['C']))?$_GET['C']:$_SESSION['code_f_o'];
+        $pr->bind_param("s",$code);
+        if($pr->execute()){
+            $pr->store_result();
+            $pr->bind_result($fo_id);
+            //listamos todos los resultados
+	        while($pr->fetch()){
+              return $fo_id;
+            }
+            $pr->close();
+        }else{
+            exit('Error al realizar la consulta:'.$pr->close());
         }
     }
 }

@@ -1,6 +1,7 @@
 <?php
 require_once(URL_PROJECT.'/app/controller/crud.controller.php');
 $Row = VALIDATIONS::val_select_datos_fo();
+$_SESSION['code_f_o']=$_GET['C'];
 ?>
 <link rel="stylesheet" href= "/public/css/style-fo_home_____.css">
 <link rel="stylesheet" href= "/public/css/Responsive/rsp_style-fo_home_.css">

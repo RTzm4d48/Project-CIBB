@@ -1,0 +1,59 @@
+.container_advert {
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.693);
+  z-index: 4;
+  position: fixed;
+  display: flex;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif; }
+  .container_advert .advert {
+    display: block;
+    width: 250px;
+    height: auto;
+    background: #36393F;
+    border: 2px solid #474a50;
+    margin: auto;
+    padding: 10px;
+    border-radius: 5px; }
+    .container_advert .advert h4 {
+      margin: 0px; }
+    .container_advert .advert p {
+      margin: 7px 2px;
+      font-size: 13px; }
+    .container_advert .advert .url {
+      width: 96%;
+      background: #3c3e43;
+      display: block;
+      margin: 0px auto;
+      color: #ffffffa6; }
+    .container_advert .advert hr {
+      width: 100%;
+      background: #b6b6b6; }
+    .container_advert .advert .buttons {
+      width: 100%;
+      height: auto;
+      display: flex;
+      /* background: #000; */ }
+      .container_advert .advert .buttons input[type=submit] {
+        cursor: pointer;
+        border: none;
+        background: none;
+        margin: 0px; }
+        .container_advert .advert .buttons input[type=submit]:hover {
+          font-size: 14px; }
+        .container_advert .advert .buttons input[type=submit]:focus {
+          outline: none; }
+      .container_advert .advert .buttons form {
+        margin: 0px;
+        width: 50%;
+        margin: 0px auto; }
+      .container_advert .advert .buttons .cancel {
+        color: #ffffff95;
+        width: 50%; }
+      .container_advert .advert .buttons .acept {
+        color: #45A1E5;
+        width: 100%;
+        display: block; }
+
+/*# sourceMappingURL=style-advert__.css.map */

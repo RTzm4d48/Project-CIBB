@@ -38,6 +38,37 @@ body{
                 a{
                     margin: auto 0px;
                 }
+                .loginRegister{
+                    width: auto;
+                    height: 100%;
+                    /* background: chocolate; */
+                    display: flex;
+
+                    .btn_login{
+                        text-decoration: none;
+                        background: $light-blue;
+                        color: white;
+                        margin: auto 5px;
+                        padding: 10px 20px;
+                        border-radius: 3px;
+                        font-family: Arial, Helvetica, sans-serif;
+                        &:hover{
+                            opacity: 0.8;
+                        }
+                    }
+                    .btn_register{
+                        text-decoration: none;
+                        background: $light-blue;
+                        color: white;
+                        margin: auto 5px;
+                        padding: 10px 20px;
+                        border-radius: 3px;
+                        font-family: Arial, Helvetica, sans-serif;
+                        &:hover{
+                            opacity: 0.8;
+                        }
+                    }
+                }
                 /* --------------------- radio --------------------- */
                 input[type="radio"]{
                     display: none;

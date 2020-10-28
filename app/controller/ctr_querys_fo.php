@@ -19,4 +19,9 @@ class CTR_QUERYS_F_O{
         $name=$ex->crud_select_name_fo();
         return$name;
     }
+    static function ctr_obtain_id_fo(){
+        $ex=new CRUD_QUERYS_F_O();
+        $rpt=$ex->crud_obtain_id_fo();
+        return$rpt;
+    }
 }?>

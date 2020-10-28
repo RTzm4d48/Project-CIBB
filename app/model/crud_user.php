@@ -30,7 +30,7 @@ class CRUD_U extends Connection{
         $image_little_bits=base64_encode(addslashes(fread(fopen($img_little,"r"),filesize($img_little))));
         //insert
         $pr=$this->conn->prepare("INSERT INTO`the_user`(`us_gmail`,`us_user`,`US_password`,`us_img_big`,`us_img_little`,`us_date_register`,`us_state`,`us_rank`,`us_point`,`us_participation`,`us_position`,`fo_id`)
-        VALUES(?,?,?,'".$image_big_bits."','".$image_little_bits."',now(),null,'Sin rango',0,0,00,null);");
+        VALUES(?,?,?,'".$image_big_bits."','".$image_little_bits."',now(),null,'sin rango',0,0,00,null);");
         $pr->bind_param("sss",$this->gmail,$this->user,$this->password);
         if($pr->execute()){
             $this->obtain_id();

@@ -72,4 +72,31 @@ class CRUD_QUERYS_USER extends Connection{
         fwrite($ifp,$base64_string);
         fclose($ifp); 
     }
+    function crud_valid_fo_user(){
+        $pr=$this->conn->prepare("SELECT fo_id FROM the_user WHERE us_id=?");
+        $pr->bind_param("i",$_COOKIE['id_user']);
+        if($pr->execute()){
+            $pr->store_result();
+            $pr->bind_result($fo_id);
+            //listamos todos los resultados
+	        while($pr->fetch()){
+              return $fo_id;
+            }
+            $pr->close();
+        }else{
+            exit('Error al realizar la consulta:'.$pr->close());
+        }
+    }
+    function crud_join_to_fo(){
+        $pr=$this->conn->prepare("UPDATE `the_user` SET `us_rank`=?,`fo_id`=? WHERE us_id=?");
+        $rack='officer';
+        $pr->bind_param("sii",$rack,$_SESSION['fo_id'],$_COOKIE['id_user']);
+        if($pr->execute()){
+            $pr->close();
+            return true;
+        }else{
+            $pr->close();
+            return false;
+        }
+        }
 }

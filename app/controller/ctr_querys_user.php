@@ -20,4 +20,18 @@ class CTR_QUERYS_USER{
         echo'</pre>'; */
         return$data;
     }
+    static function ctr_join_to_fo(){
+        $ex=new CRUD_QUERYS_USER();
+        $rpt=$ex->crud_join_to_fo();
+        return$rpt;
+    }
+    static function ctr_valid_fo_user(){
+        if(!isset($_COOKIE['id_user'])){
+            return 0;
+        }else{
+            $ex=new CRUD_QUERYS_USER();
+            $rpt=$ex->crud_valid_fo_user();
+            return$rpt;
+        }
+    }
 }?>

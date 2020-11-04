@@ -2,7 +2,6 @@
 require_once(URL_PROJECT.'/app/controller/ctr_querys_fo.php');
 require_once(URL_PROJECT.'/app/controller/ctr_querys_user.php');
 ?>
-<!-- <link rel="stylesheet" href="/css/style-create-fo______.css"> -->
 <link rel="stylesheet" href="/css/style-settings______.css">
 <link rel="stylesheet" href="/css/style-access_fo_.css">
 <div class="container">
@@ -30,7 +29,6 @@ require_once(URL_PROJECT.'/app/controller/ctr_querys_user.php');
         </a>
         <hr>
         <div class="container_commentary">
-
         <?php for($i=0;$i<3;$i++):?>
             <div class="commentary">
                 <img src="/public/img/user-img.jpg" alt="">
@@ -56,12 +54,13 @@ require_once(URL_PROJECT.'/app/controller/ctr_querys_user.php');
         }
         if(isset($_POST['sb_unirse'])){
             if(!isset($_COOKIE['id_user'])){
-                echo "<script>window.open('https://link.boombeach.com/en?url=boombeach%3A%2F%2FViewTaskforce%3Ftag%3D%23PY82C9VG', '_blank');</script>";
-                echo "<script> location.href='/h?C=".$_SESSION['code_f_o']."'; </script>";
+                echo"<script>window.open('https://link.boombeach.com/en?url=boombeach%3A%2F%2FViewTaskforce%3Ftag%3D%23PY82C9VG','_blank');</script>";
+                echo"<script>location.href='/h?C=".$_SESSION['code_f_o']."';</script>";
             }else{
                 $ex=CTR_QUERYS_USER::ctr_join_to_fo();
                 if($ex == true){
-                    echo "<script> href='https://link.boombeach.com/en?url=boombeach%3A%2F%2FViewTaskforce%3Ftag%3D%23PY82C9VG'; </script>";
+                    echo"<script>href='https://link.boombeach.com/en?url=boombeach%3A%2F%2FViewTaskforce%3Ftag%3D%23PY82C9VG';</script>";
+                    echo"<script>location.href='/h?C=".$_SESSION['code_f_o']."';</script>";
                 }else{
                     echo'Ocurrio un error, buelve a intentarlo mas tarde';
                 }

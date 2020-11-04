@@ -38,9 +38,19 @@ class VALIDATIONS{
     }
     static function val_select_datos_fo(){
         $ex=new CRUD();
-        $Row=$ex->select_datos_fo();
+        $Row=$ex->select_datos_fo($_GET['C']);
+        $lol=$ex->select_datos_fo_photo($_GET['C']);
         $User_leader=$ex->select_user_leader($Row['fo_id']);
         array_push($Row, $User_leader);
+        return $Row;
+    }
+    static function val_select_datos_fo_settings(){
+        $ex=new CRUD();
+        $code=$ex->crud_obtain_code_fo();
+        $Row=$ex->select_datos_fo($code);
+        /* echo'<pre>';
+        print_r($Row);
+        echo'</pre>'; */
         return $Row;
     }
     public static function prueba(){  

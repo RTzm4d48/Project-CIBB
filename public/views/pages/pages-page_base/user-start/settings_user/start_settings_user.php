@@ -1,6 +1,6 @@
 <!-- <link rel="stylesheet" href="/css/style-create-fo_.css"> -->
-<link rel="stylesheet" href="/css/style-settings______.css">
-<link rel="stylesheet" href="/css/responsive/rsp_style-settings____.css">
+<link rel="stylesheet" href="/css/style-settings________.css">
+<link rel="stylesheet" href="/css/responsive/rsp_style-settings_____.css">
 <div class="container">
     <div class="header_cibb">
         <img src="/svg/CIBB.svg" alt="">

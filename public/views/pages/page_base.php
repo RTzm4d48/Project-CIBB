@@ -18,6 +18,15 @@ require_once(URL_PROJECT.'/app/controller/crud.controller.php');
 <?php if(isset($_POST['warning_unirse']))warning('Unirse','¿Estas seguro de querer unirte a esta fuerza operativa? <br><br> Copia el link por si no se te redirecciona.','sb_unirse',true,true);
 if(isset($_POST['warning_unirse_false']))warning('Hubo un error','Tu ya perteneces a una fuerza operativa','--',false,false);
 if(isset($_POST['warning_currarSesion']))warning('Salir','¿Estas seguro de que quieres cerrar sesion?','sub_salir',false,true);
+if(isset($_POST['warning_calir_fo_leader'])){
+    require_once(URL_PROJECT.'/app/controller/ctr_querys_user.php');
+    $ex=CTR_QUERYS_USER::ctr_validate_empty_fo();
+    if($ex>=2)warning("Tenemos un problema",'Tu eres el lider de esta fo, por lo tanto para poder abandonarla deveras:<br><br>-Delegar tu rango a otro miembro.<br>-expulzar a todos y finalmente abandoanr la FO.','--',false,false);
+    else warning("Abandonar fuerza operativa",'¿Estas seguro de que quieres abandonar está fuerza operativa?','sb_salir_fo',false,true);
+}
+if(isset($_POST['warning_calir_fo']))warning('Abandonar fuerza operativa','¿Estas seguro de que abandonar esta fuerza operativa?','sb_salir_fo',false,true);
+if(isset($_POST['warning_sub_update_fo']))warning('Update','¿estas seguro de guardar los cambios?','sub_update_fo',false,true);
+
 ?>
 
     <?php function warning($titulo,$especificacion,$sub_aceptar,$texbox,$btncancel_aceptar){?>

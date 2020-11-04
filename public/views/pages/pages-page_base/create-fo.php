@@ -1,6 +1,6 @@
 <?php
 ?>
-<link rel="stylesheet" href="/css/style-create-fo_.css">
+<link rel="stylesheet" href="/css/style-create-fo__.css">
 <div class="container">
     <div class="header_cibb">
         <img src="/svg/CIBB.svg" alt="">
@@ -12,7 +12,7 @@
 
     <?php
     require_once(URL_PROJECT.'/app/controller/ctr_create_f_o.php');
-    $ex = new CTR_CREATE_F_O();
+    $ex=new CTR_CREATE_F_O();
 
    if(isset($_POST['sb_data'])){
      if($_COOKIE['user_id_fo'] != 'none'){

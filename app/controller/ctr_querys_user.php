@@ -34,4 +34,14 @@ class CTR_QUERYS_USER{
             return$rpt;
         }
     }
+    static function ctr_valid_leader(){
+        $ex=new CRUD_QUERYS_USER();
+        $rpt=$ex->crud_valid_leader();
+        if($rpt=='leader')return true;
+        else return false;
+    }
+    static function ctr_validate_empty_fo(){
+        $ex=new CRUD_QUERYS_USER();
+        return $rpt=$ex->crud_validate_empty_fo();
+    }
 }?>

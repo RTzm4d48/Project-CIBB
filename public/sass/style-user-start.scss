@@ -1,0 +1,385 @@
+@import "colors";
+
+.font_containers{
+    background: #{$transparent-gray};
+    border-radius: 7px;
+    display: flex;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container{
+    
+    /* property in styles-general.scss */
+
+
+    &-perfil{
+        width: calc(100% - 10px);
+        height: 250px;
+        margin: 10px auto;
+        /* background: #000; */
+
+        img{
+            margin: auto 10px auto 50px;
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+        }
+        &-data{
+            width: 60%;
+            height: auto;
+            margin: auto 10px;
+            /* border: 1px solid plum; */
+
+            h3{
+                margin: 0px;
+                font-size: 10px;
+                opacity: 1;
+                color: #34B6F7;
+            }
+            p{
+                margin: 0px;
+                font-size: 21px;
+                /* font-weight: bold; */
+                opacity: 1;   
+            }
+            .state{
+                font-size: 15px;
+            }
+        }
+    }
+
+    &-date{
+        width: calc(100% - 10px);
+        height: 40px;
+        display: flex;
+        margin: 0px auto;
+
+        .area{
+            display: flex;
+            margin: auto 10px;
+            font-size: 12px;
+        
+            p{
+                opacity: 0.5;
+                margin: 0px;
+            }
+            .p_dinamic{
+                opacity: 1;
+            }
+        }
+    }
+
+    &-subcontainer{
+        width: 100%;
+        height: auto;
+        /* background: #76e45b4f; */
+        margin: 5px 0px;
+        display: flex;
+        flex-wrap: wrap;
+        
+        
+    }
+
+
+}
+.box{
+    width: calc(50% - 10px);
+    height: 250px;
+    margin: 5px 5px;
+    display: flex;
+    flex-direction: column;
+}
+/*  */
+.event{
+    width: calc(50% - 10px);
+    height: 250px;
+    margin: 5px 5px;
+    display: flex;
+    flex-direction: column;
+
+    .titulo{
+        width: 90%;
+        height: 60px;
+        /* background: #000; */
+        display: flex;
+        justify-content: space-between;
+        margin: 7px auto;
+
+        .classtext{
+            width: 130px;
+            height: 50px;
+            /* background: firebrick; */
+            display: flex;
+            flex-direction: column;
+
+        }
+        .texttitle{
+            margin: auto 0px;
+            font-size: 20px;
+        }
+        .textadvertence{
+            margin: auto 0px;
+            font-size: 10px;
+            
+        }
+        
+        .time{
+            width: 230px;
+            height: auto;
+            /* background: pink; */
+            margin: auto 0px;
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            grid-gap: 2px;
+
+            
+            
+        }
+    }
+    .cat_and_des{
+        width: 90%;
+        height: 100px;
+        background: #{$gray};
+        margin: auto;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+
+        p{
+            margin: 0px 1px;
+            font-size: 12px;
+        }
+        .name{
+            opacity: 0.7;
+        }
+
+        .categoria{
+            display: flex;
+            margin: auto 0px 5px 10px;
+        }
+        .descripcion{
+            display: flex;
+            margin: 5px 0px auto 10px;
+        }
+    }
+    button{
+        width: 100px;
+        padding: 7px 0px;
+        margin: auto;
+        background: #{$light-green-02};
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        color: white;
+    }
+    .simply-section{
+        width: 50px;
+        height: 50px;
+        background: #{$transparent-gray};
+        padding: 5px 5px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        border-radius: 8px;
+        transform: scale(0.8);
+    }
+    .simply-amount{
+        display: flex;
+        font-size: 25px;
+        flex-direction: column;
+        margin: auto;
+        text-align: center;
+    }
+    .simply-word{
+        font-size: 11px;
+        text-align: center;
+    }
+}
+
+.ranking{
+    width: calc(50% - 10px);
+    height: 250px;
+    margin: 5px 5px;
+    display: flex;
+    flex-direction: column;
+
+    &_title{
+        margin:  auto;
+        font-size: 25px;
+    }
+    &_containerList{
+        margin: 0px auto auto auto;
+        width: 90%;
+        height: auto;
+        background: #{$gray};
+        border-radius: 10px;
+
+        /*  */
+        p{
+            margin: 0px;
+            height: 15px;
+            margin: auto 0px;
+            font-size: 12px;
+        }
+        .num{
+            /* background: salmon; */
+            width: 10%;
+            text-align: center;
+        }
+        .name{
+            /* background: rgb(114, 250, 148); */
+            width: 40%;
+        }
+        .name_m{
+            /* background: rgb(114, 250, 148); */
+            width: 40%;
+            display: flex;
+
+            img{
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                margin: auto 5px auto 0px;
+            }
+        }
+        .points{
+            /* background: rgb(114, 123, 250); */
+            width: 20%;
+            text-align: center;
+        }
+        .participations{
+            /* background: rgb(248, 250, 114); */
+            width: 30%;
+            text-align: center;
+        }
+        /*  */
+
+        .line_01{
+            width: 100%;
+            height: 30px;
+            /* background: #000; */
+            display: flex;
+        }
+        
+        .line_02{
+            width: 100%;
+            height: 30px;
+            background: #3F4A5A;
+            display: flex;
+        }
+        .lineend{
+            border-radius: 0px 0px 10px 10px;
+        }
+    }
+}
+
+.fo{
+    width: calc(50% - 10px);
+    height: 250px;
+    margin: 5px 5px;
+    display: flex;
+    flex-direction: column;
+
+    .container_principal{
+        width: 90%;
+        height: 125px;
+        background-image: url(/svg/font_fo.svg);
+        margin: auto;
+        display: flex;
+        background-size: 100% 100%;
+        
+        .badge{
+            width: 90px;
+            height: 90px;
+            /* background: #000; */
+            margin: auto 15px auto 35px;
+
+            &-img{
+                width: 90px;
+                height: 90px;
+                position: absolute;
+                z-index: 1;
+                transform: scale(0.8);
+                border-radius: 50%;
+            }
+            &-ornaments{
+                width: 90px;
+                height: 90px;
+                z-index: 3;
+                position: absolute;
+            }
+        }
+        h1{
+            /* background: rgb(197, 93, 93); */
+            margin: auto 0px;
+            font-size: 20px;
+        }
+        a{
+            cursor: pointer ;
+            width: 40px;
+            height: 40px;
+            margin: auto;
+        }
+        .setings{
+            cursor: pointer ;
+            width: 40px;
+            height: 40px;
+            margin: auto;
+        }
+    }
+    /*  */
+    
+    .buttons{
+        width: 80%;
+        height: auto;
+        /* background: green; */
+        margin: auto;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+
+        a{
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            background: #{$light-blue};
+            border-radius: 5px;
+            margin: 5px auto;
+
+            img{
+                width: 15px;
+                margin: auto 0px;
+                position: relative;
+                top: 1px;
+
+            }
+        }
+        .a2{
+            background:radial-gradient(#{$light-green-01}, #{$light-green-02});
+        }
+        
+    }
+    .no{
+        display: none;
+    }
+    .notFo{
+        background-image: url(/svg/font_fo_b.svg);
+    }
+}
+
+.setingsUsers{
+    img{
+        width: 100px;
+        margin: auto auto 0px auto;
+    }
+    a{
+        margin: 5px auto auto auto;
+        padding: 10px;
+        background: #000;
+        border-radius: 5px;
+        color: white ;
+        background:radial-gradient(#{$light-green-01}, #{$light-green-02});
+        text-decoration: none;
+    }
+}
+

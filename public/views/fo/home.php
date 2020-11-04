@@ -56,9 +56,9 @@ $_SESSION['code_f_o']=$_GET['C'];
             
         </div>
         <div class="bisection_2">
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">
+            <img src="public/tmp/f_o/directori_<?php echo $Row['fo_id'];?>/photo_01.jpg" alt="">
+            <img src="public/tmp/f_o/directori_<?php echo $Row['fo_id'];?>/photo_02.jpg" alt="">
+            <img src="public/tmp/f_o/directori_<?php echo $Row['fo_id'];?>/photo_03.jpg" alt="">
         </div>
     </div>
 </div>

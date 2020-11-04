@@ -24,4 +24,31 @@ class CTR_QUERYS_F_O{
         $rpt=$ex->crud_obtain_id_fo();
         return$rpt;
     }
+    static function ctr_update_data_fo(){
+        require_once(URL_PROJECT.'/app/model/crud_update_f_o.php');
+        $ex=new CRUD_UPDATE_F_O();
+        $ex->update();
+        if($ex==true)return'TRUE';
+        else return'FALSE';
+    }
+    static function ctr_write_photo(){
+        if($_FILES['photo_01']['tmp_name'] !=''||$_FILES['photo_02']['tmp_name'] !=''||$_FILES['photo_03']['tmp_name'] !=''){
+            require_once(URL_PROJECT.'/app/model/crud_update_photo_fo.php');
+            $ex=new CRUD_UPDATE_PHOTO_F_O();
+            $ex->crud_write_photo();
+            print_r($_FILES['photo_01']['tmp_name']);
+            return true;
+        }else return false;;
+    }
+    static function ctr_update_photo(){
+        echo"<br>";
+        if(isset($_SESSION['sess_photo_01'])||isset($_SESSION['sess_photo_02'])||isset($_SESSION['sess_photo_03'])){
+            require_once(URL_PROJECT.'/app/model/crud_update_photo_fo.php');
+            $ex=new CRUD_UPDATE_PHOTO_F_O();
+            $ex->crud_update_photo();
+            $code=$ex->crud_obtain_code_fo();
+            $lol=$ex->select_datos_fo_photo($code);
+            return true;
+        }else return false;
+    }
 }?>

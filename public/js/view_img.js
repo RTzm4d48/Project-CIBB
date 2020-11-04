@@ -1,5 +1,6 @@
 const inpFile=document.getElementById("inpFile");
 const previewImage=document.getElementById("imagePreview");
+
 inpFile.addEventListener("change",function(){
     const file=this.files[0];
     if(file){
@@ -11,3 +12,5 @@ inpFile.addEventListener("change",function(){
         reader.readAsDataURL(file);
         }
 });
+
+

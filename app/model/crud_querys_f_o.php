@@ -1,7 +1,7 @@
 <?php
 require_once ($_SERVER['DOCUMENT_ROOT']. '/app/config/config.php');
-require_once (URL_PROJECT. '/app/libs/console.php');
-require_once (URL_PROJECT. '/app/model/connection.php');
+require_once (URL_PROJECT.'/app/libs/console.php');
+require_once (URL_PROJECT.'/app/model/connection.php');
 /* -- */
 class CRUD_QUERYS_F_O extends Connection{
 

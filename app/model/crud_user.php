@@ -19,9 +19,9 @@ class CRUD_U extends Connection{
         mkdir(URL_PROJECT."/public/tmp/users/directori_".$id,0700);
     }
     function register_user(){
-        if(isset($_POST['gmail'])) $this->gmail =  $_POST['gmail'];
-        if(isset($_POST['user'])) $this->user = $_POST['user'];
-        if(isset($_POST['password'])) $this->password = $_POST['password'];
+        if(isset($_POST['gmail']))$this->gmail=$_POST['gmail'];
+        if(isset($_POST['user']))$this->user=$_POST['user'];
+        if(isset($_POST['password']))$this->password=$_POST['password'];
         //obtener la imagen
         $img_big=URL_PROJECT."/public/tmp/default/default_user_img_big.jpg";
         $image_big_bits=base64_encode(addslashes(fread(fopen($img_big,"r"),filesize($img_big))));
@@ -88,7 +88,7 @@ class CRUD_U extends Connection{
                $ruta_big=URL_PROJECT."/public/tmp/users/directori_".$_COOKIE['id_user']."/img_perfil_big.jpg";
                $this->base64_to_jpeg($image_big,$ruta_big);
                $ruta_little=URL_PROJECT."/public/tmp/users/directori_".$_COOKIE['id_user']."/img_perfil_little.jpg";
-               $this->base64_to_jpeg($image_little, $ruta_little);
+               $this->base64_to_jpeg($image_little,$ruta_little);
                //guardar en una cookie la id de la fo para validarlo
                if($fo_id==null)$fo_id='none';
                setcookie('user_id_fo',$fo_id,strtotime('+360 days'),'/');
@@ -107,38 +107,38 @@ class CRUD_U extends Connection{
     }
     function verificate_f_o_of_user(){
         $pr = $this->conn->prepare("SELECT fo_id FROM the_user WHERE us_id = ?");
-        $pr->bind_param("i", $_COOKIE['id_user']);
+        $pr->bind_param("i",$_COOKIE['id_user']);
         if($pr->execute()){
             $pr->store_result();
             $pr->bind_result($fo_id);
             //listamos todos los resultados
 	        while($pr->fetch()){
-                if(isset($fo_id)) return $fo_id;
-                else  return false;
+                if(isset($fo_id))return$fo_id;
+                else return false;
             }
             $pr->close();
         }else{
-            exit('Error al realizar la consulta: '.$pr->close());
+            exit('Error al realizar la consulta:'.$pr->close());
         }  
     }
     function user_f_o($id_fo){
-        $pr = $this->conn->prepare("SELECT fo_code, fo_img_little FROM f_o WHERE fo_id = ?");
-        $pr->bind_param("i", $id_fo);
+        $pr=$this->conn->prepare("SELECT fo_code, fo_img_little FROM f_o WHERE fo_id = ?");
+        $pr->bind_param("i",$id_fo);
         if($pr->execute()){
             $pr->store_result();
-            $pr->bind_result($fo_code, $fo_img_little);
+            $pr->bind_result($fo_code,$fo_img_little);
             //listamos todos los resultados
 	        while($pr->fetch()){
                 //convert
-                $fo_img = stripslashes(base64_decode($fo_img_little));
+                $fo_img=stripslashes(base64_decode($fo_img_little));
                 //imagen big
-                $ruta = URL_PROJECT."/public/tmp/users/directori_".$_COOKIE['id_user']."/my_f_o_img_little.jpg";
-                $this->base64_to_jpeg($fo_img, $ruta);
-                return $fo_code;
+                $ruta=URL_PROJECT."/public/tmp/users/directori_".$_COOKIE['id_user']."/my_f_o_img_little.jpg";
+                $this->base64_to_jpeg($fo_img,$ruta);
+                return$fo_code;
             }
             $pr->close();
         }else{
-            exit('Error al realizar la consulta: '.$pr->close());
+            exit('Error al realizar la consulta:'.$pr->close());
         }
     }
 }

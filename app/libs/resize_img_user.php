@@ -16,6 +16,7 @@ class Resize_user{
             }
         $ancho_original=imagesx($original);
         $alto_original=imagesy($original);
+        
         if($ancho_original>$alto_original){
             $c=$ancho_original-$alto_original;
             $centrador=$c/2;

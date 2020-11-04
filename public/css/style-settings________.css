@@ -1,0 +1,52 @@
+.container {
+  width: 100%;
+  height: auto;
+  background: #36393f98; }
+  .container .header_cibb {
+    width: 100%;
+    height: 150px;
+    background: #36393f98;
+    display: flex; }
+    .container .header_cibb img {
+      width: 200px;
+      margin: auto; }
+
+.theconteiner {
+  /* background: salmon; */
+  width: 100%;
+  height: 100%;
+  display: flex; }
+  .theconteiner .left_tool {
+    height: 100%;
+    width: 200px;
+    background: #36393F;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif; }
+    .theconteiner .left_tool ul {
+      list-style: none;
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box; }
+    .theconteiner .left_tool ul li {
+      width: 100%;
+      margin: 0px;
+      padding: 15px 20px;
+      box-sizing: border-box;
+      list-style: none;
+      text-decoration: none;
+      font-family: 'Josefin Sans', sans-serif; }
+  .theconteiner .active {
+    background: #313131;
+    border-left: 5px solid white; }
+  .theconteiner ul li a {
+    color: #ffffff9e;
+    display: block;
+    text-decoration: none; }
+  .theconteiner .right_tool {
+    width: calc(100% - 200px);
+    height: 100%;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif; }
+
+/*# sourceMappingURL=style-settings________.css.map */

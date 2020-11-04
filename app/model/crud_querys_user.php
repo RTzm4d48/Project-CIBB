@@ -6,7 +6,6 @@ class CRUD_QUERYS_USER extends Connection{
     function __construct(){
         $this->connect();
     }
-
     function crud_uptade_data_user($val_img){
         $image=(isset($_FILES['img']))?$_FILES['img']['tmp_name']:null;
         $image_type=(isset($_FILES['img']))?$_FILES['img']['type']:null;
@@ -92,6 +91,17 @@ class CRUD_QUERYS_USER extends Connection{
         $rack='officer';
         $pr->bind_param("sii",$rack,$_SESSION['fo_id'],$_COOKIE['id_user']);
         if($pr->execute()){
+            //cookie fo
+            
+            echo"<script>
+            var cname='user_id_fo';
+            var exdays=360;
+            var cvalue=".$_SESSION['fo_id'].";
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            var expires = 'expires=' + d.toUTCString();
+            document.cookie = cname + '=' + cvalue + ';' + expires +'; path=/';
+                        </script>";
             $pr->close();
             return true;
         }else{
@@ -99,4 +109,32 @@ class CRUD_QUERYS_USER extends Connection{
             return false;
         }
         }
+    function crud_valid_leader(){
+        $pr=$this->conn->prepare("SELECT us_rank FROM the_user WHERE us_id=?");
+        $pr->bind_param("i",$_COOKIE['id_user']);
+        if($pr->execute()){
+            $pr->store_result();
+            $pr->bind_result($us_rank);
+            //listamos todos los resultados
+	        while($pr->fetch()){
+              return $us_rank;
+            }
+            $pr->close();
+        }else{
+            exit('Error al realizar la consulta:'.$pr->close());
+        }
+    }
+    function crud_validate_empty_fo(){
+        $pr=$this->conn->prepare("SELECT us_user FROM the_user WHERE fo_id=?");
+        $pr->bind_param("i",$_COOKIE['user_id_fo']);
+        if($pr->execute()){
+            $pr->store_result();
+            /* if($pr->num_rows>=2)return false;
+            else return true; */
+            return $pr->num_rows();
+            $pr->close();
+        }else{
+            exit('Error al realizar la consulta:'.$pr->close());
+        }
+    }
 }

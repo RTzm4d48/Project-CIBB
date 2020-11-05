@@ -51,4 +51,28 @@ class CTR_QUERYS_F_O{
             return true;
         }else return false;
     }
+    static function ctr_select_rules(){
+        require_once(URL_PROJECT.'/app/model/crud_update_f_o.php');
+        $ex=new CRUD_UPDATE_F_O();
+        $rules=$ex->crud_select_rules($_COOKIE['user_id_fo']);
+        /* print_r($rules); */
+        return$rules;
+    }
+    static function ctr_select_prohibitions(){
+        require_once(URL_PROJECT.'/app/model/crud_update_f_o.php');
+        $ex=new CRUD_UPDATE_F_O();
+        $prohibitions=$ex->crud_select_prohibitions($_COOKIE['user_id_fo']);
+        /* print_r($prohibitions); */
+        return $prohibitions;
+    }
+    static function ctr_update_rules_prohibitions(){
+        require_once(URL_PROJECT.'/app/model/crud_update_f_o.php');
+        $ex=new CRUD_UPDATE_F_O();
+        $ex->crud_update_rules($_COOKIE['user_id_fo']);
+        $ex->crud_update_prohibitions($_COOKIE['user_id_fo']);
+        echo"ceececec";
+        if($ex==true)
+        return true;
+        else return false;
+    }
 }?>

@@ -1,7 +1,7 @@
 function plus_normative(i){
     if(i<=4){
     i++;
-    $("#num_rule_").html("<input type='text' name='num_rule' value='"+i+"' id='num_rule'>");
+    $("#num_rule_").html("<input type='text' name='num_rule' value='"+i+"' id='num_rule' hidden>");
     $("#normative").append("<div id='rule_"+i+"' class='rule'> <img src='/svg/rules-true.svg' alt=''><input type='text' name='rule_"+i+"' id='' required></div> ");
     $("#bottons_normative").html("<div class='plus' onclick='plus_normative("+i+");'></div>  <div class='plus minus' onclick='minus_normative("+i+");'></div>");
     }else{
@@ -13,9 +13,9 @@ function minus_normative(i){
     i--;
     if(i==1){
         $("#bottons_normative").html("<div class='plus' onclick='plus_normative("+i+");'>");
-        $("#num_rule_").html("<input type='text' name='num_rule' value='"+i+"' id='num_rule'>");
+        $("#num_rule_").html("<input type='text' name='num_rule' value='"+i+"' id='num_rule' hidden>");
     }else{
-        $("#num_rule_").html("<input type='text' name='num_rule' value='"+i+"' id='num_rule'>");
+        $("#num_rule_").html("<input type='text' name='num_rule' value='"+i+"' id='num_rule' hidden>");
         $("#bottons_normative").html("<div class='plus' onclick='plus_normative("+i+");'></div>  <div class='plus minus' onclick='minus_normative("+i+");'></div>");
     }
 }
@@ -23,7 +23,7 @@ function minus_normative(i){
 function plus_expulsion(i){
     if(i<=4){
     i++;
-    $("#num_prohibition_").html("<input type='text' name='num_prohibition' value='"+i+"' id='num_prohibition'>");
+    $("#num_prohibition_").html("<input type='text' name='num_prohibition' value='"+i+"' id='num_prohibition' hidden>");
     $("#expulsion").append("<div id='prohibition_"+i+"' class='rule'><img src='/svg/rules-false.svg' alt=''><input type='text' name='prohibition_"+i+"' id='' required></div>");
     $("#bottons_expulsion").html("<div class='plus' onclick='plus_expulsion("+i+");'></div> <div class='plus minus' onclick='minus_expulsion("+i+");'></div>");
     }else{
@@ -35,9 +35,9 @@ function minus_expulsion(i){
     i--;
     if(i==1){
         $("#bottons_expulsion").html("<div class='plus' onclick='plus_expulsion("+i+");'></div>");
-        $("#num_prohibition_").html("<input type='text' name='num_prohibition' value='"+i+"' id='num_prohibition'>");
+        $("#num_prohibition_").html("<input type='text' name='num_prohibition' value='"+i+"' id='num_prohibition' hidden>");
     }else{
-        $("#num_prohibition_").html("<input type='text' name='num_prohibition' value='"+i+"' id='num_prohibition'>");
+        $("#num_prohibition_").html("<input type='text' name='num_prohibition' value='"+i+"' id='num_prohibition' hidden>");
         $("#bottons_expulsion").html("<div class='plus' onclick='plus_expulsion("+i+");'></div> <div class='plus minus' onclick='minus_expulsion("+i+");'></div>");
     }
 }

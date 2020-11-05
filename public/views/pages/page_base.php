@@ -26,7 +26,6 @@ if(isset($_POST['warning_calir_fo_leader'])){
 }
 if(isset($_POST['warning_calir_fo']))warning('Abandonar fuerza operativa','¿Estas seguro de que abandonar esta fuerza operativa?','sb_salir_fo',false,true);
 if(isset($_POST['warning_sub_update_fo']))warning('Update','¿estas seguro de guardar los cambios?','sub_update_fo',false,true);
-
 ?>
 
     <?php function warning($titulo,$especificacion,$sub_aceptar,$texbox,$btncancel_aceptar){?>

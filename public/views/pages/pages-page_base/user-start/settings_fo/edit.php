@@ -1,11 +1,11 @@
 <div class="edit">
-<?php if(isset($_POST['sub_update_fo']))echo $ex=CTR_QUERYS_F_O::ctr_update_data_fo();?>
+<?php if(isset($_POST['sub_update_fo']))$ex=CTR_QUERYS_F_O::ctr_update_data_fo();?>
     <?php $Row=VALIDATIONS::val_select_datos_fo_settings();?>
-    <form action="" method="POST">
+    <form action="" method="POST" enctype="multipart/form-data">
         <div class="header_form_edit">
             <h1><?php echo$Row['name'];?></h1>
             <div class="container_img">
-                <img src="/public/tmp/default/default_big.jpg" id="imagePreview" alt="">
+                <img src="/public/tmp/f_o/directori_<?php echo$Row['fo_id']?>/fo_img_little.jpg" id="imagePreview" alt="">
                 <div class="semi-circulo">
                     <input type="file" name="image" accept="image/jpeg, image/png" id="inpFile" hidden>
                     <label for="inpFile">Cambiar</label>

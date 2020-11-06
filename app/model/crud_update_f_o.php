@@ -7,9 +7,6 @@ class CRUD_UPDATE_F_O extends Connection{
     public function __construct(){
         $this->connect();
     }
-    function ctr_function_update(){
-        if(!isset($_POST['image']))$this->update();
-    }
     function update(){
         $pr=$this->conn->prepare("UPDATE `f_o` SET `fo_name`=?,`fo_description`=?,`fo_description_short`=?,`fo_tag`=?,`fo_url_w_a`=?,`fo_url_b_b_f`=?,`fo_url_m`=? WHERE `fo_id`=?;");
         $name=(isset($_POST['input_name']))?$_POST['input_name']:'--';
@@ -22,6 +19,36 @@ class CRUD_UPDATE_F_O extends Connection{
         $pr->bind_param("sssssssi",$name,$description,$description_short,$tag,$url_w_a,$fo_url_b_b_f,$fo_url_m,$_COOKIE['user_id_fo']);
         if($pr->execute()){
             $pr->close();
+            return true;
+        }else{
+            $pr->close();
+            return false;
+        }
+    }
+    function update_with_img(){
+        $image=(isset($_FILES['image'])) ? $_FILES['image']['tmp_name'] : 'null';
+        $image_type=(isset($_FILES['image'])) ? $_FILES['image']['type'] : 'null';
+        $name='foid_'.$_COOKIE['user_id_fo'].'update';
+        //se redireccionan y se guardan en carpeta
+        require_once URL_PROJECT.'/app/libs/resize_img.php';
+        $rs=new Resize();
+        $rs->resized_img_fo_big($image,$name,$image_type);
+        $rs->resized_img_fo_little($image,$name,$image_type);
+        //obtengo las imagenes ya redimensionadas
+        $img_big=URL_PROJECT."/public/tmp/tmp/size-$name-big.jpg";
+        $image_big_bits=base64_encode(addslashes(fread(fopen($img_big,"r"),filesize($img_big))));
+        $img_little=URL_PROJECT."/public/tmp/tmp/size-$name-little.jpg";
+        $image_little_bits=base64_encode(addslashes(fread(fopen($img_little,"r"),filesize($img_little))));
+        //update
+        $pr=$this->conn->prepare("UPDATE `f_o` SET `fo_img_little`='".$image_little_bits."', `fo_img_big`='".$image_big_bits."' WHERE `fo_id`=?;");
+        $pr->bind_param("i",$_COOKIE['user_id_fo']);
+        if($pr->execute()){
+            $pr->close();
+            /* echo"<script type='text/javascript'>
+            if (window.location.href.substr(-2) !== '/?settings_fo=set&edit=set') {
+                window.location = window.location.href;
+            }
+            </script>"; */
             return true;
         }else{
             $pr->close();

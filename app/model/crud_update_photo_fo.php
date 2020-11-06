@@ -37,6 +37,9 @@ class CRUD_UPDATE_PHOTO_F_O extends Connection{
         $pr->bind_param("i",$_COOKIE['user_id_fo']);
         if($pr->execute()){
             $pr->close();
+            //deleted file
+            $ruta1=URL_PROJECT."/public/tmp/tmp/photo_01_user_".$_COOKIE['id_user'].".jpg";
+            if(file_exists($ruta1))@unlink($ruta1);
             return true;
         }else{
             $pr->close();
@@ -52,6 +55,8 @@ class CRUD_UPDATE_PHOTO_F_O extends Connection{
             $pr->bind_param("i",$_COOKIE['user_id_fo']);
         if($pr->execute()){
             $pr->close();
+            $ruta2=URL_PROJECT."/public/tmp/tmp/photo_02_user_".$_COOKIE['id_user'].".jpg";
+            if(file_exists($ruta2))@unlink($ruta2);
             return true;
         }else{
             $pr->close();
@@ -67,6 +72,8 @@ class CRUD_UPDATE_PHOTO_F_O extends Connection{
             $pr->bind_param("i",$_COOKIE['user_id_fo']);
         if($pr->execute()){
             $pr->close();
+            $ruta3=URL_PROJECT."/public/tmp/tmp/photo_03_user_".$_COOKIE['id_user'].".jpg";
+            if(file_exists($ruta3))@unlink($ruta3);
             return true;
         }else{
             $pr->close();
@@ -112,7 +119,7 @@ class CRUD_UPDATE_PHOTO_F_O extends Connection{
             $this->base64_to_jpeg($photo_03,$ruta3);
             echo"<script type='text/javascript'>
             function actualizar(){location.reload(true);}
-            setInterval('actualizar()',4000);
+            setInterval('actualizar()',6000);
             </script>";
             return true;
             }

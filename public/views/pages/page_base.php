@@ -12,6 +12,7 @@ require_once(URL_PROJECT.'/app/controller/crud.controller.php');
     <link rel="stylesheet" href="/css/styles-general___.css">
     <link rel="stylesheet" href="/css/responsive/rsp_style-general__.css">
     <link rel="stylesheet" href="/css/style-advert__.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>@nameUser</title>
 </head>
 <body>
@@ -133,6 +134,5 @@ if(isset($_POST['warning_sub_update_fo']))warning('Update','¿estas seguro de gu
             </div>
         </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
 </html>

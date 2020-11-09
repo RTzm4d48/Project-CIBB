@@ -72,7 +72,7 @@ class CRUD_QUERYS_F_O extends Connection{
     function crud_get_out_fo_for_name(){
         $pr=$this->conn->prepare("SELECT fo_img_little,fo_name,fo_code,fo_activity,fo_description_short FROM `f_o` WHERE fo_operating='yes' and fo_name=? ORDER BY fo_activity DESC LIMIT 10");
         $name='neffex';
-        $pr->bind_param("s",$_POST['text_search']);
+        $pr->bind_param("s",$_POST['txtSearch']);
         if($pr->execute()){
             $pr->store_result();
             $Rows=$pr->num_rows();

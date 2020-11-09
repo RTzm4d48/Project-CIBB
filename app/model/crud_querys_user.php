@@ -88,7 +88,7 @@ class CRUD_QUERYS_USER extends Connection{
     }
     function crud_join_to_fo(){
         $pr=$this->conn->prepare("UPDATE `the_user` SET `us_rank`=?,`fo_id`=? WHERE us_id=?");
-        $rack='officer';
+        $rack='Oficial';
         $pr->bind_param("sii",$rack,$_SESSION['fo_id'],$_COOKIE['id_user']);
         if($pr->execute()){
             //cookie fo

@@ -15,9 +15,9 @@ class Connection{
     public function connect(){
         $this->conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
         if (!$this->conn) {
-            console("Connection failed: " . mysqli_connect_error());
+            /* console("Connection failed: " . mysqli_connect_error()); */
         }else{
-            console("Connected successfully");
+            /* console("Connected successfully"); */
             return $this->conn;
         }
     }

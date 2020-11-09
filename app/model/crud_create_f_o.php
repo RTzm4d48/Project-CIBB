@@ -41,10 +41,12 @@ class CRUD_CREATE_F_O extends Connection{
             $img_little = URL_PROJECT."/app/tmp/default/default_little.jpg";
             $image_little_bits = base64_encode(addslashes(fread(fopen($img_little, "r"), filesize($img_little))));
         }
+        $photo_url=URL_PROJECT."/public/tmp/default/photo_defaultt.jpg";
+        $photo=base64_encode(addslashes(fread(fopen($photo_url, "r"), filesize($photo_url))));
         //$ex = obtain_id();
         //insert
         $pr = $this->conn->prepare("INSERT INTO `f_o`(`fo_img_little`, `fo_img_big`, `fo_name`, `fo_description`,`fo_description_short`, `fo_tag`, `fo_url_w_a`, `fo_url_b_b_f`, `fo_url_m`, `fo_photo_1`, `fo_photo_2`, `fo_photo_3`, `fo_activity`)
-        VALUES ('".$image_little_bits."', '".$image_big_bits."',?,?,?,?,?,?,?,null,null,null,0);");
+        VALUES ('".$image_little_bits."', '".$image_big_bits."',?,?,?,?,?,?,?,'".$photo."','".$photo."','".$photo."',0);");
         $pr->bind_param("sssssss", $name,$description,$description, $tag, $url_w_a, $url_b_b_f, $url_m);
         if($pr->execute()){
             $this->obtain_id();
@@ -80,7 +82,7 @@ class CRUD_CREATE_F_O extends Connection{
     }
     function insert_rank(){
         $pr = $this->conn->prepare("UPDATE `the_user` SET `us_rank`= ?, `fo_id`= ? WHERE us_id = ?");
-        $rank = 'leader';
+        $rank = 'Líder';
         $pr->bind_param("sii", $rank, $_SESSION['sess_id'], $_COOKIE['id_user']);
         if($pr->execute()){
             setcookie('user_id_fo', $_SESSION['sess_id'], strtotime( '+360 days' ), '/');

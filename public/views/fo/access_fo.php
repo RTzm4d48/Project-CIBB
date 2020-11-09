@@ -58,7 +58,7 @@ require_once(URL_PROJECT.'/app/controller/ctr_querys_user.php');
                 echo"<script>location.href='/h?C=".$_SESSION['code_f_o']."';</script>";
             }else{
                 $ex=CTR_QUERYS_USER::ctr_join_to_fo();
-                if($ex == true){
+                if($ex==true){
                     echo"<script>href='https://link.boombeach.com/en?url=boombeach%3A%2F%2FViewTaskforce%3Ftag%3D%23PY82C9VG';</script>";
                     echo"<script>location.href='/h?C=".$_SESSION['code_f_o']."';</script>";
                 }else{

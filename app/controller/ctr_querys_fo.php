@@ -3,6 +3,7 @@ require_once(URL_PROJECT.'/app/model/crud_querys_f_o.php');
 class CTR_QUERYS_F_O{
     static function get_out_fo(){
         $ex=new CRUD_QUERYS_F_O();
+        $ex->valid_empty_fo();
         $rpt=$ex->get_out_fo();
         return $rpt;
     }
@@ -12,6 +13,11 @@ class CTR_QUERYS_F_O{
         /* echo '<pre>';
         print_r($data);
         echo '</pre>'; */
+        return $data;
+    }
+    static function ctr_search_all_fo_for_name(){
+        $ex=new CRUD_QUERYS_F_O();
+        $data=$ex->crud_get_out_fo_for_name();
         return $data;
     }
     static function ctr_select_name_fo(){
@@ -69,7 +75,6 @@ class CTR_QUERYS_F_O{
         $ex=new CRUD_UPDATE_F_O();
         $ex->crud_update_rules($_COOKIE['user_id_fo']);
         $ex->crud_update_prohibitions($_COOKIE['user_id_fo']);
-        echo"ceececec";
         if($ex==true)
         return true;
         else return false;

@@ -122,7 +122,7 @@ class CRUD extends Connection{
     }
     function select_user_leader($id_fo){   
         $pr=$this->conn->prepare("SELECT us_user, us_img_little FROM the_user WHERE fo_id = ? and us_rank = ?");
-        $rank='leader';
+        $rank='Líder';
         $pr->bind_param("is",$id_fo,$rank);
         if($pr->execute()){
             $pr->store_result();

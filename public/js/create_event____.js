@@ -36,7 +36,8 @@ function create_the_event(){
         data: dataa,
         dataType: "json",
         success:function(rpt){
-            alert(rpt['year']);
+            if(rpt == true)closet();
+            else messagebox_2('error','ocurrio un error, intentalo mas tarde.');
         }
     }); 
 }
@@ -75,8 +76,4 @@ function messagebox_2(title,description){
 }
 function closet(){
     $("#id_warning_").addClass("no");
-}
-function create_(data){
-    $("#id_warning_").addClass("no");
-    alert('loli'+data);
 }

@@ -6,7 +6,7 @@
 <div class="create_event_container">
     <div class="create_event_subcontainer_01">
         <h2>Nuevo evento</h2>
-        <select class="combobox" id="combo_objetive" onchange="objetive_change()">
+        <select class="combobox" id="combo_objetive">
             <option>Recoleccion de informacion militar</option>
             <option>Saab</option>
             <option>Opel</option>
@@ -106,4 +106,4 @@
 </div>
 </div>
 <script src="/public/js/calendario_____.js"></script>
-<script src="/public/js/create_event___.js"></script>
+<script src="/public/js/create_event____.js"></script>

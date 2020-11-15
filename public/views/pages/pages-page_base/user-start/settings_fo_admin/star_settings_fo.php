@@ -2,7 +2,8 @@
 require_once(URL_PROJECT.'/app/controller/ctr_querys_fo.php');
 ?>
 <link rel="stylesheet" href="/css/style-create-fo__.css">
-<link rel="stylesheet" href="/css/style-settings______.css">
+<link rel="stylesheet" href="/css/style-settings________.css">
+<link rel="stylesheet" href="/css/responsive/rsp_style-settings_____.css">
 <div class="container">
     <div class="header_cibb">
         <img src="/svg/CIBB.svg" alt="">
@@ -13,9 +14,9 @@ require_once(URL_PROJECT.'/app/controller/ctr_querys_fo.php');
         <form action="" id="myForm" method="GET">
         <div class="left_tool">
            <ul>
-               <li class="<?php if(isset($_GET['edit']))echo'active';?>"><a href="/?settings_fo_admin=set&general=set">General</a></li>
-               <li class="<?php if(isset($_GET['photo']))echo'active';?>"><a href="/?settings_fo_admin=set&administration=set">Administracion</a></li>
-               <li class="<?php if(isset($_GET['rules']))echo'active';?>"><a href="/?settings_fo_admin=set&event=set">Eventos</a></li>
+               <li class="<?php if(isset($_GET['general']))echo'active';?>"><a href="/?settings_fo_admin=set&general=set">General</a></li>
+               <li class="<?php if(isset($_GET['administration']))echo'active';?>"><a href="/?settings_fo_admin=set&administration=set">Administracion</a></li>
+               <li class="<?php if(isset($_GET['event']))echo'active';?>"><a href="/?settings_fo_admin=set&event=set">Eventos</a></li>
            </ul> 
         </div>
         </form>
@@ -23,7 +24,7 @@ require_once(URL_PROJECT.'/app/controller/ctr_querys_fo.php');
             <?php
             if(isset($_GET['general']))echo'Esto es general';
             if(isset($_GET['administration']))echo'Esto es administracion';
-            if(isset($_GET['event']))echo'Esto es eventos';
+            if(isset($_GET['event']))include('create_event.php');
             ?>
         </div>
     </div>

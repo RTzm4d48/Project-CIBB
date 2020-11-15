@@ -62,7 +62,7 @@ class CRUD_QUERYS_F_O extends Connection{
                 array_push($description,$fo_description_short);
                 //escribimos las imagenes
                 $img=stripslashes(base64_decode($fo_img_little));
-                $ruta=URL_PROJECT."/public/tmp/users/directori_".$_COOKIE['id_user']."/search_fo/img_all_".$i.".jpg";
+                $ruta=URL_PROJECT."/public/tmp/users/directori_".$_COOKIE['id_user']."/search_fo/img_all_".$fo_code.".jpg";
                 $this->base64_to_jpeg($img,$ruta);
             }
             array_push($data,$name,$code,$activity,$description,$Rows);  
@@ -97,7 +97,7 @@ class CRUD_QUERYS_F_O extends Connection{
                 array_push($description,$fo_description_short);
                 //escribimos las imagenes
                 $img=stripslashes(base64_decode($fo_img_little));
-                $ruta=URL_PROJECT."/public/tmp/users/directori_".$_COOKIE['id_user']."/search_fo/img_all_".$i.".jpg";
+                $ruta=URL_PROJECT."/public/tmp/users/directori_".$_COOKIE['id_user']."/search_fo/img_all_".$fo_code.".jpg";
                 $this->base64_to_jpeg($img,$ruta);
             }
             array_push($data,$name,$code,$activity,$description,$Rows);  

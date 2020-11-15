@@ -43,7 +43,7 @@ function readCookie(name) {
         $('#conteiner_fo').append("<div class='wraper_fo'>"+
         "<div class='cont_fo'>"+
                 "<div class='badge'>"+
-                    "<img src='/public/tmp/users/directori_"+id_user+"/search_fo/img_all_"+ii+".jpg' class='badge-img' alt=''>"+
+                    "<img src='/public/tmp/users/directori_"+id_user+"/search_fo/img_all_"+data[1][i]+".jpg' class='badge-img' alt=''>"+
                     "<img src='/img/F-O.png' class='badge-ornaments' alt=''>"+
                 "</div>"+
                 "<div class='properties'>"+
@@ -57,5 +57,10 @@ function readCookie(name) {
             "</div>"+
             "</div>"+
         "</div>");
-        }           
+        }
+        
     }
+    $('input[type=search]').on('search',function(){
+        search_all();
+    });
+            

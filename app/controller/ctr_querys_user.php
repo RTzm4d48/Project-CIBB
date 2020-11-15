@@ -44,4 +44,8 @@ class CTR_QUERYS_USER{
         $ex=new CRUD_QUERYS_USER();
         return $rpt=$ex->crud_validate_empty_fo();
     }
+    static function ctr_select_user_ranking(){
+        $ex=new CRUD_QUERYS_USER();
+        return $rpt=$ex->crud_select_user_ranking();
+    }
 }?>

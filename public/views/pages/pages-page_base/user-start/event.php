@@ -5,10 +5,8 @@
             <p class="textadvertence">El evento expira en:</p>
             
         </div>
-            
-        
         <div id="cuenta" class="time">
-            <!--  -->
+            <!-- time -->
         </div>
     </div>
     <div class="cat_and_des">

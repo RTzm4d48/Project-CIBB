@@ -43,8 +43,8 @@ if($x == true) header('Location: '.'/');
                     }else{}
                     ?>
                     </p>
-                    <button id="btn-continuar">Continuar</button>
-                    <input type="submit" value="Continuar" name="login_user">
+                    <button type="submit" name="login_user" id="btn-continuar">Continuar</button>
+                    
                     <p class="container-register-login_body_question">¿Necesitas una cuenta? <a href="/views/pages/register">Registrarse</a></p>
                 </div>
             </div>

@@ -13,7 +13,7 @@ class CRUD_QUERYS_F_O extends Connection{
         $pr->bind_param("i",$_COOKIE['user_id_fo']);
         if($pr->execute()){
             $pr->store_result();
-            if($pr->num_rows==1){		
+            if($pr->num_rows==0){		
                 $pr2=$this->conn->prepare("UPDATE `f_o` SET `fo_operating`=? WHERE fo_id=?");
                 $operating='not';
                 $pr2->bind_param("si",$operating,$_COOKIE['user_id_fo']);
@@ -23,8 +23,17 @@ class CRUD_QUERYS_F_O extends Connection{
             exit('Error al realizar la consulta: '.$pr->close());
         }
     }
+    function deleted_participation_user(){
+        $pr=$this->conn->prepare("DELETE FROM `participants_event` WHERE us_id=?");
+        $pr->bind_param("i",$_COOKIE['id_user']);
+        if($pr->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
     function get_out_fo(){
-        $pr=$this->conn->prepare("UPDATE `the_user` SET `us_rank`= ?, `fo_id`= ? WHERE us_id = ?");
+        $pr=$this->conn->prepare("UPDATE `the_user` SET `us_rank`= ?, `fo_id`= ?,`us_point`=0,`us_participation`=0 WHERE us_id = ?");
         $rank='Sin rango';
         $fo_id=null;
         $pr->bind_param("sii", $rank, $fo_id, $_COOKIE['id_user']);

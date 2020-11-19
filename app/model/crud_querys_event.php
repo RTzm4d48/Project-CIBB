@@ -24,7 +24,7 @@ class CRUD_QUERYS_EVENT extends Connection{
         }
     }
     function crud_consult_exist_event(){
-        $pr = $this->conn->prepare("SELECT `evt_id`,`evt_objetive`,`evt_description`,`evt_rango`,`evt_day_f`,`evt_month_f`,`evt_year_f`,`evt_id_creator`,`evt_num_participants`,`fo_id`
+        $pr = $this->conn->prepare("SELECT `evt_id`,`evt_objetive`,`evt_description`,`evt_rango`,`evt_day_f`,`evt_month_f`,`evt_year_f`,`evt_id_creator`,`evt_num_participants`,`fo_id`,`evt_day_i`, `evt_month_i`, `evt_year_i`
         FROM`the_event`WHERE fo_id=? and evt_operating='yes' ORDER BY evt_id DESC LIMIT 1;");
         $pr->bind_param("i",$_COOKIE['user_id_fo']);
         //Ejecutamos la consulta
@@ -35,10 +35,10 @@ class CRUD_QUERYS_EVENT extends Connection{
                 return false;
             }else{
                 //Indicamos la variable donde se guardaran los resultados
-                $pr->bind_result($evt_id,$evt_objetive,$evt_description,$evt_rango,$evt_day_f,$evt_month_f,$year_f,$evt_id_creador,$evt_num_participants,$fo_id);
+                $pr->bind_result($evt_id,$evt_objetive,$evt_description,$evt_rango,$evt_day_f,$evt_month_f,$year_f,$evt_id_creador,$evt_num_participants,$fo_id,$evt_day_i,$evt_month_i,$evt_year_i);
                 //listamos todos los resultados
                 while($pr->fetch()){
-                    $data=[$evt_id,$evt_objetive,$evt_description,$evt_rango,$evt_day_f,$evt_month_f,$year_f,$evt_id_creador,$evt_num_participants,$fo_id];
+                    $data=[$evt_id,$evt_objetive,$evt_description,$evt_rango,$evt_day_f,$evt_month_f,$year_f,$evt_id_creador,$evt_num_participants,$fo_id,$evt_day_i,$evt_month_i,$evt_year_i];
                 }
                 return $data;
             }
@@ -47,6 +47,14 @@ class CRUD_QUERYS_EVENT extends Connection{
         } else {
             exit('Error al realizar la consulta: '.$pr->close());
         }
+    }
+    function deleted_participantion_user($id_event){
+        $pr=$this->conn->prepare("DELETE FROM `participants_event` WHERE evt_id=$id_event;");
+        if($pr->execute()){
+            return true;
+        }else{
+            return false;
+        } 
     }
     function crud_deleted_event($id_event){
         //update

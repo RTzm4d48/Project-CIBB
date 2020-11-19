@@ -3,7 +3,7 @@ require_once(URL_PROJECT.'/app/controller/crud.controller.php');
 $Row = VALIDATIONS::val_select_datos_fo();
 $_SESSION['code_f_o']=$_GET['C'];
 ?>
-<link rel="stylesheet" href= "/public/css/style-fo_home_____.css">
+<link rel="stylesheet" href= "/public/css/style-fo_home______.css">
 <link rel="stylesheet" href= "/public/css/Responsive/rsp_style-fo_home_.css">
 <div class="container_">
     <div class="section_1">
@@ -37,8 +37,7 @@ $_SESSION['code_f_o']=$_GET['C'];
             <div id="MiGrafica" class="container_estadisticas">
             <canvas id="myChart" style="font-size: 20px;"></canvas>
             </div>
-            <button>Acceder a la F.O</button>
-            <a href="/h?access=G52157c215">Acceder a la F.O</a>
+            <a href="/h?access=G52157c215"><button>Acceder a la F.O</button></a>
         </div>
     </div>
     <div class="section_2">

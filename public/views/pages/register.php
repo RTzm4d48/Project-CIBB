@@ -45,13 +45,12 @@ if($x == true) header('Location: '.'/');
                     require_once(URL_PROJECT.'/app/controller/ctr_crud_user.php');
                     $ex = new VALIDATIONS_U();
                     if(isset($_POST['registrar_user'])){
-                        $ex -> val_register_user();
+                        $ex->val_register_user();
                     }else{}
                     ?>
 
                     </p>
-                    <button id="btn-continuar">Continuar</button>
-                    <input type="submit" name="registrar_user" value="OK">
+                    <button type="submit" name="registrar_user" id="btn-continuar">Continuar</button>
                     <a href="/views/pages/login.php">¿ya tienes una cuenta?</a>
                 </div>
             </div>

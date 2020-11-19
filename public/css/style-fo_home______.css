@@ -82,9 +82,12 @@
       flex-direction: column; }
       .container_ .section_1 .estadistic .container_estadisticas {
         width: 80%;
-        height: 200px;
+        height: auto;
         margin: 0px auto;
-        color: white; }
+        color: white;
+        /* background: salmon; */ }
+      .container_ .section_1 .estadistic a {
+        margin: auto; }
       .container_ .section_1 .estadistic button {
         padding: 10px 30px;
         color: white;
@@ -162,4 +165,4 @@
         width: 420px;
         background: black; }
 
-/*# sourceMappingURL=style-fo_home_____.css.map */
+/*# sourceMappingURL=style-fo_home______.css.map */

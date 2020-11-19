@@ -107,9 +107,13 @@
 
             .container_estadisticas{
                 width: 80%;
-                height: 200px;
+                height: auto;
                 margin: 0px auto;
                 color: white;
+                /* background: salmon; */
+            }
+            a{
+                margin: auto;
             }
             button{
                 padding: 10px 30px;

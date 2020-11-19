@@ -138,7 +138,7 @@ class CRUD_QUERYS_USER extends Connection{
         }
     }
     function crud_select_user_ranking(){
-        $pr=$this->conn->prepare("SELECT `us_user`,`us_img_little`,`us_point`,`us_participation`FROM `the_user` WHERE fo_id=? ORDER BY us_point LIMIT 5");
+        $pr=$this->conn->prepare("SELECT `us_user`,`us_img_little`,`us_point`,`us_participation`FROM `the_user` WHERE fo_id=? ORDER BY us_point DESC LIMIT 5");
         $pr->bind_param("i",$_COOKIE['user_id_fo']);
         if($pr->execute()){
             $pr->store_result();    

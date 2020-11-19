@@ -1,28 +1,29 @@
-<div id="create_event_container" class="create_event_container no">
+<div id="create_event_container" class="no">
 <hr>
+<div class="create_event_container">
     <div class="create_event_subcontainer_01">
         <h2>Nuevo evento</h2>
         <select class="combobox" id="combo_objetive">
             <option>Recoleccion de informacion militar</option>
-            <option>Saab</option>
-            <option>Opel</option>
-            <option>Audi</option>
+            <option>misión_2</option>
+            <option>misión_3</option>
+            <option>misión_4</option>
         </select>
-        <textarea id="text_description" name="description" maxlength="250" rows="3" cols="5" required></textarea>
+        <textarea id="text_description" name="description" maxlength="25" rows="3" cols="5" required></textarea>
         <div class="container_rango_enevt">
-            <p>Rango del evento:</p>
+            <p>Recompensa del evento:</p>
             <div class="radios">
                 <div class="radio_once">                    
-                    <input type="radio" name="rank" id="cinco" value="5">
-                    <label for="cinco">5pts</label>
+                    <input type="radio" name="rank" id="cinco" value="12">
+                    <label for="cinco">12pts</label>
                 </div>
                 <div class="radio_once">
-                    <input type="radio" name="rank" id="doce" value="12">
-                    <label for="doce">12pts</label>
+                    <input type="radio" name="rank" id="doce" value="23">
+                    <label for="doce">23pts</label>
                 </div>
                 <div class="radio_once">
-                    <input type="radio" name="rank" id="vetitres" value="23">
-                    <label for="vetitres">23pts</label>
+                    <input type="radio" name="rank" id="vetitres" value="35">
+                    <label for="vetitres">35pts</label>
                 </div>
             </div>
         </div>
@@ -61,6 +62,7 @@
             </style>
         </div>
     </div>
+</div>
 </div>
 <script src="/public/js/calendario_____.js"></script>
 <script src="/public/js/create_event____.js"></script>

@@ -13,6 +13,7 @@ class CTR_QUERYS_EVENT{
     }
     static function ctr_deleted_event($id_event){
         $ex=new CRUD_QUERYS_EVENT();
+        $ex->deleted_participantion_user($id_event);
         $rpt=$ex->crud_deleted_event($id_event);
         return $rpt;
     }

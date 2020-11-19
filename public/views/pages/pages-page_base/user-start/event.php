@@ -6,6 +6,10 @@ $range=($data==false)?0:$data[3];
 $day=($data==false)?0:$data[4];
 $month=($data==false)?0:$data[5];
 $year=($data==false)?0:$data[6];
+
+$i_day=($data==false)?0:$data[10];
+$i_month=($data==false)?0:$data[11];
+$i_year=($data==false)?0:$data[12];
 require_once(URL_PROJECT.'/app/controller/ctr_querys_event.php');
 $rpt=CTR_QUERYS_EVENT::ctr_validate_joind_event();
 $num_part=CTR_QUERYS_EVENT::ctr_select_participants($id_evt);
@@ -38,7 +42,7 @@ echo'</pre>'; */
         </div>
         <div class="spacetext">
             <p class="name">Fecha de inicio:</p>
-            <p><?php echo"$day/$month/$year";?></p>
+            <p><?php echo"$i_day/$i_month/$i_year";?></p>
         </div>
         <div class="spacetext">
             <p class="name">Fecha de Finalizacion:</p>

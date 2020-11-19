@@ -17,11 +17,11 @@ $year=($data==false)?0:$data[6];
         <br>
         <span>Descripción: <?php echo$description;?></span>
         <br>
-        <span>Rango del evento: <?php echo$range;?></span>
+        <span>Recompensa del evento: <?php echo$range;?>pts</span>
         </center>
         <br>
         <div id="container_borrar" class="container_borrar">
-        <p>El evento solo se podra cancelar antes del primer día transcurrido desde la fecha de cracion.</p>
+        <p>El evento solo se devera cancelar antes del primer día transcurrido desde la fecha de cracion.</p>
         <button class="btn_cancelar" id="btn_borrar_event">Cancelar Evento</button>
         </div>
 

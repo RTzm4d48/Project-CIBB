@@ -1,6 +1,8 @@
 <?php
 include_once ($_SERVER['DOCUMENT_ROOT']. '/app/config/config.php');
 require_once(URL_PROJECT.'/app/controller/ctr_querys_event.php');
+require_once(URL_PROJECT.'/app/controller/ctr_querys_activity.php');
+$ex2=CTR_QUERYS_ACTIVITY::ctr_act_activities();
 
 $objetive=(isset($_POST['objetive']))?$_POST['objetive']:null;
 $description=(isset($_POST['description']))?$_POST['description']:null;

@@ -63,4 +63,4 @@ $_SESSION['code_f_o']=$_GET['C'];
     </div>
 </div>
 <script src="/public/js/Chart.js"></script>
-<script src="/public/js/MiGrafica.js"></script>
+<script src="/public/js/MiGrafica__.js"></script>

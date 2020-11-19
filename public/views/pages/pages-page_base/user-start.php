@@ -1,5 +1,5 @@
 <?php $ex = VALIDATIONS_U::val_select_data_user();?>
-<link rel="stylesheet" href="/css/style-user-start.css">
+<link rel="stylesheet" href="/css/style-user-start_.css">
 <link rel="stylesheet" href="/css/Responsive/rsp_style-user-start_.css">
 <div class="container">
     <div class="container-perfil font_containers">
@@ -34,7 +34,11 @@
         <!-- box -->
         <?php
         if(isset($_COOKIE['user_id_fo']) and $_COOKIE['user_id_fo'] != "none"){
-            include "user-start/event.php";
+            require_once(URL_PROJECT.'/app/controller/ctr_querys_event.php');
+            require_once(URL_PROJECT.'/app/controller/ctr_querys_event.php');
+            $val=CTR_QUERYS_EVENT::ctr_validate_joind_event();
+            $data=CTR_QUERYS_EVENT::ctr_consult_exist_event();
+            if($data!=false||$val!=false)include "user-start/event.php";
             include "user-start/ranking.php";
             include "user-start/settings.php";
             include "user-start/fo.php";

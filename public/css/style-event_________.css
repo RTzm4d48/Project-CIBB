@@ -202,12 +202,64 @@
     .create_event_subcontainer_02 .buttons_create_event .cancelar {
       background: red; }
 
+.course_event {
+  /* background: salmon; */
+  display: flex;
+  flex-direction: column; }
+  .course_event h4 {
+    margin: 5px auto; }
+  .course_event .time {
+    width: auto;
+    height: auto;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    text-align: center; }
+  .course_event .simply-section {
+    width: 50px;
+    height: 50px;
+    background: #36393f98;
+    padding: 5px 5px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 8px;
+    transform: scale(0.8); }
+  .course_event .simply-amount {
+    display: flex;
+    font-size: 25px;
+    flex-direction: column;
+    margin: auto;
+    text-align: center; }
+  .course_event .simply-word {
+    font-size: 11px;
+    text-align: center; }
+  .course_event p {
+    width: 80%;
+    /* background: #000; */
+    margin: 0px auto;
+    text-align: center;
+    font-size: 12px; }
+  .course_event .btn_cancelar {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background: red;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer; }
+    .course_event .btn_cancelar:hover {
+      opacity: 0.8; }
+
 .admin_event {
   width: 100%;
   height: auto;
   display: flex;
   /* background: sandybrown; */
   flex-direction: column; }
+  .admin_event h2 {
+    margin: 0px auto; }
   .admin_event p {
     text-align: center; }
   .admin_event .position_container {
@@ -216,14 +268,15 @@
     /* background:darkmagenta; */
     margin: 0px auto 20px auto;
     display: flex;
-    justify-content: space-between; }
+    justify-content: center; }
     .admin_event .position_container .position {
       width: 25%;
       height: auto;
       background: #36393f98;
       border-radius: 10px;
       flex-direction: column;
-      display: flex; }
+      display: flex;
+      margin: 0px 4.1%; }
       .admin_event .position_container .position img {
         width: 80%;
         margin: 0px auto; }
@@ -237,7 +290,19 @@
         cursor: pointer; }
   .admin_event .cerrar_Event {
     background: #8EDF4A;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin: 0px auto 20px auto;
     width: 200px; }
+    .admin_event .cerrar_Event:focus {
+      outline: none; }
+    .admin_event .cerrar_Event:hover {
+      opacity: 0.8; }
+
+.no {
+  display: none; }
 
 @media (max-width: 1024px) {
   .container_event {
@@ -259,5 +324,11 @@
 
   .create_event_subcontainer_02 {
     width: 100%; } }
+.disable {
+  opacity: 0.4; }
 
-/*# sourceMappingURL=style-event______.css.map */
+.disable:hover {
+  opacity: 0.4;
+  background: #222222; }
+
+/*# sourceMappingURL=style-event_________.css.map */

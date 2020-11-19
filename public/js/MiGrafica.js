@@ -24,7 +24,7 @@ for(var i = initMonth; i<=currentMonth;i++){
 }
 
 let data_Asistencia = [0, 0, 0, 0, 0,2];
-let data_Actividades = [0, 0, 0, 0, 0, 8];
+let data_Actividades = [0, 0, 0, 0, 0, 50];
 let data_Participaciones = [0, 0, 0, 0, 0, 5];
 
 let meses = [];

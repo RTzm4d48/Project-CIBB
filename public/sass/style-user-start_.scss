@@ -100,7 +100,6 @@
     .titulo{
         width: 90%;
         height: 60px;
-        /* background: #000; */
         display: flex;
         justify-content: space-between;
         margin: 7px auto;
@@ -138,9 +137,10 @@
     }
     .cat_and_des{
         width: 90%;
-        height: 100px;
+        height: auto;
         background: #{$gray};
-        margin: auto;
+        padding: 5px 0px;
+        margin: 1px auto;
         border-radius: 10px;
         display: flex;
         flex-direction: column;
@@ -153,24 +153,50 @@
             opacity: 0.7;
         }
 
-        .categoria{
+        .spacetext{
             display: flex;
-            margin: auto 0px 5px 10px;
+            margin: 5px 0px 3px 5px;
         }
-        .descripcion{
-            display: flex;
-            margin: 5px 0px auto 10px;
+        
+    }
+    .button_and_num_p{
+        display: flex;
+        /* background: #000; */
+        justify-content: center;
+        margin: auto 0px;
+    }
+    .no{
+        display: none;
+    }
+    .combobox{
+        background: $light-blue;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        margin: 0px 2px;
+        cursor: pointer;
+        &:focus{
+            outline: none;
+        }
+        &:hover{
+            opacity: 0.9;
         }
     }
     button{
         width: 100px;
         padding: 7px 0px;
-        margin: auto;
+        margin: 0px 2px;
         background: #{$light-green-02};
         border: none;
         border-radius: 5px;
         cursor: pointer;
         color: white;
+        &:hover{
+            opacity: 0.8;
+        }
+        &:focus{
+            outline: none;
+        }
     }
     .simply-section{
         width: 50px;
@@ -193,6 +219,80 @@
     .simply-word{
         font-size: 11px;
         text-align: center;
+    }
+    .event_finished_container{
+        /* background: salmon; */
+        display: flex;
+        flex-direction: column;
+
+        h4{
+            margin: 0px auto 5px auto;
+        }
+        p{
+            margin: 5px auto;
+            text-align: center;
+            font-size: 12px;
+            label{
+                color: #34B6F7
+            }
+        }
+        .container_califications{
+            width: 100%;
+            /* background: green; */
+            display: flex;
+            flex-direction: column;
+            .winers{
+                width: 90%;
+               /*  background: yellow; */
+                margin: 0px auto;
+                display: flex;
+                justify-content: space-between;
+
+                .winer_1_2_3{
+                    width: 30%;
+                    background: $gray;
+                    border-radius: 5px;
+                    padding: 5px 0px;
+                    display: flex;
+                    flex-direction: column;
+                    img{
+                        height: 60px;
+                        margin: auto;
+
+                    }
+                    p{
+                        margin: auto auto 5px auto;
+                        font-size: 11px;
+                        text-align: center;
+                    }
+                }
+            }
+            .btn_cerrar_fin{
+                margin: 10px auto 0px auto;
+            }
+        }
+    }
+    .loading_leader{
+        display: flex;
+        flex-direction: column;
+        /* background: #000; */
+        margin: auto;
+        position: relative;
+        top: -20px;
+        h4{
+            margin: 0px auto 5px auto;
+        }
+        p{
+            margin: 0px auto;
+            font-size: 12px;
+        }
+        a{
+            margin: 0px auto;
+            color: #34B6F7;
+        }
+    }
+    .no{
+        display: none;
     }
 }
 

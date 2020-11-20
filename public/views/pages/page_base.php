@@ -121,6 +121,8 @@ if(isset($_POST['warning_sub_update_fo']))warning('Update','¿estas seguro de gu
                     include URL_PROJECT."/public/views/fo/home.php";
                 }else if(isset($_GET['access'])){
                     include URL_PROJECT."/public/views/fo/access_fo.php";
+                /* }else if(isset($_GET['members'])){
+                    include URL_PROJECT."/public/views/fo/members_bosters.php"; */
                 }else if(isset($_GET['settings'])){
                     include "pages-page_base/user-start/settings_user/start_settings_user.php";
                 }else if(isset($_GET['settings_fo_admin'])){

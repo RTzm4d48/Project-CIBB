@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="/css/style-members.css">
 <div class="container_members">
     <div class="container_categori">
         <span>✨:LIDER</span>
@@ -10,7 +9,7 @@
                 <img src="/public/img/user-img.jpg" alt="">
                 <div class="data">
                 <div class="space_name">
-                    <h2 class="name C_leader">#Edgar_X</h2><img class="img_pink" src="/public/img/img04.png">
+                    <h2 class="name C_leader">edgaredgarEdgar</h2><img class="img_pink" src="/public/img/img04.png">
                     <div class="points"><img class="img_blue" src="/public/img/img05.png"><p>45</p></div>
                 </div>
                     <samp class="estado">Siento el peso de la gravedad...</samp>
@@ -69,7 +68,7 @@
                 <img src="/public/img/user-img.jpg" alt="">
                 <div class="data">
                 <div class="space_name">
-                    <h2 class="name C_i_oficer">Laura</h2>
+                    <h2 class="name C_i_oficer">LauraLauraLaura</h2>
                     <div class="points"><img class="img_blue" src="/public/img/img05.png"><p>45</p></div>
                 </div>
                     <samp class="estado">Siento el peso de la gravedad...</samp>

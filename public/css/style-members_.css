@@ -114,4 +114,46 @@ button {
   button:hover {
     background: #2793ce; }
 
-/*# sourceMappingURL=style-members.css.map */
+@media (max-width: 1024px) {
+  .container_categori {
+    /* background: red; */ }
+    .container_categori .container_users a {
+      width: 47%;
+      height: 40px;
+      margin: 5px 1.5%; }
+    .container_categori .container_users .user {
+      height: 100%; }
+      .container_categori .container_users .user img {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        margin: auto 0px auto 5px; }
+      .container_categori .container_users .user .data {
+        /* background: slateblue; */
+        width: calc(100% - 35px - 4px); }
+        .container_categori .container_users .user .data .space_name {
+          /* background: rgb(213, 218, 122); */
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap; }
+          .container_categori .container_users .user .data .space_name .img_pink {
+            height: 13px;
+            top: -1px; }
+          .container_categori .container_users .user .data .space_name .points {
+            min-width: 15px;
+            max-width: 80px;
+            height: 15px;
+            margin: 0px 0px 0px 2px; }
+            .container_categori .container_users .user .data .space_name .points .img_blue {
+              height: 10px; }
+            .container_categori .container_users .user .data .space_name .points p {
+              font-size: 9px; }
+        .container_categori .container_users .user .data .name {
+          font-size: 13px;
+          margin: 0px; }
+        .container_categori .container_users .user .data .estado {
+          font-size: 7px;
+          opacity: 0.8;
+          /* background: darkmagenta; */ } }
+
+/*# sourceMappingURL=style-members_.css.map */

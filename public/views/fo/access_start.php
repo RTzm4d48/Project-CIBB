@@ -11,7 +11,7 @@
             </span>
         </div>
         </a>
-        <a href="">
+        <a href="/h?access=G52157c215&rules=get">
         <div class="container_reglas">
             <samp><h1>📋REGLAS DE LA FUERZA OPERATIVA📋</h1></samp>
         </div>

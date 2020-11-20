@@ -1,0 +1,49 @@
+@import "colors";
+.container_rules_fo{
+    /* background:#000; */
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    h3{
+        text-align: center;
+        margin: 10px 0px;
+    }
+    p{
+        text-align: center;
+        opacity: 0.8;
+        font-size: 12px;
+        margin: 0px auto;
+        width: 90%;
+    }
+    span{
+        color: yellow;
+        text-align: left;
+        margin: 15px 0px 0px 10px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    h4{
+        color: #98C0E5;
+        margin: 0px 0px 10px 10px;
+    }
+    .rule{
+        width: 95%;
+        height: 30px;
+        /* background: green; */
+        margin: 5px auto;
+        display: flex;
+        img{
+            width: 30px;
+        }
+        p{
+            margin: auto 5px;
+            text-align: left;
+        }
+    }
+    .message{
+        margin: 20px auto;
+        width: 80%;
+        background:$gray;
+        padding: 10px 20px;
+    }
+}

@@ -31,7 +31,7 @@ class CRUD_QUERYS_EVENT extends Connection{
         if($pr->execute()){
             //Alamacenaos los datos de la consulta
             $pr->store_result();
-            if($pr->num_rows==0){		
+            if($pr->num_rows==0){
                 return false;
             }else{
                 //Indicamos la variable donde se guardaran los resultados

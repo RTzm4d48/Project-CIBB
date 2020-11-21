@@ -4,7 +4,15 @@
   .container_search .wraper_f_o_s {
     width: 97%;
     height: auto;
-    /* background: salmon; */ }
+    /* background: salmon; */
+    /* 
+            .without_results{
+             
+    
+                label{
+                  
+                }
+            } */ }
     .container_search .wraper_f_o_s .wraper_fo {
       width: 100%;
       margin: 2.5% 0px;
@@ -49,7 +57,14 @@
   .container_search .wraper_f_o_s {
     width: 97%;
     height: auto;
-    /* background: salmon; */ }
+    /* background: salmon; */
+        /* .without_results{
+         
+
+            label{
+              
+            }
+        } */ }
     .container_search .wraper_f_o_s .wraper_fo {
       width: 100%;
       margin: 2.5% 0px;

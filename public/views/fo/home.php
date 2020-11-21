@@ -37,7 +37,7 @@ $_SESSION['code_f_o']=$_GET['C'];
             <div id="MiGrafica" class="container_estadisticas">
             <canvas id="myChart" style="font-size: 20px;"></canvas>
             </div>
-            <a href="/h?access=G52157c215&start=get"><button>Acceder a la F.O</button></a>
+            <a href="/h?C=<?php echo $_GET['C'];?>&access=get&start=get"><button>Acceder a la F.O</button></a>
         </div>
     </div>
     <div class="section_2">

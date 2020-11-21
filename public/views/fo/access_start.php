@@ -1,17 +1,19 @@
-<a href="/h?access=G52157c215&members=get">
+<a href="/h?C=<?php echo $_GET['C'];?>&access=get&members=get">
         <div class="container_integrantes">
             <samp><h1>⚔INTEGRANTES BOSTERS</h1></samp>
+            <?php if($tree_img):?>
             <span>
-                <img id="img1"src="/public/img/user-img.jpg" alt="">
-                <img id="img2"src="/public/img/user-img.jpg" alt="">
-                <img id="img3"src="/public/img/user-img.jpg" alt="">
+                <img id="img1"src="/public/tmp/all_img_users/user_<?php echo$tree_img[0]?>_img.jpg" alt="">
+                <img id="img2"src="/public/tmp/all_img_users/user_<?php echo$tree_img[1]?>_img.jpg" alt="">
+                <img id="img3"src="/public/tmp/all_img_users/user_<?php echo$tree_img[2]?>_img.jpg" alt="">
                 <div class="container_marcador">
-                    <p>+12</p>
+                    <p>+<?php echo$all_user_num;?></p>
                 </div>
             </span>
+            <?php endif;?>
         </div>
         </a>
-        <a href="/h?access=G52157c215&rules=get">
+        <a href="/h?C=<?php echo $_GET['C'];?>&access=get&rules=get">
         <div class="container_reglas">
             <samp><h1>📋REGLAS DE LA FUERZA OPERATIVA📋</h1></samp>
         </div>

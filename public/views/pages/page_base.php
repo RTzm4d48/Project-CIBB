@@ -117,10 +117,10 @@ if(isset($_POST['warning_sub_update_fo']))warning('Update','¿estas seguro de gu
                     include "pages-page_base/f_o.php";
                 }else if(isset($_GET['new_fo'])){
                     include "pages-page_base/create-fo.php"; 
+                }else if(isset($_GET['C'])&&isset($_GET['access'])){
+                    include URL_PROJECT."/public/views/fo/access_fo.php";
                 }else if(isset($_GET['C'])){
                     include URL_PROJECT."/public/views/fo/home.php";
-                }else if(isset($_GET['access'])){
-                    include URL_PROJECT."/public/views/fo/access_fo.php";
                 /* }else if(isset($_GET['members'])){
                     include URL_PROJECT."/public/views/fo/members_bosters.php"; */
                 }else if(isset($_GET['settings'])){

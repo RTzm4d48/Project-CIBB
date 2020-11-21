@@ -116,13 +116,17 @@ button {
 
 @media (max-width: 1024px) {
   .container_categori {
-    /* background: red; */ }
+    /* background: red; */
+    /*  span{
+     } */ }
     .container_categori .container_users a {
       width: 47%;
       height: 40px;
       margin: 5px 1.5%; }
     .container_categori .container_users .user {
-      height: 100%; }
+      height: 100%;
+      /* .line{
+      } */ }
       .container_categori .container_users .user img {
         height: 30px;
         width: 30px;

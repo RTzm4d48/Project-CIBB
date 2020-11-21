@@ -3,7 +3,7 @@ require_once(URL_PROJECT.'/app/controller/crud.controller.php');
 $Row = VALIDATIONS::val_select_datos_fo();
 $_SESSION['code_f_o']=$_GET['C'];
 ?>
-<link rel="stylesheet" href= "/public/css/style-fo_home______.css">
+<link rel="stylesheet" href= "/public/css/style-fo_home_______.css">
 <link rel="stylesheet" href= "/public/css/Responsive/rsp_style-fo_home_.css">
 <div class="container_">
     <div class="section_1">
@@ -19,8 +19,22 @@ $_SESSION['code_f_o']=$_GET['C'];
             <div class="leadfor">
                 <p>Liderado por:</p>
                 <img id="img_leader" src="<?php echo "/public/tmp/f_o/directori_".$Row['fo_id']."/leader_img.jpg" ?>" alt="">
-                <h1 id="name_leader"><?php echo $Row[0]['user_leader']/* echo'<pre>'; print_r($Row); echo '<pre>'; */?></h1>
+                <div class="conatiner_leader" onclick="box_user(<?php echo $Row[0]['us_id'];?>);"><h1 id="name_leader"><?php echo $Row[0]['user_leader'];/* echo'<pre>'; print_r($Row); echo '<pre>'; */?></h1></div>
             </div>
+            <script src="/js/perfil_user__.js"></script>
+           <script>
+                function box_user(id_user){
+                    $.ajax({
+                    url: '/public/ajax/ajax_perfil_users.php',
+                    type: 'POST',
+                    data: 'id_user='+id_user,
+                    dataType: "json",
+                    success:function(rpt){
+                        user_box(rpt);
+                    }
+                });
+                }
+           </script>
             <div class="url_w_a">
                 <img src="/public/svg/link-solid.svg" alt="">
                 <a href=""><?php echo $Row['fo_url_w_a'] ?></a>

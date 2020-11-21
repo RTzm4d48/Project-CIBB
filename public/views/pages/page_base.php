@@ -54,8 +54,8 @@ if(isset($_POST['warning_sub_update_fo']))warning('Update','¿estas seguro de gu
        
     </div>
     <?php }?>
-    
-
+    <!--  -->
+    <div id="id_warning_" class='container_advert no'></div>
     <div class="container_body">
         <!-- toolbar -->
         <style>
@@ -137,9 +137,7 @@ if(isset($_POST['warning_sub_update_fo']))warning('Update','¿estas seguro de gu
                 ?>
             </div>
         </div>
-        <!--  -->
-        <div id="id_warning_" class='container_advert no'></div>
-        <!--  -->
+        
     </div>
 </body>
 </html>

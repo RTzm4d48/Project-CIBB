@@ -27,6 +27,7 @@ $("#id_warning_").html
 "</div>"
 );
 }
+
 function closet(){
 $("#id_warning_").addClass("no");
 }

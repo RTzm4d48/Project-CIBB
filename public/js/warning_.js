@@ -8,7 +8,7 @@ function messagebox_1(title,description,run){
             "<hr>"+
             "<div class='buttons'>"+
                 "<input type='submit'value='Cancelar'onclick='closet();'class='cancel'>"+
-                "<input type='submit' value='Aceptar' onclick='"+run+"();' class='acept'>"+
+                "<input type='submit' value='Aceptar' onclick='"+run+";' class='acept'>"+
             "</div>"+
         "</div>"
     );

@@ -1,0 +1,63 @@
+@import"colors";
+.container_administration{
+    /* background: $gray; */
+    width: 95%;
+    margin: 10px auto 0px auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .container_user{
+        width: calc(100% / 3 - 10px);
+        height: 230px;
+        background: $gray;
+        border: #000 solid 1px;
+        display: flex;
+        flex-direction: column;
+        margin: 5px calc(10px / 3) ;
+        color: white;
+        border-radius: 7px;
+
+        img{
+            background: pink;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            margin: 5px auto;
+        }
+        h4{
+            margin: 0px auto;
+        }
+        p{
+            margin: 0px auto;
+            font-size: 11px;
+            opacity: 0.8;
+            text-align: center;
+        }
+        .buttons_area{
+            margin: auto;
+            width: auto;
+
+            button{
+                border: none;
+                margin: 5px auto;
+                padding: 2.5px 20px;
+                border-radius: 5px;
+                display: block;
+                width: 100%;
+                color: white;
+                background: #000;
+            }
+            .ascend{
+                background: $light-green-02;
+            }
+            .degrade{
+                background: $light-blue;
+
+            }
+            .expel{
+                background: red;
+            }
+        }
+    }
+}

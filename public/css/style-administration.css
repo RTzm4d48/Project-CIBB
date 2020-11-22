@@ -1,0 +1,51 @@
+.container_administration {
+  /* background: $gray; */
+  width: 95%;
+  margin: 10px auto 0px auto;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+  .container_administration .container_user {
+    width: calc(100% / 3 - 10px);
+    height: 230px;
+    background: #36393F;
+    border: #000 solid 1px;
+    display: flex;
+    flex-direction: column;
+    margin: 5px calc(10px / 3);
+    color: white;
+    border-radius: 7px; }
+    .container_administration .container_user img {
+      background: pink;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      margin: 5px auto; }
+    .container_administration .container_user h4 {
+      margin: 0px auto; }
+    .container_administration .container_user p {
+      margin: 0px auto;
+      font-size: 11px;
+      opacity: 0.8;
+      text-align: center; }
+    .container_administration .container_user .buttons_area {
+      margin: auto;
+      width: auto; }
+      .container_administration .container_user .buttons_area button {
+        border: none;
+        margin: 5px auto;
+        padding: 2.5px 20px;
+        border-radius: 5px;
+        display: block;
+        width: 100%;
+        color: white;
+        background: #000; }
+      .container_administration .container_user .buttons_area .ascend {
+        background: #8EDF4A; }
+      .container_administration .container_user .buttons_area .degrade {
+        background: #45A1E5; }
+      .container_administration .container_user .buttons_area .expel {
+        background: red; }
+
+/*# sourceMappingURL=style-administration.css.map */

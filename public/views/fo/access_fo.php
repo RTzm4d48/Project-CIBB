@@ -4,7 +4,7 @@ require_once(URL_PROJECT.'/app/controller/ctr_querys_user.php');
 require_once(URL_PROJECT.'/app/controller/ctr_fo_access.php');
 ?>
 <link rel="stylesheet" href="/css/style-settings________.css">
-<link rel="stylesheet" href="/css/style-access_fo_.css">
+<link rel="stylesheet" href="/css/style-access_fo____.css">
 <link rel="stylesheet" href="/css/style-members__.css">
 <link rel="stylesheet" href="/css/style-rules.css">
 <div class="container">

@@ -6,7 +6,7 @@ require_once(URL_PROJECT.'/app/controller/ctr_querys_user.php');
 <link rel="stylesheet" href="/css/style-settings________.css">   
 <link rel="stylesheet" href="/css/responsive/rsp_style-settings_____.css">
 <!-- style for settings fo -->
-<link rel="stylesheet"href="/public/css/style-settings_fo________.css">
+<link rel="stylesheet"href="/public/css/style-settings_fo.css">
 <div class="container">
     <div class="header_cibb">
         <img src="/svg/CIBB.svg" alt="">
@@ -29,9 +29,9 @@ require_once(URL_PROJECT.'/app/controller/ctr_querys_user.php');
         <div class="right_tool">
             <?php
             if(isset($_GET['edit']))include'edit.php';
-            if(isset($_GET['fo']))include'fo.php';
-            if(isset($_GET['photo']))include'photo.php';
-            if(isset($_GET['rules']))include'rules.php';
+            else if(isset($_GET['fo']))include'fo.php';
+            else if(isset($_GET['photo']))include'photo.php';
+            else if(isset($_GET['rules']))include'rules.php';
             ?>
         </div>
     </div>

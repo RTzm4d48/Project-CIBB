@@ -1,5 +1,5 @@
 <link rel="stylesheet"href="/public/css/style-settings_user___.css">
-<link rel="stylesheet"href="/public/css/Responsive/rsp_style-settings_user.css">
+<link rel="stylesheet"href="/public/css/Responsive/rsp_style-settings_user_.css">
 <div class="container_user_settings">
 <form action=""method="POST">
 <div class="img_name Salir">

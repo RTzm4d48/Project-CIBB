@@ -243,16 +243,17 @@
             flex-direction: column;
             .winers{
                 width: 90%;
-               /*  background: yellow; */
+                /* background: yellow; */
                 margin: 0px auto;
                 display: flex;
-                justify-content: space-between;
+                justify-content: center;
 
                 .winer_1_2_3{
                     width: 30%;
                     background: $gray;
                     border-radius: 5px;
                     padding: 5px 0px;
+                    margin: 0px auto;
                     display: flex;
                     flex-direction: column;
                     img{
@@ -379,6 +380,7 @@
     margin: 5px 5px;
     display: flex;
     flex-direction: column;
+    /* background: #000; */
 
     .container_principal{
         width: 90%;
@@ -445,7 +447,22 @@
             background: #{$light-blue};
             border-radius: 5px;
             margin: 5px auto;
+            width: auto;
+            height: auto;
+            font-size: 14px;
+            text-align: center;
+            padding: auto 5px;
+            display: flex;
+            justify-content: center;
 
+            &:hover{
+                opacity: 0.8;
+            }
+
+            h5{
+                margin: auto 3px;
+                font-family: Arial, Helvetica, sans-serif;
+            }
             img{
                 width: 15px;
                 margin: auto 0px;

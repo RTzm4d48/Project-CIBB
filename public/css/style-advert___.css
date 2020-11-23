@@ -47,13 +47,14 @@
       .container_advert .advert .buttons form {
         margin: 0px;
         width: 50%;
-        margin: 0px auto; }
+        margin: 0px auto;
+        /* background: red; */ }
       .container_advert .advert .buttons .cancel {
         color: #ffffff95;
         width: 50%; }
       .container_advert .advert .buttons .acept {
         color: #45A1E5;
-        width: 100%;
+        width: 50%;
         display: block; }
 
-/*# sourceMappingURL=style-advert__.css.map */
+/*# sourceMappingURL=style-advert___.css.map */

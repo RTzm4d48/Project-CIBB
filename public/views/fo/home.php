@@ -37,13 +37,26 @@ $_SESSION['code_f_o']=$_GET['C'];
            </script>
             <div class="url_w_a">
                 <img src="/public/svg/link-solid.svg" alt="">
-                <a href=""><?php echo $Row['fo_url_w_a'] ?></a>
+                <a href="https://www.<?php echo $Row['fo_url_w_a']?>" target="_blank"><?php echo $Row['fo_url_w_a']?></a>
             </div>
             <div class="tag">
                 <img src="/public/svg/tag-solid.svg" alt="">
-                <p>Name</p>
-                <p class="text_tag"><?php echo $Row['fo_tag'] ?></p>
-                <img class="imgtag" src="/public/svg/copy-solid.svg" alt="">
+                <p>Eslogan</p>
+                <p class="text_tag" id="textoeslogan"><?php echo $Row['fo_tag']?></p>
+                <img class="imgtag" src="/public/svg/copy-solid.svg" alt="" onclick="eslogancopy()">
+            </div>
+            <div class="tag">
+                <img src="/public/svg/tag-solid.svg" alt="">
+                <p>Etiqueta</p>
+                <p class="text_tag" id="textoetiqueta">#9U2RYRCQ</p>
+                <img class="imgtag" src="/public/svg/copy-solid.svg" alt="" onclick="etiquetacopy()">
+
+            </div>
+            <div class="tag">
+                <img src="/public/svg/tag-solid.svg" alt="">
+                <p>URL</p>
+                <p class="text_tag" id="textourl">cibb/h?C=<?php echo$_GET['C']?></p>
+                <img class="imgtag" src="/public/svg/copy-solid.svg" alt="" onclick="urlcopy()">
 
             </div>
         </div>
@@ -77,3 +90,4 @@ $_SESSION['code_f_o']=$_GET['C'];
 </div>
 <script src="/public/js/Chart.js"></script>
 <script src="/public/js/MiGrafica__.js"></script>
+<script src="/public/js/PortaPapeles_.js"></script>

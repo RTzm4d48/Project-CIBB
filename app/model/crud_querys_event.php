@@ -185,5 +185,13 @@ class CRUD_QUERYS_EVENT extends Connection{
             return false;
         }
     }
+    function crud_deleted_users_lazy(){
+        $pr=$this->conn->prepare("DELETE FROM `participants_event` WHERE fo_id=".$_COOKIE['user_id_fo'].";");
+        if($pr->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
 ?>

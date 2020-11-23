@@ -28,4 +28,4 @@ function open_create_container(){
     $("#create_event_container").removeClass("no");
 }
 </script>
-<script src="/js/warning.js"></script>
+<script src="/js/warning_.js"></script>

@@ -1,3 +1,13 @@
+<?php
+require_once(URL_PROJECT.'/app/controller/ctr_message.php');
+$data=CTR_MESSAGE::ctr_select_message();
+$my_message=CTR_MESSAGE::ctr_select_my_message();
+$text=(isset($my_message))?$my_message:null;
+/* echo'<pre>';
+print_r($data);
+echo'</pre>'; */
+$valid_mi_fo=CTR_MESSAGE::ctr_valid_my_fo($_GET['C']);
+?>
 <a href="/h?C=<?php echo $_GET['C'];?>&access=get&members=get">
         <div class="container_integrantes">
             <samp><h1>⚔INTEGRANTES BOSTERS</h1></samp>
@@ -19,13 +29,25 @@
         </div>
         </a>
         <hr>
+        <?php if($_COOKIE['user_id_fo']==$valid_mi_fo):?>
+            <div class="container_message">
+            <img src="<?php echo "/public/tmp/users/directori_". $_COOKIE['id_user'] ."/img_perfil_big.jpg"?>" alt="">
+            <div class="container_txt_button">
+            <textarea id="text_area" name="description" maxlength="250" rows="3" cols="5" required><?php echo$text;?></textarea>
+            <div class="butt">
+            <button onclick="alert_message();"><?php if($my_message!=false)echo"Actualizar";else echo'Publicar'?></button>
+            <button class="<?php if($my_message==false)echo'borrar_none';else echo'borrar';?>"<?php if($my_message!=false)echo" onclick='alert_deleted_message();'";?>>Borrar</button>
+            </div>
+            </div>
+            </div>
+        <?php endif;?>
         <div class="container_commentary">
-        <?php for($i=0;$i<3;$i++):?>
+        <?php for($i=0;$i<$data['Row'];$i++):?>
             <div class="commentary">
-                <img src="/public/img/user-img.jpg" alt="">
+                <img src="/public/tmp/all_img_users/user_<?php echo$data['data'][$i][2]?>_img.jpg" alt="">
                 <div class="name_commentary">
-                    <h1>NAME_USER</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipi suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+                    <h1><?php echo$data['data'][$i][0]?></h1>
+                    <p><?php echo$data['data'][$i][1]?></p>
                 </div>
             </div>
         <?php endfor;?>
@@ -57,3 +79,43 @@
                 }
             }
         }?>
+<script>
+    function alert_message(){
+        var text = document.getElementById('text_area').value;
+        if(text=='')messagebox_2('Hubo un problema','El campo de texto esta vacio, por favor escriba algo.');
+        else messagebox_1('Publicar','¿Estas seguro de publicar este mensage?','message()');
+    }
+    function alert_deleted_message(){
+        messagebox_1('Publicar','¿Estas seguro de eliminar este mensage?','deleted_message()');
+    }
+    function message(){
+        var text = document.getElementById('text_area').value;
+        $.ajax({
+        url: '/public/ajax/ajax_message.php',
+        type: 'POST',
+        data: 'text='+text,
+        /* dataType: "json", */
+        success:function(rpt){
+            if(rpt == true)closet();
+            else messagebox_2('error','ocurrio un error, intentalo nuevamente mas tarde.');
+            actualizar();
+        }
+    });
+    }
+    function actualizar(){location.reload(true);}
+    function deleted_message(){
+        $.ajax({
+        url: '/public/ajax/ajax_message.php',
+        type: 'POST',
+        data: 'deleted=get',
+        /* dataType: "json", */
+        success:function(rpt){
+            if(rpt==true)closet();
+            else messagebox_2('error','ocurrio un error, intentalo nuevamente mas tarde.');
+            actualizar();
+            /* alert(rpt); */
+        }
+    });
+    }
+</script>
+<script src="/public/js/warning_.js"></script>

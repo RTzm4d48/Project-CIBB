@@ -1,5 +1,5 @@
 <?php $ex = VALIDATIONS_U::val_select_data_user();?>
-<link rel="stylesheet" href="/css/style-user-start_.css">
+<link rel="stylesheet" href="/css/style-user-start___.css">
 <link rel="stylesheet" href="/css/Responsive/rsp_style-user-start_.css">
 <div class="container">
     <div class="container-perfil font_containers">
@@ -25,10 +25,6 @@
             <p>Participaciones:</p>
             <p class="p_dinamic"><?php echo $ex['participation'];?></p>
         </div>
-        <div class="area">
-            <p>Puesto:</p>
-            <p class="p_dinamic"><?php echo $ex['position'];?></p>
-        </div>
     </div>
     <div class="container-subcontainer">
         <!-- box -->
@@ -40,7 +36,7 @@
             $data=CTR_QUERYS_EVENT::ctr_consult_exist_event();
             if($data!=false||$val!=false)include "user-start/event.php";
             include "user-start/ranking.php";
-            include "user-start/settings.php";
+            $ex=CTR_QUERYS_USER::ctr_valid_leader();if($ex==true)include "user-start/settings.php";
             include "user-start/fo.php";
         }else{
             include "user-start/fo.php";

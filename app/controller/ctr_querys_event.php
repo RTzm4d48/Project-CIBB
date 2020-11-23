@@ -64,5 +64,9 @@ class CTR_QUERYS_EVENT{
         $rpt=$ex->crud_participation_plus($us_participation);
         return$rpt;
     }
+    static function ctr_deleted_users_lazy(){
+        $ex=new CRUD_QUERYS_EVENT();
+        return$ex->crud_deleted_users_lazy();
+    }
 }
 ?>

@@ -15,8 +15,8 @@
 
     <div class="container_principal notFo <?php echo $i;?>">
         <div class="buttons">
-            <a href="/?search=set"><img src="/svg/search-solid.svg" alt=""> Buscar Fuerzas Operativas</a>
-            <a class="a2" href="/views/pages/page_base?new_fo=start"><img src="/svg/plus-solid.svg" alt=""> Crear Fuerza Operative</a>
+            <a href="/?search=set"><img src="/svg/search-solid.svg" alt=""><h5>Buscar Fuerzas Operativas</h5></a>
+            <a class="a2" href="/views/pages/page_base?new_fo=start"><img src="/svg/plus-solid.svg" alt=""><h5>Crear Fuerza Operative</h5></a>
        </div>
     </div>
 </div>

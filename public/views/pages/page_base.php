@@ -11,7 +11,7 @@ require_once(URL_PROJECT.'/app/controller/crud.controller.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styles-general___.css">
     <link rel="stylesheet" href="/css/responsive/rsp_style-general__.css">
-    <link rel="stylesheet" href="/css/style-advert__.css">
+    <link rel="stylesheet" href="/css/style-advert___.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>@nameUser</title>
 </head>

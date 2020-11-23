@@ -74,7 +74,7 @@
     display: flex;
     justify-content: center;
     samp{
-       /*  background: royalblue; */
+        /* background: royalblue; */
         font-size: 10px;
         color: white;
         margin: auto 0px;
@@ -86,6 +86,59 @@ hr{
     height: 1px;
     width: 90%;
     border: none;
+}
+.container_message{
+    width: 100%;
+    height: auto;
+    background: $transparent-gray;
+    display: flex;
+    margin: 0px auto;
+    padding: 15px 0px;
+
+    img{
+        width: 50px;
+        height: 50px;
+        margin: 0px 0px 0px 10px;
+        border-radius: 50%;
+    }
+    .container_txt_button{
+        width: calc(100% - 50px - 10px);
+        height: auto;
+        /* background: red; */
+
+        textarea{
+            min-width: calc(100% - 20px);
+            max-width: calc(100% - 20px);
+            min-height: 50px;
+            max-height: 70px;
+            margin: 0px 5px 0px 5px;
+            border-radius: 2px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(102, 102, 102);
+
+            &:focus{
+                outline: none;
+            }
+        }
+        .butt{
+            display: flex;
+            button{
+                margin: 0px 5px;
+                padding: 5px 10px;
+                width: 100px;
+
+                &:focus{
+                    outline: none;
+                }
+            }
+            .borrar{
+                background: red;
+            }
+            .borrar_none{
+                background: #8C8C8C;
+            }
+        }
+    }
 }
 .container_commentary{
     width: 100%;
@@ -104,13 +157,13 @@ hr{
         display: flex;
 
         img{
-            width: 50px;
-            height: 50px;
+            width: 35px;
+            height: 35px;
             background: #000;
             border-radius: 50px;
         }
         .name_commentary{
-            width: calc(100% - 55px);
+            width: calc(100% - 40px);
             height: auto;
             margin: 0px 0px 0px 5px;
             /* background: #000; */
@@ -170,7 +223,7 @@ input[type=submit]{
         height: auto;
         padding: 5px 0px;
         samp{
-            font-size: 9px;
+            font-size: 7px;
             padding: 0px 0px 0px 25px;
         }
         span{
@@ -205,7 +258,7 @@ input[type=submit]{
         height: auto;
         padding: 5px 0px;
         samp{
-            font-size: 9px;
+            font-size: 7px;
             padding: 0px;
         }
     }

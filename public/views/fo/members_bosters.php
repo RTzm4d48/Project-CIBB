@@ -48,17 +48,17 @@ echo'</pre>'; */
         <span>🔥:LEYENDAS</span>
         <div class="container_users">
             <!--  -->
-            <?php for($i=1;$i<$data['num_legends'];$i++):?>
+            <?php for($i=0;$i<$data['num_legends'];$i++):?>
             <a class="aa" onclick="box_user(<?php echo$data['legends'][$i][0];?>);">
             <div class="user">
                 <div class="line B_legend"></div>
-                <img src="/public/img/user-img.jpg" alt="">
+                <img src="/public/tmp/all_img_users/user_<?php echo$data['legends'][$i][0];?>_img.jpg" alt="">
                 <div class="data">
                 <div class="space_name">
-                    <h2 class="name C_legend">#Edgar_X</h2><img class="img_pink" src="/public/img/img04.png">
-                    <div class="points"><img class="img_blue" src="/public/img/img05.png"><p>45</p></div>
+                    <h2 class="name C_legend"><?php echo$data['legends'][$i][1];?></h2><img class="img_pink" src="/public/img/img04.png">
+                    <div class="points"><img class="img_blue" src="/public/img/img05.png"><p><?php echo$data['legends'][$i][4];?></p></div>
                 </div>
-                    <samp class="estado">Siento el peso de la gravedad...</samp>
+                    <samp class="estado"><?php echo$data['legends'][$i][2];?></samp>
                 </div>
             </div>
             </a>

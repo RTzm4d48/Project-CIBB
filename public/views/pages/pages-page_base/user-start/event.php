@@ -85,7 +85,7 @@ echo'</pre>'; */
 
 <script>
 $("#joind_event").click(function(){
-    messagebox_1('Participar','¿Estas seguro de participar en este evento?','join_to_event');
+    messagebox_1('Participar','¿Estas seguro de participar en este evento?','join_to_event()');
 });
 function join_to_event(){
     var data='evt_id=<?php echo$id_evt;?>';
@@ -104,4 +104,4 @@ function join_to_event(){
 function actualizar(){location.reload(true);}
 </script>
 
-<script src="/js/warning.js"></script>
+<script src="/js/warning_.js"></script>

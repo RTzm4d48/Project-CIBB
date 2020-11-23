@@ -17,7 +17,7 @@ $("#create_event").click(function(){
     var array_data = data();
     var val_empty = valid_empty(array_data);
     if(val_empty == false)messagebox_2('error','falta relleno');
-    else messagebox_1('Crear Eveto','¿Estas seguro de crear el evento?','create_the_event');
+    else messagebox_1('Crear Eveto','¿Estas seguro de crear el evento?','create_the_event()');
 });
 
 function valid_empty(array_data){

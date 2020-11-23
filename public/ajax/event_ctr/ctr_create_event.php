@@ -13,5 +13,6 @@ $year=(isset($_POST['year']))?$_POST['year']:null;
 
 $array=['obj'=>$objetive,'desc'=>$description,'rank'=>$rank,'day'=>$day,'month'=>$month,'year'=>$year];
 $rpt=CTR_QUERYS_EVENT::ctr_create_event($array);
+$ex=CTR_QUERYS_EVENT::ctr_deleted_users_lazy();
 echo json_encode($rpt);
 ?>

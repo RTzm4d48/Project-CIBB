@@ -8,7 +8,7 @@ if($x == true) header('Location: '.'/');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style-register-login.css">
+    <link rel="stylesheet" href="/css/style-register-login_.css">
     <link rel="stylesheet" href="/css/responsive/rsp_style-register-login.css">
     <title>Registrarse</title>
 </head>

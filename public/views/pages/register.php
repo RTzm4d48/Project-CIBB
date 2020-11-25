@@ -10,7 +10,7 @@ if($x == true) header('Location: '.'/');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style-register-login.css">
+    <link rel="stylesheet" href="/css/style-register-login_.css">
     <link rel="stylesheet" href="/css/responsive/rsp_style-register-login.css">
     <title>Registrarse</title>
 </head>
@@ -28,11 +28,11 @@ if($x == true) header('Location: '.'/');
                     <div class="container-register-login_body_titulo register-size"><h1>Crear Cuenta</h1></div>
                     <div class="container-register-login_body_space-box">
                         <p>CORREO ELECTRONICO</p>
-                        <input type="text" placeholder="Name@gmail.com" name='gmail' required>
+                        <input type="email"pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"name="gmail"id="" maxlength="50" required>
                     </div>
                     <div class="container-register-login_body_space-box">
                         <p>NOMBRE DE USUARIO</p>
-                        <input type="text" name='user' required>
+                        <input type="text" name='user' maxlength="15"  required>
                     </div>
                     <div class="container-register-login_body_space-box">
                         <p>CONTRASEÑA</p>

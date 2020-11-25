@@ -3,14 +3,10 @@
     <img src="/svg/check-circle-solid.svg" alt="">
     <div class="direcction">
         <p>Dirección:</p>
-        <input type="text" name="" value="http://cibb/h?C=<?php echo $_SESSION['sess_code']; ?>" id="">
+        <?php $code=CTR_CREATE_F_O::ctr_select_code_fo();?>
+        <input type="text" name="" value="http://cibb/h?C=<?php echo$code;?>" id="">
 
         <div class="copiar">COPIAR</div>
     </div>
-    <a href="/h?C=<?php echo $_SESSION['sess_code']; ?>" target="_blank">ir a la F.O</a>
-
-    <!-- <script type="text/javascript">
-    window.history.forward();
-    function sinVueltaAtras(){ window.history.forward(); }
-    </script> -->
+    <a href="/h?C=<?php echo$code;?>" target="_blank">ir a la F.O</a>
 </div>

@@ -8,7 +8,7 @@ class CTR_CREATE_F_O{
         $prev=$ex->crud_previous_create();
         //prepare data7
         $name=(isset($_POST['namee'])&& $_POST['namee'] != '') ? $_POST['namee'] : 'null';
-        $description=(isset($_POST['description']) && $_POST['description'] != '') ? $_POST['description'] : 'null';
+        $description=(isset($_POST['description']) && $_POST['description'] != '') ? $_POST['description'] : '¡Siempre Unidos!';
         $tag=(isset($_POST['tag']) && $_POST['tag'] != '') ? $_POST['tag'] : 'null';
         $url_w_a=(isset($_POST['UrlWebAlternative']) && $_POST['UrlWebAlternative'] != '') ? $_POST['UrlWebAlternative'] : 'null';
         $url_b_b_f=(isset($_POST['UrlFo']) && $_POST['UrlFo'] != '') ? $_POST['UrlFo'] : 'null';

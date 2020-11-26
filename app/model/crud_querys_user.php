@@ -170,4 +170,31 @@ class CRUD_QUERYS_USER extends Connection{
             exit('Error al realizar la consulta:'.$pr->close());
         }
     }
+    function crud_valid_pass(){
+        $pr=$this->conn->prepare("SELECT `us_password`FROM `the_user` WHERE us_id=".$_COOKIE['id_user'].";");
+        if($pr->execute()){
+            $pr->store_result();
+            if($pr->num_rows==0)return false;
+            else{
+                $pr->bind_result($pass);
+                while($pr->fetch()){
+                    $pr->close();return $pass;
+                }
+            }
+        }else{
+            exit('Error al realizar la consulta:'.$pr->close());
+        }
+    }
+    function crud_change_pass($new_pass){
+        $hash= password_hash($new_pass, PASSWORD_DEFAULT, ['cost'=> 10]);//encriptar
+        $pr=$this->conn->prepare("UPDATE `the_user` SET `us_password`=? WHERE us_id=?");
+        $pr->bind_param("si",$hash,$_COOKIE['id_user']);
+        if($pr->execute()){
+            $pr->close();
+            return true;
+        }else{
+            $pr->close();
+            return false;
+        }
+    }
 }

@@ -6,7 +6,7 @@ require_once(URL_PROJECT.'/app/controller/ctr_querys_user.php');
 <link rel="stylesheet" href="/css/style-settings________.css">   
 <link rel="stylesheet" href="/css/responsive/rsp_style-settings_____.css">
 <!-- style for settings fo -->
-<link rel="stylesheet"href="/public/css/style-settings_fo.css">
+<link rel="stylesheet"href="/public/css/style-settings_fo_.css">
 <div class="container">
     <div class="header_cibb">
         <img src="/svg/CIBB.svg" alt="">

@@ -48,4 +48,14 @@ class CTR_QUERYS_USER{
         $ex=new CRUD_QUERYS_USER();
         return $rpt=$ex->crud_select_user_ranking();
     }
+    static function ctr_change_pass($my_old_pass,$new_pass){
+        $ex=new CRUD_QUERYS_USER();
+        $old_pass=$ex->crud_valid_pass();
+        if(password_verify($my_old_pass,$old_pass)){
+            $ex->crud_change_pass($new_pass);
+            return 'true';
+        }else{return 'fail';}
+        //return $ex->crud_change_pass($new_pass);
+    }
+    
 }?>

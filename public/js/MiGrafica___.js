@@ -17,9 +17,8 @@ Chart.defaults.global.defaultFontColor = 'rgba(255, 255, 255, 0.9)';
 
 var monthName = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio",
                  "Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
-
-var currentMonth = 12-1;//10
-
+var now = new Date();
+var currentMonth = now.getMonth();//month
 let monthAray = [];
 var initMonth = currentMonth - 5;//4
 var x = 1;

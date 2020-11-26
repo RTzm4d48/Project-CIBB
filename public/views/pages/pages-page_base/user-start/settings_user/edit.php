@@ -1,5 +1,5 @@
 <?php require_once(URL_PROJECT.'/app/controller/ctr_querys_user.php');$ex=CTR_QUERYS_USER::ctr_select_data_user();?>
-<link rel="stylesheet"href="/public/css/style-settings_user___.css">
+<link rel="stylesheet"href="/public/css/style-settings_user_____.css">
 <link rel="stylesheet"href="/public/css/Responsive/rsp_style-settings_user_.css">
 <div class="container_user_settings">
     <form action=""method="POST"enctype="multipart/form-data">

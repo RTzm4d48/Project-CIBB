@@ -35,16 +35,20 @@ $_SESSION['code_f_o']=$_GET['C'];
                 });
                 }
            </script>
+           <?php if($Row['fo_url_w_a']!='null'):?>
             <div class="url_w_a">
                 <img src="/public/svg/link-solid.svg" alt="">
                 <a href="https://www.<?php echo $Row['fo_url_w_a']?>" target="_blank"><?php echo $Row['fo_url_w_a']?></a>
             </div>
+            <?php endif;?>
+            <?php if($Row['fo_tag']!='null'):?>
             <div class="tag">
                 <img src="/public/svg/tag-solid.svg" alt="">
                 <p>Eslogan</p>
                 <p class="text_tag" id="textoeslogan"><?php echo $Row['fo_tag']?></p>
                 <img class="imgtag" src="/public/svg/copy-solid.svg" alt="" onclick="eslogancopy()">
             </div>
+            <?php endif;?>
             <div class="tag">
                 <img src="/public/svg/tag-solid.svg" alt="">
                 <p>Etiqueta</p>
@@ -89,5 +93,5 @@ $_SESSION['code_f_o']=$_GET['C'];
     </div>
 </div>
 <script src="/public/js/Chart.js"></script>
-<script src="/public/js/MiGrafica__.js"></script>
+<script src="/public/js/MiGrafica___.js"></script>
 <script src="/public/js/PortaPapeles_.js"></script>

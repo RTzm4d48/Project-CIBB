@@ -53,7 +53,7 @@ class CRUD_CREATE_F_O extends Connection{
         //insert
         $pr = $this->conn->prepare("INSERT INTO `f_o`(`fo_img_little`, `fo_img_big`, `fo_name`, `fo_description`,`fo_description_short`, `fo_tag`, `fo_url_w_a`, `fo_url_b_b_f`, `fo_url_m`, `fo_photo_1`, `fo_photo_2`, `fo_photo_3`, `fo_activity`,`fo_label`)
         VALUES ('".$image_little_bits."', '".$image_big_bits."',?,?,?,?,?,?,?,'".$photo."','".$photo."','".$photo."',0,?);");
-        $pr->bind_param("sssssss",$data['name'],$data['description'],$data['description'],$data['tag'],$data['url_w_a'],$data['url_b_b_f'],$data['url_m'],$data['label']);
+        $pr->bind_param("ssssssss",$data['name'],$data['description'],$data['description'],$data['tag'],$data['url_w_a'],$data['url_b_b_f'],$data['url_m'],$data['label']);
         if($pr->execute()){
             $this->obtain_id();
             return true;

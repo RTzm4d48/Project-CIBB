@@ -59,3 +59,5 @@ if($x == true) header('Location: '.'/');
     </form>
 </body>
 </html>
+<!-- $hash= password_hash($pass, PASSWORD_DEFAULT, ['cost'=> 10]);//encriptar
+if(password_verify($pass, $hash))echo'true';//validacion -->

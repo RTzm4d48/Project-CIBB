@@ -13,7 +13,8 @@
     .container_user_settings .img_name img {
       width: 100px;
       height: 100px;
-      border-radius: 50%; }
+      border-radius: 50%;
+      object-fit: cover; }
     .container_user_settings .img_name .name {
       /* background: pink; */
       margin: auto 10px;
@@ -91,12 +92,14 @@
       text-align: left;
       margin: 0px 40px;
       width: auto; }
+    .container_user_settings .body_form .pass .unerror {
+      border: 1px solid red;
+      background: #ffd3d3; }
     .container_user_settings .body_form .pass input[type="password"] {
       margin: 0px 0px 0px 40px;
       width: 50%;
       height: 30px;
       border-radius: 4px;
-      border: none;
       color: #505050;
       font-family: Arial, Helvetica, sans-serif;
       font-weight: bolder; }
@@ -122,4 +125,4 @@
     width: 200px;
     margin: 10px 50px; }
 
-/*# sourceMappingURL=style-settings_user___.css.map */
+/*# sourceMappingURL=style-settings_user_____.css.map */

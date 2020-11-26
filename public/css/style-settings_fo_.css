@@ -55,7 +55,8 @@
       .edit .header_form_edit .container_img img {
         height: 70px;
         width: 70px;
-        border-radius: 50%; }
+        border-radius: 50%;
+        object-fit: cover; }
       .edit .header_form_edit .container_img .semi-circulo {
         width: 70px;
         height: 30px;
@@ -319,4 +320,4 @@
   .cambios_gusrdados {
     font-size: 12px; } }
 
-/*# sourceMappingURL=style-settings_fo.css.map */
+/*# sourceMappingURL=style-settings_fo_.css.map */

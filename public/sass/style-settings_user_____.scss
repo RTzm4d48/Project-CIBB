@@ -17,6 +17,7 @@
             width: 100px;
             height: 100px;
             border-radius: 50%;
+            object-fit: cover;
         }
         .name{
             /* background: pink; */
@@ -116,15 +117,22 @@
             margin: 0px 40px;
             width: auto;
         }
+        .unerror{
+            border: 1px solid red;
+            background: rgb(255, 211, 211);
+        }
+        .successful{
+            border: 1px solid #3ced3c;
+            background: #99fc99;
+        }
         input[type="password"]{
             margin: 0px 0px 0px 40px;
             width: 50%;
             height: 30px;
             border-radius: 4px;
-            border: none;
             color: #505050;
             font-family: Arial, Helvetica, sans-serif;
-            
+
             font-weight: bolder;
             &:focus{
                 outline: none;

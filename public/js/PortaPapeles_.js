@@ -35,7 +35,7 @@ function urlcopy(){
 
   try {  
     var successful = document.execCommand('copy');
-    alert("Etiqueta copiada en el portapapeles")
+    alert("URL copiado en el portapapeles")
     window.getSelection().removeAllRanges(); 
   } catch(e) {  
     alert("no copiado");}

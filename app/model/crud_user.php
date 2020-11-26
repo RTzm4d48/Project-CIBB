@@ -4,12 +4,8 @@ require_once(URL_PROJECT.'/app/libs/console.php');
 require_once(URL_PROJECT.'/app/model/connection.php');
 /* -- */
 class CRUD_U extends Connection{
-    private$gmail;
-    private$user;
-    private$password;
     function __construct(){
         $this->connect();
-        /* $this->select_code(); */
     }
     function obtain_id(){
         $id=mysqli_insert_id($this->conn);
@@ -19,22 +15,25 @@ class CRUD_U extends Connection{
         mkdir(URL_PROJECT."/public/tmp/users/directori_".$id,0700);
     }
     function register_user(){
-        if(isset($_POST['gmail']))$this->gmail=$_POST['gmail'];
-        if(isset($_POST['user']))$this->user=$_POST['user'];
-        if(isset($_POST['password']))$this->password=$_POST['password'];
         //obtener la imagen
+        $hash_pass= password_hash($_POST['password'], PASSWORD_DEFAULT, ['cost'=> 10]);//encriptar
         $img_big=URL_PROJECT."/public/tmp/default/default_user_img_big.jpg";
         $image_big_bits=base64_encode(addslashes(fread(fopen($img_big,"r"),filesize($img_big))));
 
         $img_little=URL_PROJECT."/public/tmp/default/default_user_img_little.jpg";
         $image_little_bits=base64_encode(addslashes(fread(fopen($img_little,"r"),filesize($img_little))));
         //insert
-        $pr=$this->conn->prepare("INSERT INTO`the_user`(`us_gmail`,`us_user`,`US_password`,`us_img_big`,`us_img_little`,`us_date_register`,`us_state`,`us_rank`,`us_point`,`us_participation`,`us_position`,`fo_id`)
-        VALUES(?,?,?,'".$image_big_bits."','".$image_little_bits."',now(),null,'sin rango',0,0,00,null);");
-        $pr->bind_param("sss",$this->gmail,$this->user,$this->password);
+        $pr=$this->conn->prepare("INSERT INTO`the_user`(`us_gmail`,`us_user`,`us_password`,`us_img_big`,`us_img_little`,`us_date_register`,`us_state`,`us_rank`,`us_point`,`us_participation`,`us_position`,`fo_id`)
+        VALUES(?,?,?,'".$image_big_bits."','".$image_little_bits."',now(),'¡Hola! soy parte de la comunidad CIBB.','sin rango',0,0,00,null);");
+        $gamail='Lucas@gmail.com';
+        $user='Lucas';
+        $pass='12345678';
+        $pr->bind_param("sss",$_POST['gmail'],$_POST['user'],$hash_pass);
         if($pr->execute()){
             $this->obtain_id();
-        }   
+        }else{
+            exit('Error al realizar la consulta:'.$pr->close());
+        }
     }
     function validate_gmail(){
         if(isset($_POST['gmail'])){
@@ -49,11 +48,25 @@ class CRUD_U extends Connection{
             }
         }
     }
+    function crud_select_pass(){
+        $pr=$this->conn->prepare("SELECT `us_password`FROM `the_user` WHERE us_user=?;");
+        $pr->bind_param("s",$_POST['user']);
+        if($pr->execute()){
+            $pr->store_result();
+            if($pr->num_rows==0)return false;
+            else{
+                $pr->bind_result($pass);
+                while($pr->fetch()){
+                    $pr->close();return $pass;
+                }
+            }
+        }else{
+            exit('Error al realizar la consulta:'.$pr->close());
+        }
+    }
     function login_user(){
-        if(isset($_POST['user']))$this->user=$_POST['user'];
-        if(isset($_POST['password']))$this->password=$_POST['password'];
-        $pr=$this->conn->prepare("SELECT us_id, fo_id FROM the_user WHERE us_user=? AND US_password=?");
-        $pr->bind_param("ss",$this->user,$this->password);
+        $pr=$this->conn->prepare("SELECT us_id, fo_id FROM the_user WHERE us_user=?");
+        $pr->bind_param("s",$_POST['user']);
         if($pr->execute()){
             $pr->store_result();
             if($pr->num_rows==0){		
@@ -63,11 +76,14 @@ class CRUD_U extends Connection{
             //listamos todos los resultados
 	        while($pr->fetch()){
                 //crear un directorio
-                mkdir(URL_PROJECT."/public/tmp/users/directori_".$us_id,0700);
+                $ruta=URL_PROJECT."/public/tmp/users/directori_".$us_id;
+                if(!file_exists($ruta)){
+                    mkdir($ruta,0700);
+                }
                 //creamos la cookie
                 setcookie('id_user',$us_id,strtotime('+360 days'),'/');
                 setcookie('user_id_fo',$fo_id,strtotime('+360 days'),'/');
-                header('Location:'.'/');
+                echo "<script> location.href='/'; </script>";
             }
             $pr->close();
         }else{

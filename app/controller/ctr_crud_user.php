@@ -10,14 +10,19 @@ class VALIDATIONS_U{
         if($Row != 'error'){
             $ex->register_user();
             setcookie('id_user', $_SESSION['us_id'], strtotime( '+360 days' ), '/');
-            header('Location: '.'/');
+            echo "<script> location.href='/'; </script>";
         }else{
             echo 'La cuenta de gmail ya esta afiliada';
         }
     }   
     static function val_login_user(){
         $ex = new CRUD_U();
-        $Row = $ex->login_user();
+        $pass=$ex->crud_select_pass();
+        if(password_verify($_POST['password'],$pass)){
+            $Row = $ex->login_user();
+        }else{
+            echo "La contraseña o el usuario es incorrecto.";
+        }
     }
     static function val_select_data_user(){
         $ex = new CRUD_U();

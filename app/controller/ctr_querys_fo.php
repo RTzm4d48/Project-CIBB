@@ -4,6 +4,7 @@ class CTR_QUERYS_F_O{
     static function get_out_fo(){
         $ex=new CRUD_QUERYS_F_O();
         $ex->deleted_participation_user();
+        $ex->deleted_messages_user();
         $rpt=$ex->get_out_fo();
         $ex->valid_empty_fo();
         return $rpt;

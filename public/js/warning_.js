@@ -7,7 +7,7 @@ function messagebox_1(title,description,run){
             "<p>"+description+"</p>"+
             "<hr>"+
             "<div class='buttons'>"+
-                "<input type='submit'value='Cancelar'onclick='closet();'class='cancel'>"+
+                "<input type='submit'value='Cancelar'onclick='closet_();'class='cancel'>"+
                 "<input type='submit' value='Si' onclick='"+run+";' class='acept'>"+
             "</div>"+
         "</div>"
@@ -22,12 +22,12 @@ $("#id_warning_").html
     "<p>"+description+"</p>"+
     "<hr>"+
     "<div class='buttons'>"+
-        "<input type='submit' value='Aceptar'onclick='closet();' style='width:100%' class='acept'>"+
+        "<input type='submit' value='Aceptar'onclick='closet_();' style='width:100%' class='acept'>"+
     "</div>"+
 "</div>"
 );
 }
 
-function closet(){
+function closet_(){
 $("#id_warning_").addClass("no");
 }

@@ -30,32 +30,30 @@ if(isset($_POST['warning_sub_update_fo']))warning('Update','¿estas seguro de gu
 ?>
 
     <?php function warning($titulo,$especificacion,$sub_aceptar,$texbox,$btncancel_aceptar){?>
-    <div id="id_warning" class="container_advert">
+    <div id="id_warningg" class="container_advert">
         <div class="advert">
             <h4><?php echo$titulo;?></h4>
             <p><?php echo$especificacion;?></p>
-            <?php if($texbox==true)echo"<input class='url' type='text' name='' value='cibb/h?fo=1c5d4c22' id=''>";?>
+            <?php if($texbox==true)echo"<input class='url' type='text' name='' value='".$_SESSION['url']."' id=''>";?>
             <hr>
             <div class="buttons">
                 <?php if($btncancel_aceptar==true)echo"<input type='submit'value='Cancelar'onclick='closet();'class='cancel'>
                 <form action='' method='POST'>
-                <input type='submit' value='Aceptar' name='".$sub_aceptar."' class='acept'>
-                </form>";if($btncancel_aceptar==false)echo"<input type='submit'value='Aceptar'onclick='closet();'class='acept'>";?>
+                <input type='submit' value='Si' name='".$sub_aceptar."' class='aceptphp'>
+                </form>";if($btncancel_aceptar==false)echo"<input type='submit'value='Aceptar'class='aceptphp' onclick='closet();'>";?>
                 
                 
                 
             </div>
-            <script>
-            function closet(){
-                $("#id_warning").addClass("no");
-            }
-            </script>
+            
         </div>
        
     </div>
     <?php }?>
     <!--  -->
+    
     <div id="id_warning_" class='container_advert no'></div>
+  
     <div class="container_body">
         <!-- toolbar -->
         <style>
@@ -137,7 +135,11 @@ if(isset($_POST['warning_sub_update_fo']))warning('Update','¿estas seguro de gu
                 ?>
             </div>
         </div>
-        
+        <script>
+            function closet(){
+                $("#id_warningg").addClass("no");
+            }
+            </script>
     </div>
 </body>
 </html>

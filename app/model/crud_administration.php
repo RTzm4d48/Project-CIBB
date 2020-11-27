@@ -76,5 +76,24 @@ class CRUD_ADMINISTRATION extends Connection{
             return false;
         }
     }
+
+    function deleted_participation_user($id_user){
+        $pr=$this->conn->prepare("DELETE FROM `participants_event` WHERE us_id=?");
+        $pr->bind_param("i",$id_user);
+        if($pr->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    function deleted_messages_user($id_user){
+        $pr=$this->conn->prepare("DELETE FROM `messages` WHERE us_id=?");
+        $pr->bind_param("i",$id_user);
+        if($pr->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
 ?>

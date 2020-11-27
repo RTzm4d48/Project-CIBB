@@ -52,7 +52,7 @@ class CRUD extends Connection{
     public function select_datos_fo($code){
         if(isset($code)){
             $pr=$this->conn->prepare("SELECT fo_img_little, fo_img_big, fo_name, fo_description, 
-            fo_tag, fo_url_w_a, fo_url_b_b_f, fo_url_m, fo_id FROM f_o WHERE fo_code=?");
+            fo_tag, fo_url_w_a, fo_url_b_b_f, fo_url_m, fo_id, fo_label FROM f_o WHERE fo_code=?");
             $pr->bind_param("s",$code);
             if($pr->execute()){
                 $pr->store_result();
@@ -62,10 +62,10 @@ class CRUD extends Connection{
                     exit('<h1>No existe ninguan fuerza operativa afianxada a la URL</h1>');
                     echo "</div>";
                 }
-                $pr->bind_result($fo_img_little,$fo_img_big,$fo_name,$fo_description,$fo_tag, $fo_url_w_a,$fo_url_b_b_f,$fo_url_m,$fo_id);
+                $pr->bind_result($fo_img_little,$fo_img_big,$fo_name,$fo_description,$fo_tag, $fo_url_w_a,$fo_url_b_b_f,$fo_url_m,$fo_id,$fo_label);
                 //listamos todos los resultados
                 while($pr->fetch()){
-                    $Row=['name'=>$fo_name,'description'=>$fo_description,'fo_tag'=>$fo_tag,'fo_url_w_a'=>$fo_url_w_a,'fo_url_b_b_f'=>$fo_url_b_b_f,'fo_url_m'=>$fo_url_m,'fo_id'=>$fo_id];
+                    $Row=['name'=>$fo_name,'description'=>$fo_description,'fo_tag'=>$fo_tag,'fo_url_w_a'=>$fo_url_w_a,'fo_url_b_b_f'=>$fo_url_b_b_f,'fo_url_m'=>$fo_url_m,'fo_id'=>$fo_id,'fo_label'=>$fo_label];
                 //Escribimos las imagenes de la BD
                 //creamos un directorio
                 $ruta=URL_PROJECT."/public/tmp/f_o/directori_".$fo_id;

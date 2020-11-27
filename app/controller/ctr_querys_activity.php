@@ -12,7 +12,6 @@ class CTR_QUERYS_ACTIVITY{
         $ex=new CRUD_QUERYS_ACTIVITY();
         $num=$ex->crud_obtain_num_assistance();
         $num++;
-        $num++;
         $rpt=$ex->crud_act_assistance($num);
         return $rpt;
     }

@@ -13,6 +13,12 @@ $id_t3=$_POST['id_top_3'];
 $point_top_1=$_POST['point_top_1'];
 $point_top_2=$point_top_1/2;
 $point_top_3=$point_top_1/3;
+
+//puntages de grafica
+require_once(URL_PROJECT.'/app/controller/ctr_administration.php');
+$act_ex=CTR_QUERYS_ACTIVITY::ctr_act_assistance();
+$act_ex=CTR_QUERYS_ACTIVITY::ctr_act_activities();
+
 if($_POST['id_top_1']!=null)$x=CTR_QUERYS_EVENT::ctr_add_point_users($point_top_1,$_POST['id_top_1']);
 if($_POST['id_top_2']!=null)$x=CTR_QUERYS_EVENT::ctr_add_point_users($point_top_2,$_POST['id_top_2']);
 if($_POST['id_top_1']!=null)$x=CTR_QUERYS_EVENT::ctr_add_point_users($point_top_3,$_POST['id_top_3']);

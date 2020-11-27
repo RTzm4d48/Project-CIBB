@@ -32,6 +32,15 @@ class CRUD_QUERYS_F_O extends Connection{
             return false;
         }
     }
+    function deleted_messages_user(){
+        $pr=$this->conn->prepare("DELETE FROM `messages` WHERE us_id=?");
+        $pr->bind_param("i",$_COOKIE['id_user']);
+        if($pr->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
     function get_out_fo(){
         $pr=$this->conn->prepare("UPDATE `the_user` SET `us_rank`= ?, `fo_id`= ?,`us_point`=0,`us_participation`=0 WHERE us_id = ?");
         $rank='Sin rango';

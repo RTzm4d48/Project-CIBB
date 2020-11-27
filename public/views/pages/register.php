@@ -36,7 +36,7 @@ if($x == true) header('Location: '.'/');
                     </div>
                     <div class="container-register-login_body_space-box">
                         <p>CONTRASEÑA</p>
-                        <input type="password" maxlength="20" name='password' required>
+                        <input type="password" maxlength="20" minlength="8" name='password' required>
                     </div>
                     <p class="container-register-login_body_alert">
                     

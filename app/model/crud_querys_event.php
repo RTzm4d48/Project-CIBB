@@ -131,6 +131,23 @@ class CRUD_QUERYS_EVENT extends Connection{
             return false;
         }
     }
+    function crud_obtain_reputacion_user($id_user){
+        $pr=$this->conn->prepare("SELECT us_position FROM the_user WHERE us_id=$id_user;");
+        $pr->execute();
+        $pr->store_result();
+        $pr->bind_result($point);
+        //listamos todos los resultados
+        while($pr->fetch()){return$point;}
+    }
+    function crud_add_reputacion_users($points,$id_user){
+        $pr=$this->conn->prepare("UPDATE `the_user` SET `us_position`=? WHERE us_id=?");
+        $pr->bind_param("ii",$points,$id_user);
+        if($pr->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
     function crud_obtain_id_event(){
         $pr=$this->conn->prepare("SELECT `evt_id` FROM `participants_event` WHERE us_id=".$_COOKIE['id_user'].";");
         $pr->execute();

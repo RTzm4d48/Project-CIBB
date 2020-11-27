@@ -3,6 +3,7 @@ $data=CTR_FO_ACCESS::ctr_select_users();
 /* echo'hola<pre>';
 print_r($data);
 echo'</pre>'; */
+/* echo substr($data['lider'][2], 0, 4);//Recortar una cadena de caracteres */
 ?>
 <div class="container_members">
     <div class="container_categori">
@@ -18,7 +19,7 @@ echo'</pre>'; */
                     <h2 class="name C_leader"><?php echo$data['lider'][1]?></h2><img class="img_pink" src="/public/img/img04.png">
                     <div class="points"><img class="img_blue" src="/public/img/img05.png"><p><?php echo$data['lider'][4]?></p></div>
                 </div>
-                    <samp class="estado"><?php echo$data['lider'][2]?></samp>
+                    <samp class="estado"><?php echo substr($data['lider'][2],0,38);?></samp>
                 </div>
             </div>
             </a>
@@ -58,7 +59,7 @@ echo'</pre>'; */
                     <h2 class="name C_legend"><?php echo$data['legends'][$i][1];?></h2><img class="img_pink" src="/public/img/img04.png">
                     <div class="points"><img class="img_blue" src="/public/img/img05.png"><p><?php echo$data['legends'][$i][4];?></p></div>
                 </div>
-                    <samp class="estado"><?php echo$data['legends'][$i][2];?></samp>
+                    <samp class="estado"><?php echo substr($data['legends'][$i][2],0,38);?></samp>
                 </div>
             </div>
             </a>
@@ -84,7 +85,7 @@ echo'</pre>'; */
                     <h2 class="name C_i_oficer"><?php echo$data['officers'][$i][1];?></h2>
                     <div class="points"><img class="img_blue" src="/public/img/img05.png"><p><?php echo$data['officers'][$i][4];?></p></div>
                 </div>
-                    <samp class="estado"><?php echo$data['officers'][$i][2];?></samp>
+                    <samp class="estado"><?php echo substr($data['officers'][$i][2],0,38);?></samp>
                 </div>
             </div>
             </a>

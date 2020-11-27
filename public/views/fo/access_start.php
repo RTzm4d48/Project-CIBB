@@ -1,7 +1,10 @@
 <?php
 require_once(URL_PROJECT.'/app/controller/ctr_message.php');
 $data=CTR_MESSAGE::ctr_select_message();
+$Row = VALIDATIONS::val_select_datos_fo();
+if(isset($_COOKIE['id_user'])){
 $my_message=CTR_MESSAGE::ctr_select_my_message();
+}
 $text=(isset($my_message))?$my_message:null;
 /* echo'<pre>';
 print_r($data);
@@ -29,7 +32,9 @@ $valid_mi_fo=CTR_MESSAGE::ctr_valid_my_fo($_GET['C']);
         </div>
         </a>
         <hr>
-        <?php if($_COOKIE['user_id_fo']==$valid_mi_fo):?>
+        <?php
+        $my_fo_id=(isset($_COOKIE['user_id_fo']))?$_COOKIE['user_id_fo']:00404;
+        if($my_fo_id==$valid_mi_fo):?>
             <div class="container_message">
             <img src="<?php echo "/public/tmp/users/directori_". $_COOKIE['id_user'] ."/img_perfil_big.jpg"?>" alt="">
             <div class="container_txt_button">
@@ -43,8 +48,8 @@ $valid_mi_fo=CTR_MESSAGE::ctr_valid_my_fo($_GET['C']);
         <?php endif;?>
         <div class="container_commentary">
         <?php for($i=0;$i<$data['Row'];$i++):?>
-            <div class="commentary">
-                <img src="/public/tmp/all_img_users/user_<?php echo$data['data'][$i][2]?>_img.jpg" alt="">
+            <div class="commentary" >
+                <img src="/public/tmp/all_img_users/user_<?php echo$data['data'][$i][2]?>_img.jpg" alt="" onclick="box_user(<?php echo$data['data'][$i][2];?>);">
                 <div class="name_commentary">
                     <h1><?php echo$data['data'][$i][0]?></h1>
                     <p><?php echo$data['data'][$i][1]?></p>
@@ -52,6 +57,20 @@ $valid_mi_fo=CTR_MESSAGE::ctr_valid_my_fo($_GET['C']);
             </div>
         <?php endfor;?>
         </div>
+        <script src="/js/perfil_user__.js"></script>
+           <script>
+                function box_user(id_user){
+                    $.ajax({
+                    url: '/public/ajax/ajax_perfil_users.php',
+                    type: 'POST',
+                    data: 'id_user='+id_user,
+                    dataType: "json",
+                    success:function(rpt){
+                        user_box(rpt);
+                    }
+                });
+                }
+           </script>
         <form action="" method="POST">
             <?php
             $ex=CTR_QUERYS_USER::ctr_valid_fo_user();if($ex):?>
@@ -64,15 +83,16 @@ $valid_mi_fo=CTR_MESSAGE::ctr_valid_my_fo($_GET['C']);
         if(isset($_POST['warning_unirse'])){
             $ex=CTR_QUERYS_F_O::ctr_obtain_id_fo();
             $_SESSION['fo_id']=$ex;
+            $_SESSION['url']=$Row['fo_url_b_b_f'];
         }
         if(isset($_POST['sb_unirse'])){
             if(!isset($_COOKIE['id_user'])){
-                echo"<script>window.open('https://link.boombeach.com/en?url=boombeach%3A%2F%2FViewTaskforce%3Ftag%3D%23PY82C9VG','_blank');</script>";
+                echo"<script>window.open('".$Row['fo_url_b_b_f']."','_blank');</script>";
                 echo"<script>location.href='/h?C=".$_SESSION['code_f_o']."';</script>";
             }else{
                 $ex=CTR_QUERYS_USER::ctr_join_to_fo();
                 if($ex==true){
-                    echo"<script>href='https://link.boombeach.com/en?url=boombeach%3A%2F%2FViewTaskforce%3Ftag%3D%23PY82C9VG';</script>";
+                    echo"<script>window.open('".$Row['fo_url_b_b_f']."','_blank');</script>";
                     echo"<script>location.href='/h?C=".$_SESSION['code_f_o']."';</script>";
                 }else{
                     echo'Ocurrio un error, buelve a intentarlo mas tarde';

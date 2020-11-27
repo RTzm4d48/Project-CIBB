@@ -1,6 +1,9 @@
 <?php
 require_once(URL_PROJECT.'/app/controller/crud.controller.php');
 $Row = VALIDATIONS::val_select_datos_fo();
+/* echo'<pre>';
+print_r($Row);
+echo'</pre>'; */
 $_SESSION['code_f_o']=$_GET['C'];
 ?>
 <link rel="stylesheet" href= "/public/css/style-fo_home_______.css">
@@ -35,13 +38,13 @@ $_SESSION['code_f_o']=$_GET['C'];
                 });
                 }
            </script>
-           <?php if($Row['fo_url_w_a']!='null'):?>
+           <?php if($Row['fo_url_w_a']!=''):?>
             <div class="url_w_a">
                 <img src="/public/svg/link-solid.svg" alt="">
                 <a href="https://www.<?php echo $Row['fo_url_w_a']?>" target="_blank"><?php echo $Row['fo_url_w_a']?></a>
             </div>
             <?php endif;?>
-            <?php if($Row['fo_tag']!='null'):?>
+            <?php if($Row['fo_tag']!=''):?>
             <div class="tag">
                 <img src="/public/svg/tag-solid.svg" alt="">
                 <p>Eslogan</p>
@@ -52,14 +55,14 @@ $_SESSION['code_f_o']=$_GET['C'];
             <div class="tag">
                 <img src="/public/svg/tag-solid.svg" alt="">
                 <p>Etiqueta</p>
-                <p class="text_tag" id="textoetiqueta">#9U2RYRCQ</p>
+                <p class="text_tag" id="textoetiqueta"><?php echo$Row['fo_label']?></p>
                 <img class="imgtag" src="/public/svg/copy-solid.svg" alt="" onclick="etiquetacopy()">
 
             </div>
             <div class="tag">
                 <img src="/public/svg/tag-solid.svg" alt="">
                 <p>URL</p>
-                <p class="text_tag" id="textourl">cibb/h?C=<?php echo$_GET['C']?></p>
+                <p class="text_tag" id="textourl"><!-- cibb/h?C= --><?php echo URL_PROJECT.'/h?C='.$_GET['C']?></p>
                 <img class="imgtag" src="/public/svg/copy-solid.svg" alt="" onclick="urlcopy()">
 
             </div>

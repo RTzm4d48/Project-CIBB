@@ -26,9 +26,10 @@ $year=($data==false)?0:$data[6];
         </div>
 
     <script src="/js/simplyCountdown.min.js"></script>
+    
     <script>
         $("#btn_borrar_event").click(function(){
-            messagebox_1('Eliminar evento','¿Estas seguro de eliminar este evento?','deleted_event');
+            messagebox_1('Eliminar evento','¿Estas seguro de eliminar este evento?','deleted_event()');
         });
         function deleted_event(){
             var data = 'id_event=<?php echo $data[0]?>';

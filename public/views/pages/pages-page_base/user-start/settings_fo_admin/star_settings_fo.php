@@ -1,7 +1,7 @@
 <?php
 require_once(URL_PROJECT.'/app/controller/ctr_querys_fo.php');
 ?>
-<link rel="stylesheet" href="/css/style-create-fo___.css">
+<link rel="stylesheet" href="/css/style-create-fo____.css">
 <link rel="stylesheet" href="/css/style-settings________.css">
 <link rel="stylesheet" href="/css/responsive/rsp_style-settings_____.css">
 <div class="container">

@@ -42,7 +42,10 @@ class CTR_QUERYS_EVENT{
     static function ctr_add_point_users($point,$id_user){
         $ex=new CRUD_QUERYS_EVENT();
         $num_point=$ex->crud_obtain_points_user($id_user);
+        $num_reputation=$ex->crud_obtain_reputacion_user($id_user);
+        $r=$num_reputation+($point+1);
         $p=$num_point+$point;
+        $ex->crud_add_reputacion_users($r,$id_user);
         $rpt=$ex->crud_add_point_users($p,$id_user);
         return$rpt;
     }

@@ -19,6 +19,8 @@ class CTR_ADMINISTRATION{
     }
     static function ctr_expel_user($id_user){
         $ex=new CRUD_ADMINISTRATION();
+        $ex->deleted_participation_user($id_user);
+        $ex->deleted_messages_user($id_user);
         /* $ex->crud_select_rank_user($id_user); */
         return$ex->crud_expel_user($id_user);
     }

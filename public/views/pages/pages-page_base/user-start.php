@@ -27,7 +27,7 @@
         </div>
         <div class="area">
             <p>Reputacion:</p>
-            <p class="p_dinamic"><?php echo $ex['participation'];?></p>
+            <p class="p_dinamic"><?php echo $ex['position'];?></p>
         </div>
     </div>
     <div class="container-subcontainer">

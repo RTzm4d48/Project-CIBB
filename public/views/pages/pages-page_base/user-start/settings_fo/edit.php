@@ -22,7 +22,7 @@
                 <textarea name="description" maxlength="250" rows="3" cols="5" required><?php echo$Row['description'];?></textarea>
             </div>
             <div class="text_box">
-                <p>Tag</p>
+                <p>Eslogan</p>
                 <input class="inputText inputText_tag" type="text" value="<?php echo$Row['fo_tag'];?>" name="input_tag" id="">
             </div>
             <div class="text_box">

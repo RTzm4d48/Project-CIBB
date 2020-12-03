@@ -95,6 +95,9 @@
     .container_user_settings .body_form .pass .unerror {
       border: 1px solid red;
       background: #ffd3d3; }
+    .container_user_settings .body_form .pass .successful {
+      border: 1px solid #3ced3c;
+      background: #99fc99; }
     .container_user_settings .body_form .pass input[type="password"] {
       margin: 0px 0px 0px 40px;
       width: 50%;

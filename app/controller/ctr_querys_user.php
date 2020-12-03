@@ -37,7 +37,7 @@ class CTR_QUERYS_USER{
     static function ctr_valid_leader(){
         $ex=new CRUD_QUERYS_USER();
         $rpt=$ex->crud_valid_leader();
-        if($rpt=='Líder')return true;
+        if($rpt=='Lider')return true;
         else return false;
     }
     static function ctr_validate_empty_fo(){

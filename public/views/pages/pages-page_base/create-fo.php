@@ -37,14 +37,14 @@ if(isset($_POST['sb_data'])){
 </div>
 <script>
      function CreateFo(data){
-          closet();
+          closet_();
           $.ajax({
                url: '/public/ajax/ajax_create_fo.php',
                type: 'POST',
                data: data,
                dataType: "json",
                success:function(rpt){
-                    if(rpt == true){closet();actualizar();}
+                    if(rpt == true){closet_();actualizar();}
                     else messagebox_2('error','ocurrio un error, intentalo nuevamente mas tarde.');
                     /* alert(rpt); */
                     

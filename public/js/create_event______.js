@@ -36,7 +36,7 @@ function create_the_event(){
         data: dataa,
         dataType: "json",
         success:function(rpt){
-            if(rpt == true)closet();
+            if(rpt == true)closet_();
             else messagebox_2('error','ocurrio un error, intentalo nuevamente mas tarde.');
             actualizar();
         }

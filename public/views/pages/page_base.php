@@ -37,10 +37,10 @@ if(isset($_POST['warning_sub_update_fo']))warning('Update','¿estas seguro de gu
             <?php if($texbox==true)echo"<input class='url' type='text' name='' value='".$_SESSION['url']."' id=''>";?>
             <hr>
             <div class="buttons">
-                <?php if($btncancel_aceptar==true)echo"<input type='submit'value='Cancelar'onclick='closet();'class='cancel'>
+                <?php if($btncancel_aceptar==true)echo"<input type='submit'value='Cancelar'onclick='myclose();'class='cancel'>
                 <form action='' method='POST'>
                 <input type='submit' value='Si' name='".$sub_aceptar."' class='aceptphp'>
-                </form>";if($btncancel_aceptar==false)echo"<input type='submit'value='Aceptar'class='aceptphp' onclick='closet();'>";?>
+                </form>";if($btncancel_aceptar==false)echo"<input type='submit'value='Aceptar'class='aceptphp' onclick='myclose();'>";?>
                 
                 
                 
@@ -136,10 +136,10 @@ if(isset($_POST['warning_sub_update_fo']))warning('Update','¿estas seguro de gu
             </div>
         </div>
         <script>
-            function closet(){
-                $("#id_warningg").addClass("no");
-            }
-            </script>
+        function myclose(){
+            $("#id_warningg").addClass("no");
+        }
+        </script>
     </div>
 </body>
 </html>

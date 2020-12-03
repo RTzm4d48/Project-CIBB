@@ -5,6 +5,9 @@ $range=($data==false)?0:$data[3];
 $day=($data==false)?0:$data[4];
 $month=($data==false)?0:$data[5];
 $year=($data==false)?0:$data[6];
+/* echo'<pre>';
+print_r($data);
+echo'</pre>'; */
 ?>
 <div class="course_event">
         <h4>Tiempo de duracion del evento</h4>
@@ -39,7 +42,7 @@ $year=($data==false)?0:$data[6];
                 data: data,
                 dataType: "json",
                 success:function(rpt){
-                    if(rpt==true)closet();
+                    if(rpt==true)closet_();
                     else messagebox_2('error','ocurrio un error, intentalo nuevamente mas tarde.');
                     actualizar();
                 }

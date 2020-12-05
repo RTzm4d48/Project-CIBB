@@ -4,8 +4,8 @@ $winers=CTR_QUERYS_EVENT::ctr_obtain_winers();
 print_r($winers);
 echo'</pre>'; */
 $num_winers;
-if($winers[2]!=null)$num_winers=2;
-if($winers[1]!=null)$num_winers=1;
+if($winers[2]=='null')$num_winers=2;
+if($winers[1]=='null')$num_winers=1;
 else $num_winers=3;
 $top1=(isset($winers[0]))?$winers[0]:'unnamed';
 $top2=(isset($winers[1]))?$winers[1]:'unnamed';

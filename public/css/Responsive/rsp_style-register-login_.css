@@ -40,12 +40,17 @@
       top: 120px;
       margin: 15px auto; }
       .container-register-login_body_titulo {
-        font-size: 11px; }
+        height: 30px;
+        font-size: 11px;
+        /*  background: #000; */
+        margin: 20px auto; }
       .container-register-login_body_space-box {
         /* background: darkgreen; */
         margin: 5px auto; }
         .container-register-login_body_space-box p {
           font-size: 9px; }
+      .container-register-login_body .register-size {
+        margin: 5px auto; }
       .container-register-login_body button {
         height: 35px; }
         .container-register-login_body button:focus {
@@ -53,4 +58,4 @@
       .container-register-login_body a {
         font-size: 10px; } }
 
-/*# sourceMappingURL=rsp_style-register-login.css.map */
+/*# sourceMappingURL=rsp_style-register-login_.css.map */

@@ -62,7 +62,7 @@ $_SESSION['code_f_o']=$_GET['C'];
             <div class="tag">
                 <img src="/public/svg/tag-solid.svg" alt="">
                 <p>URL</p>
-                <p class="text_tag" id="textourl"><!-- cibb/h?C= --><?php echo URL_PROJECT.'/h?C='.$_GET['C']?></p>
+                <p class="text_tag" id="textourl"><?php echo'cibb.com/h.php?C='.$_GET['C']?></p>
                 <img class="imgtag" src="/public/svg/copy-solid.svg" alt="" onclick="urlcopy()">
 
             </div>
@@ -71,7 +71,7 @@ $_SESSION['code_f_o']=$_GET['C'];
             <div id="MiGrafica" class="container_estadisticas">
             <canvas id="myChart" style="font-size: 20px;"></canvas>
             </div>
-            <a href="/h?C=<?php echo $_GET['C'];?>&access=get&start=get"><button>Acceder a la F.O</button></a>
+            <a href="/h.php?C=<?php echo $_GET['C'];?>&access=get&start=get"><button>Acceder a la F.O</button></a>
         </div>
     </div>
     <div class="section_2">

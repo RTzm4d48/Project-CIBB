@@ -54,9 +54,10 @@ body{
         margin: 15px auto;
 
         &_titulo{
-
+            height: 30px;
             font-size: 11px;
-
+           /*  background: #000; */
+            margin: 20px auto;
             h1{
  
             }
@@ -73,6 +74,9 @@ body{
             input[type="text"],input[type="password"]{
 
             }
+        }
+        .register-size{
+            margin: 5px auto;
         }
         button{
             height: 35px;

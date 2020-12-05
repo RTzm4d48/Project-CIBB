@@ -11,7 +11,7 @@ print_r($data);
 echo'</pre>'; */
 $valid_mi_fo=CTR_MESSAGE::ctr_valid_my_fo($_GET['C']);
 ?>
-<a href="/h?C=<?php echo $_GET['C'];?>&access=get&members=get">
+<a href="/h.php?C=<?php echo $_GET['C'];?>&access=get&members=get">
         <div class="container_integrantes">
             <samp><h1>⚔INTEGRANTES BOSTERS</h1></samp>
             <?php if($tree_img):?>
@@ -26,7 +26,7 @@ $valid_mi_fo=CTR_MESSAGE::ctr_valid_my_fo($_GET['C']);
             <?php endif;?>
         </div>
         </a>
-        <a href="/h?C=<?php echo $_GET['C'];?>&access=get&rules=get">
+        <a href="/h.php?C=<?php echo $_GET['C'];?>&access=get&rules=get">
         <div class="container_reglas">
             <samp><h1>📋REGLAS DE LA FUERZA OPERATIVA📋</h1></samp>
         </div>

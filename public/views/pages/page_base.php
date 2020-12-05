@@ -3,6 +3,7 @@ session_start();
 include_once ($_SERVER['DOCUMENT_ROOT']. '/app/config/config.php');
 require_once(URL_PROJECT.'/app/controller/ctr_crud_user.php');
 require_once(URL_PROJECT.'/app/controller/crud.controller.php');
+$name = VALIDATIONS_U::ctr_select_name_user();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +14,7 @@ require_once(URL_PROJECT.'/app/controller/crud.controller.php');
     <link rel="stylesheet" href="/css/responsive/rsp_style-general__.css">
     <link rel="stylesheet" href="/css/style-advert___.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <title>@nameUser</title>
+    <title>@<?php echo$name;?></title>
 </head>
 <body>
 <?php if(isset($_POST['warning_unirse']))warning('Unirse','¿Estas seguro de querer unirte a esta fuerza operativa? <br><br> Copia el link por si no se te redirecciona.','sb_unirse',true,true);
@@ -34,7 +35,7 @@ if(isset($_POST['warning_sub_update_fo']))warning('Update','¿estas seguro de gu
         <div class="advert">
             <h4><?php echo$titulo;?></h4>
             <p><?php echo$especificacion;?></p>
-            <?php if($texbox==true)echo"<input class='url' type='text' name='' value='".$_SESSION['url']."' id=''>";?>
+            <?php $url_=($_SESSION['url'])?$_SESSION['url']:'';if($texbox==true)echo"<input class='url' type='text' name='' value='".$url_."' id=''>";?>
             <hr>
             <div class="buttons">
                 <?php if($btncancel_aceptar==true)echo"<input type='submit'value='Cancelar'onclick='myclose();'class='cancel'>

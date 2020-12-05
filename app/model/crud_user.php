@@ -81,8 +81,25 @@ class CRUD_U extends Connection{
                     mkdir($ruta,0700);
                 }
                 //creamos la cookie
-                setcookie('id_user',$us_id,strtotime('+360 days'),'/');
-                setcookie('user_id_fo',$fo_id,strtotime('+360 days'),'/');
+                /* setcookie('id_user',$us_id,strtotime('+360 days'),'/');
+                setcookie('user_id_fo',$fo_id,strtotime('+360 days'),'/'); */
+
+                echo
+                "
+                <script>
+                var cname_1='id_user';
+                var cname_2='user_id_fo';
+                var exdays=360;
+                var cvalue_1=".$us_id.";
+                var cvalue_2=".$fo_id.";
+                var d = new Date();
+                d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+                var expires = 'expires=' + d.toUTCString();
+                document.cookie = cname_1 + '=' + cvalue_1 + ';' + expires +'; path=/';
+                document.cookie = cname_2 + '=' + cvalue_2 + ';' + expires +'; path=/';
+                </script>
+                ";
+
                 echo "<script> location.href='/'; </script>";
             }
             $pr->close();
@@ -112,6 +129,19 @@ class CRUD_U extends Connection{
                return$data=['name_user'=>$us_user,'state'=>$us_state,'rank'=>$us_rank,'point'=>$us_point,'participation'=>$us_participation,'position'=>$us_position,'fo_id'=>$fo_id];
             }
             $pr->close();
+        }else{
+            exit('Error al realizar la consulta:'.$pr->close());
+        }
+    }
+    function crud_select_name_user(){
+        $pr=$this->conn->prepare("SELECT us_user FROM the_user WHERE us_id=?");
+        $pr->bind_param("i",$_COOKIE['id_user']);
+        if($pr->execute()){
+            $pr->store_result();
+            $pr->bind_result($us_user);
+            while($pr->fetch()){
+                return $us_user;
+            }
         }else{
             exit('Error al realizar la consulta:'.$pr->close());
         }

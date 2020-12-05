@@ -51,7 +51,7 @@ function readCookie(name) {
                     "<p>"+data[3][i]+"...</p>"+
                     "<span>"+
                         "<p class='activity'>Actividad: "+data[2][i]+"%</p>"+
-                        "<a href='/h?C="+data[1][i]+"'>Visitar</a>"+
+                        "<a href='/h.php?C="+data[1][i]+"'>Visitar</a>"+
                     "</span>"+
                 "</div>"+
             "</div>"+

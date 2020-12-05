@@ -29,6 +29,11 @@ class VALIDATIONS_U{
         $data = $ex->select_data_user();
         return $data;
     }
+    static function ctr_select_name_user(){
+        $ex = new CRUD_U();
+        $name=$ex->crud_select_name_user();
+        return$name;
+    }
     static function val_verificate_f_o_of_user(){
         $fo_code = null;
         $exx = new CRUD_U();

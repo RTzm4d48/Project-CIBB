@@ -22,6 +22,7 @@ require_once(URL_PROJECT.'/app/controller/ctr_querys_user.php');
                <li class="<?php if(isset($_GET['edit']))echo'active';?>"><a href="/?settings_fo=set&edit=set">Editar</a></li>
                <li class="<?php if(isset($_GET['photo']))echo'active';?>"><a href="/?settings_fo=set&photo=set">Fotos</a></li>
                <li class="<?php if(isset($_GET['rules']))echo'active';?>"><a href="/?settings_fo=set&rules=set">Reglas</a></li>
+               <li class="<?php if(isset($_GET['sett_premium']))echo'active';?>"><a href="/?settings_fo=set&sett_premium=set" style="color:#FDC300">Premium</a></li>
            <?php endif;?>
            </ul> 
         </div>
@@ -32,6 +33,7 @@ require_once(URL_PROJECT.'/app/controller/ctr_querys_user.php');
             else if(isset($_GET['fo']))include'fo.php';
             else if(isset($_GET['photo']))include'photo.php';
             else if(isset($_GET['rules']))include'rules.php';
+            else if(isset($_GET['sett_premium']))include'sett_premium.php';
             ?>
         </div>
     </div>

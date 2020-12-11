@@ -1,4 +1,5 @@
-<link rel="stylesheet" href="/public/css/style-settings_fo_premium______.css">
+<?php session_destroy(); ?>
+<link rel="stylesheet" href="/public/css/style-settings_fo_premium________.css">
 <link rel="stylesheet" href="/public/css/spectrum_.css">
 
 <div class="container_sett_premium">
@@ -71,7 +72,7 @@
             </div>
         </div>
         <div id="id_cnt_2" class="container_2">
-            <div id="id_btn_design_buttons" class="secction">
+            <div id="id_btn_design_buttons" class="secction" style='display:none'>
                 <div class="icon_name">
                     <img src="/public/svg/premium/i02.svg" alt="">
                     <samp>Diseño de botones</samp>
@@ -136,8 +137,8 @@
                 </div>
             </div>
             <div class="btn_acept_cancel">
-                <button id="btn_acept">Aceptar</button>
-                <button id="btn_cancel">Cancelar</button>
+                <button id="btn_acept">Guardar</button>
+                <button id="btn_apply">Aplicar</button>
             </div>
         </div>
         <!-- Container diseño de botones -->
@@ -158,147 +159,26 @@
                 <p>Libreria</p>
                 <img class="check bookstore_return" src="/public/svg/premium/check-circle-regular.svg" alt="">
             </div>
-            <div class="cont_cont">
-
+            <div id="id_cont_cont" class="cont_cont">
+                <!-- Content stace colors -->
             </div>
         </div>
     </div>
 </div>
-
-<script>
-    $('#btn_r_03').css('opacity','0.5');
-   
-    $('#btn_r_02').css('background','#fdc20041');
-
-    $('#btn_r_01').click(function(){
-        $('#btn_r_02').css('background','#313131');
-        $('#btn_r_01').css('background','#fdc20041');
-        $('#btn_r_03').css('opacity','0.5');
-        only_one_screen();
-    });
-    $('#btn_r_02').click(function(){
-        $('#btn_r_01').css('background','#313131');
-        $('#btn_r_02').css('background','#fdc20041');
-        $('#btn_r_03').css('opacity','0.5');
-        only_two_screen();
-    });
-    $('#btn_r_03').click(function(){
-        /* empty */
-    });
-
-    $('#id_btn_design_buttons').click(function(){
-        $('#id_cnt_2').addClass('no');
-        $('#id_cont_2_design_btn').removeClass('no');
-    });
-    $('.design_btn_return').click(function(){
-        $('#id_cnt_2').removeClass('no');
-        $('#id_cont_2_design_btn').addClass('no');
-    });
-
-
-    $('#id_btn_bookstore').click(function(){
-        $('#id_cnt_2').addClass('no');
-        $('#id_cont_2_bookstore').removeClass('no');
-    });
-    $('.bookstore_return').click(function(){
-        $('#id_cnt_2').removeClass('no');
-        $('#id_cont_2_bookstore').addClass('no');
-    });
-
-
-    function only_one_screen(){
-        $('#screen_02').addClass('no');
-        $('#screen_01').removeClass('no');
-        $('#view').css('height','200px');
-        $('#screen_01').css('transform','scale(1.2)');
-    }
-    function only_two_screen(){
-        $('#screen_01').addClass('no');
-        $('#screen_02').removeClass('no');
-        $('#view').css('height','auto');
-        $('#screen_01').css('transform','scale(1)');
-    }
-    function chanel(){
-        alert('chanel');
-    }
-</script>
-
 <script src="/public/js/spectrum_.js"></script>
-<script>
-    $(".c1").spectrum({
-        replacerClassName: 'awesome',
-        containerClassName: 'awesome',
-        chooseText: "Aceptar",
-        showInput: true,
-        showPalette: true,
-        showPalette: true,
-        palette:[['#36393F'],['#A4DF4A'],['#5693DB']],
-    color: '#45A1E5',
-    change: function(color){
-        $('.fondo').css('background-color',color.toHexString());
-    }
-    });
-    $(".c2").spectrum({
-        replacerClassName: 'awesome',
-        containerClassName: 'awesome',
-        chooseText: "Aceptar",
-        showInput: true,
-        showPalette: true,
-        showPalette: true,
-        palette:[['#36393F'],['#A4DF4A'],['#5693DB']],
-    color: "#45A1E5",
-    change: function(color){
-        $('.buttons').css('background-color',color.toHexString());
-    }
-    });
-    $(".c3").spectrum({
-        replacerClassName: 'awesome',
-        containerClassName: 'awesome',
-        chooseText: "Aceptar",
-        showInput: true,
-        showPalette: true,
-        showPalette: true,
-        palette:[['#36393F'],['#A4DF4A'],['#5693DB']],
-    color: '#fff',
-    change: function(color){
-        $('.line').css('background','linear-gradient(to right,#ffffff00, '+color.toHexString()+'35, #ffffff00)');
-        
-    }
-    });
-    $(".c4").spectrum({
-        replacerClassName: 'awesome',
-        containerClassName: 'awesome',
-        chooseText: "Aceptar",
-        showInput: true,
-        showPalette: true,
-        showPalette: true,
-        palette:[['#36393F'],['#A4DF4A'],['#5693DB']],
-    color: '#36393F',
-    change: function(color){
-        $('.conteinn').css('background-color',color.toHexString());
-        $('.op-conteinn').css('background-color',color.toHexString()+'98');
-        $('.d-op-conteinn').css('background-color',color.toHexString()+'b4');
-        $('.es-op-conteinn').css('background-color',color.toHexString()+'27');
-    }
-    });
-    $(".c5").spectrum({
-        replacerClassName: 'awesome',
-        containerClassName: 'awesome',
-        chooseText: "Aceptar",
-        showInput: true,
-        showPalette: true,
-        showPalette: true,
-        palette:[['#36393F'],['#A4DF4A'],['#5693DB']],
-    color: '#8EDF4A',
-    change: function(color){
-        $('.join').css('background-color',color.toHexString());
-    }
-    });
-</script>
+<script src="/public/js/premium_function.js"></script>
 <style>
     .awesome{
     background: #434544;
     border: none;
     margin: auto;
     }
+    .text{
+        width: 95%;
+        padding: 0px 5px;
+        margin: auto;
+        color: white;
+        background: #434544;
+    }
 </style>
+<script src="/public/js/warning_.js"></script>

@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="/css/style-toolbar-right____.css">
-<div class="toolbar_right">
+<div id="id_toolbar_right" class="toolbar_right">
             <div class="toolbar_right-menu">
                 <img src="/svg/menu-icon.svg" alt="">
             </div>

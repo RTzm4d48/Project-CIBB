@@ -16,7 +16,7 @@ $name = VALIDATIONS_U::ctr_select_name_user();
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>@<?php echo$name;?></title>
 </head>
-<body>
+<body id="id_body">
 <?php if(isset($_POST['warning_unirse']))warning('Unirse','¿Estas seguro de querer unirte a esta fuerza operativa? <br><br> Copia el link por si no se te redirecciona.','sb_unirse',true,true);
 if(isset($_POST['warning_unirse_false']))warning('Hubo un error','Tu ya perteneces a una fuerza operativa','--',false,false);
 if(isset($_POST['warning_currarSesion']))warning('Salir','¿Estas seguro de que quieres cerrar sesion?','sub_salir',false,true);
@@ -105,8 +105,8 @@ if(isset($_POST['warning_sub_update_fo']))warning('Update','¿estas seguro de gu
                 <a href="/?search=set"><img src="/svg/search-solid.svg" alt=""></a>
                 <?php endif;if(!isset($_COOKIE['id_user'])):?>
                     <div class="loginRegister">
-                        <a class="btn_login" href="/public/views/pages/login.php">Iniciar Sesion</a>
-                        <a class="btn_register" href="/public/views/pages/register.php">Registrarse</a>
+                        <a id="id_btn_login" class="btn_login" href="/public/views/pages/login.php">Iniciar Sesion</a>
+                        <a id="id_btn_register" class="btn_register" href="/public/views/pages/register.php">Registrarse</a>
                     </div>
                 <?php endif;?>
             </div>

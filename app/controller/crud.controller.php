@@ -56,5 +56,11 @@ class VALIDATIONS{
     public static function prueba(){  
         return URL_PROJECT.'/app/controller/test.php';
     }
+    static function ctr_obtaiin_color(){
+        $ex=new CRUD();
+        $fo_id=$ex->crud_obtain_id_fo();
+        $data_color=$ex->crud_obtain_color($fo_id);
+        return $data_color;
+    }
 }
 ?>

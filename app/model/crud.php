@@ -145,5 +145,36 @@ class CRUD extends Connection{
             exit('Error al realizar la consulta:'.$pr->close());
         }
     }
+    function crud_obtain_id_fo(){
+        $pr=$this->conn->prepare("SELECT fo_id FROM `f_o` WHERE fo_code=?;");
+        $code=(isset($_GET['C']))?$_GET['C']:$_SESSION['code_f_o'];
+        $pr->bind_param("s",$code);
+        if($pr->execute()){
+            $pr->store_result();
+            $pr->bind_result($fo_id);
+            //listamos todos los resultados
+	        while($pr->fetch()){
+              return $fo_id;
+            }
+            $pr->close();
+        }else{
+            exit('Error al realizar la consulta:'.$pr->close());
+        }
+    }
+    function crud_obtain_color($fo_id){
+            $pr=$this->conn->prepare("SELECT `spf_color_1`, `spf_color_2`, `spf_color_3`, `spf_color_4`, `spf_color_5` FROM `styles_premium_fo` WHERE fo_id = ".$fo_id.";");
+            if($pr->execute()){
+                $pr->store_result();
+                if($pr->num_rows!=0){
+                    $pr->bind_result($c1,$c2,$c3,$c4,$c5);
+                    while($pr->fetch()){$color_data=['c1'=>$c1,'c2'=>$c2,'c3'=>$c3,'c4'=>$c4,'c5'=>$c5];return $color_data;}
+                }else{
+                    $pr->close(); return false;
+                }
+                
+            }else{
+                exit('Error al realizar la consulta:'.$pr->close());
+                
+            }
 }
-/* $crud = new CRUD(); */
+}

@@ -65,7 +65,7 @@ function apply_style_fo(){
     /* data: data, */
     /* dataType: "json", */
     success:function(rpt){
-        alert(rpt);
+        /* alert(rpt); */
     }
     });
 }
@@ -158,6 +158,20 @@ function firsh_function(data){
         save_colors(color.toHexString(),5);
     }
     });
+    $(".c6").spectrum({
+        replacerClassName: 'awesome',
+        containerClassName: 'awesome',
+        chooseText: "Aceptar",
+        showInput: true,
+        showPalette: true,
+        showPalette: true,
+        palette:[['#36393F'],['#A4DF4A'],['#5693DB']],
+        color: data['c6'],
+    change: function(color){
+        $('.op-conteinn_p').css('background-color',color.toHexString()+'98');
+        save_colors(color.toHexString(),6); 
+    }
+    });
 }
 
 //TEMPORAL SAVE COLOR
@@ -202,15 +216,15 @@ function data_color_02(i){
     dataType: "json",
     success:function(data){
         apply(i,data);
-        apply_warning(data[i]['name'],data[i]['color_01'],data[i]['color_02'],data[i]['color_03'],data[i]['color_04'],data[i]['color_05']);
+        apply_warning(data[i]['name'],data[i]['color_01'],data[i]['color_02'],data[i]['color_03'],data[i]['color_04'],data[i]['color_05'],data[i]['color_06']);
     }
 });
 }
 function deleted_warning(id){
     messagebox_1('Eliminar','¿estas seguro de eliminar este estilo?','deleted('+id+');');
 }
-function apply_warning(name,c1,c2,c3,c4,c5){
-    var data = 'c1='+c1+'&c2='+c2+'&c3='+c3+'&c4='+c4+'&c5='+c5;
+function apply_warning(name,c1,c2,c3,c4,c5,c6){
+    var data = 'c1='+c1+'&c2='+c2+'&c3='+c3+'&c4='+c4+'&c5='+c5+'&c6='+c6;
     $.ajax({
     url: '/public/ajax/premium_ctr/ajax_tmp_colors.php',
     type: 'POST',
@@ -248,6 +262,8 @@ function apply(i,data){
     $('.es-op-conteinn').css('background-color',data[i]['color_04']+'27');
     //join -5-
     $('.join').css('background-color',data[i]['color_05']);
+    //content -6-
+    $('.op-conteinn_p').css('background-color',data[i]['color_06']+'98');
     //colores primcipales
 }
 function actualizar(){location.reload(true);}
@@ -268,6 +284,7 @@ function select_styles(data){
                         "<div style='background:"+data[i]['color_03']+"' class='c'></div>"+
                         "<div style='background:"+data[i]['color_04']+"' class='c'></div>"+
                         "<div style='background:"+data[i]['color_05']+"' class='c'></div>"+
+                        "<div style='background:"+data[i]['color_06']+"' class='c'></div>"+
                     "</div>"+
                     "<ul class='nav'>"+
                         "<li><img src='/public/svg/premium/ellipsis-h-solid.svg'>"+

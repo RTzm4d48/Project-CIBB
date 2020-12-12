@@ -162,12 +162,12 @@ class CRUD extends Connection{
         }
     }
     function crud_obtain_color($fo_id){
-            $pr=$this->conn->prepare("SELECT `spf_color_1`, `spf_color_2`, `spf_color_3`, `spf_color_4`, `spf_color_5` FROM `styles_premium_fo` WHERE fo_id = ".$fo_id.";");
+            $pr=$this->conn->prepare("SELECT `spf_color_1`, `spf_color_2`, `spf_color_3`, `spf_color_4`, `spf_color_5`, `spf_color_6` FROM `styles_premium_fo` WHERE fo_id = ".$fo_id.";");
             if($pr->execute()){
                 $pr->store_result();
                 if($pr->num_rows!=0){
-                    $pr->bind_result($c1,$c2,$c3,$c4,$c5);
-                    while($pr->fetch()){$color_data=['c1'=>$c1,'c2'=>$c2,'c3'=>$c3,'c4'=>$c4,'c5'=>$c5];return $color_data;}
+                    $pr->bind_result($c1,$c2,$c3,$c4,$c5,$c6);
+                    while($pr->fetch()){$color_data=['c1'=>$c1,'c2'=>$c2,'c3'=>$c3,'c4'=>$c4,'c5'=>$c5,'c6'=>$c6];return $color_data;}
                 }else{
                     $pr->close(); return false;
                 }

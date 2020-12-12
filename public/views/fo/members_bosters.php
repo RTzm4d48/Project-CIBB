@@ -76,7 +76,7 @@ echo'</pre>'; */
         <div class="container_users">
         <?php for($i=0;$i<$data['num_officers'];$i++):?>
             <!--  -->
-            <a class="aa" onclick="box_user(<?php echo$data['officers'][$i][0];?>);">
+            <a  class="aa" onclick="box_user(<?php echo$data['officers'][$i][0];?>);">
             <div class="user">
                 <div class="line B_i_oficer"></div>
                 <img src="/public/tmp/all_img_users/user_<?php echo$data['officers'][$i][0];?>_img.jpg" alt="">
@@ -95,6 +95,35 @@ echo'</pre>'; */
 <?php endif;?>
     <br>
     <a href="/h?C=<?php echo $_GET['C'];?>&access=get&start=get">
-    <button>Regresar</button>
+    <button id="id_return">Regresar</button>
     </a>
 </div>
+<!-- //PAINT -->
+<?php
+$color_data = VALIDATIONS::ctr_obtaiin_color();
+if($color_data != false){
+echo"
+<script>
+    $('#id_body').css('background','".$color_data['c1']."');
+    
+    $('#id_btn_login').css('background','".$color_data['c2']."');
+    $('#id_btn_register').css('background','".$color_data['c2']."');
+    $('#id_p_u_cerrar_btn').css('background','".$color_data['c2']."');
+
+    $('#id_return').css('background','".$color_data['c2']."');
+    
+    $('.container_body-espace-container').css('background','linear-gradient(to right,#ffffff00, ".$color_data['c3']."35, #ffffff00)');
+    
+    $('.header_cibb').css('background','".$color_data['c4']."98');
+    $('.user').css('background','".$color_data['c6']."');
+    $('.container').css('background','".$color_data['c4']."30');
+    
+    $('.toolbar_right-menu').html('<img src=/public/svg/menu-icon_width.svg>');
+    $('#toolbar_top').css('background','".$color_data['c4']."');
+    $('#id_toolbar_right').css('background','".$color_data['c4']."b4');
+    $('.toolbar_right-menu').css('background','".$color_data['c4']."b4');
+
+</script>
+";
+}
+?>

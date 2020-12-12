@@ -208,7 +208,8 @@
                                 .es13{
                                     width: 60px;
                                     height: calc(60px / 1.777);
-                                    background: #000;
+                                    background-image: url('/public/tmp/default/photo_defaultt.jpg');
+                                    background-size: 100%;
                                     margin: auto;
                                 }
                             }
@@ -493,14 +494,14 @@
                     }
                 }
                 .cont_p_color{
-                    width: 70px;
-                    height: calc(70px / 5);
+                    width: 80px;
+                    height: calc(80px / 6);
                     /* background: yellow; */
                     margin: auto 5px auto auto;
                     display: flex;
 
                     .c{
-                        width: 20%;
+                        width: 16.6%;
                         height: 100%;
                     }
                 }

@@ -9,6 +9,7 @@ if(isset($_POST['deleted'])){
     unset($_SESSION['color_03']);
     unset($_SESSION['color_04']);
     unset($_SESSION['color_05']);
+    unset($_SESSION['color_06']);
 }
 
 $data = CTR_STYLES_PREMIUM::ctr_select_color();

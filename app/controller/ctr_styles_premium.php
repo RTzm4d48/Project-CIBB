@@ -17,9 +17,9 @@ class CTR_STYLES_PREMIUM{
         $rpt=$ex->crud_deleted_color($id);
         return $rpt;
     }
-    static function ctr_insert_style_fo($co1,$co2,$co3,$co4,$co5){
+    static function ctr_insert_style_fo($co1,$co2,$co3,$co4,$co5,$co6){
         $ex=new CRUD_STYLES_PREMIUM();
-        $rpt=$ex->crud_valid_style_fo($co1,$co2,$co3,$co4,$co5);
+        $rpt=$ex->crud_valid_style_fo($co1,$co2,$co3,$co4,$co5,$co6);
         return true;
     }
 }

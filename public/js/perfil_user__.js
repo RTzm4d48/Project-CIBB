@@ -12,7 +12,7 @@ function user_box(data){
         "<div class='box_atribute lable'><h5>"+data['rank']+"</h5><p>rank</p></div>"+
         "<div class='box_atribute numeric'><h5>"+data['participation']+"</h5><p>fo part.</p></div>"+
         "</div>"+
-        "<button onclick='closet();'>Cerrar</button>"+
+        "<button id='id_p_u_cerrar_btn' onclick='closet();'>Cerrar</button>"+
     "</div>"
     );
     }

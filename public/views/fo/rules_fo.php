@@ -32,5 +32,33 @@ echo'</pre>'; */
 
     <p class="message">Los Colideres y Oficiales quedan con el derecho total de expulsar a cualquier integrante, reservandose o no cualquier tipo de explicacion, puesto que se asume que estas reglas fueron leidas y comprendidas.</p>
 
-    <a href="/h?C=<?php echo $_GET['C'];?>&access=get&start=get"><button>Entendido</button></a>
+    <a href="/h?C=<?php echo $_GET['C'];?>&access=get&start=get"><button id="id_understood">Entendido</button></a>
 </div>
+<!-- //PAINT -->
+<?php
+$color_data = VALIDATIONS::ctr_obtaiin_color();
+if($color_data != false){
+echo"
+<script>
+    $('#id_body').css('background','".$color_data['c1']."');
+    
+    $('#id_btn_login').css('background','".$color_data['c2']."');
+    $('#id_btn_register').css('background','".$color_data['c2']."');
+    $('#id_understood').css('background','".$color_data['c2']."');
+    
+    $('.container_body-espace-container').css('background','linear-gradient(to right,#ffffff00, ".$color_data['c3']."35, #ffffff00)');
+    
+    $('.header_cibb').css('background','".$color_data['c4']."98');
+    $('.user').css('background','".$color_data['c4']."');
+    $('.container').css('background','".$color_data['c4']."30');
+    $('.message').css('background','".$color_data['c6']."');
+    
+    $('.toolbar_right-menu').html('<img src=/public/svg/menu-icon_width.svg>');
+    $('#toolbar_top').css('background','".$color_data['c4']."');
+    $('#id_toolbar_right').css('background','".$color_data['c4']."b4');
+    $('.toolbar_right-menu').css('background','".$color_data['c4']."b4');
+
+</script>
+";
+}
+?>

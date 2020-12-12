@@ -171,7 +171,8 @@
                 .container_base .container_1 .space_view .view .screen_01 .es03 .es10 .es12 .es13 {
                   width: 60px;
                   height: calc(60px / 1.777);
-                  background: #000;
+                  background-image: url("/public/tmp/default/photo_defaultt.jpg");
+                  background-size: 100%;
                   margin: auto; }
         .container_base .container_1 .space_view .view .screen_02 {
           width: 90px;
@@ -381,13 +382,13 @@
             margin: auto;
             font-size: 14px; }
         .container_base .container_2_boockstore .cont_cont .color_space .cont_p_color {
-          width: 70px;
-          height: calc(70px / 5);
+          width: 80px;
+          height: calc(80px / 6);
           /* background: yellow; */
           margin: auto 5px auto auto;
           display: flex; }
           .container_base .container_2_boockstore .cont_cont .color_space .cont_p_color .c {
-            width: 20%;
+            width: 16.6%;
             height: 100%; }
         .container_base .container_2_boockstore .cont_cont .color_space .nav {
           width: 20px;
@@ -492,4 +493,4 @@
       width: 100%;
       height: 400px; } }
 
-/*# sourceMappingURL=style-settings_fo_premium________.css.map */
+/*# sourceMappingURL=style-settings_fo_premium.css.map */

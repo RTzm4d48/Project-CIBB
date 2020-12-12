@@ -40,7 +40,7 @@ $valid_mi_fo=CTR_MESSAGE::ctr_valid_my_fo($_GET['C']);
             <div class="container_txt_button">
             <textarea id="text_area" name="description" maxlength="250" rows="3" cols="5" required><?php echo$text;?></textarea>
             <div class="butt">
-            <button onclick="alert_message();"><?php if($my_message!=false)echo"Actualizar";else echo'Publicar'?></button>
+            <button id="id_button_A_P" onclick="alert_message();"><?php if($my_message!=false)echo"Actualizar";else echo'Publicar'?></button>
             <button class="<?php if($my_message==false)echo'borrar_none';else echo'borrar';?>"<?php if($my_message!=false)echo" onclick='alert_deleted_message();'";?>>Borrar</button>
             </div>
             </div>
@@ -139,3 +139,34 @@ $valid_mi_fo=CTR_MESSAGE::ctr_valid_my_fo($_GET['C']);
     }
 </script>
 <script src="/public/js/warning_.js"></script>
+<!-- //PAINT -->
+<?php
+$color_data = VALIDATIONS::ctr_obtaiin_color();
+if($color_data != false){
+echo"
+<script>
+    $('#id_body').css('background','".$color_data['c1']."');
+    
+    $('#id_btn_login').css('background','".$color_data['c2']."');
+    $('#id_btn_register').css('background','".$color_data['c2']."');
+    $('#id_button_A_P').css('background','".$color_data['c2']."');
+    $('.unirse_true').css('background','".$color_data['c2']."');
+    $('#id_p_u_cerrar_btn').css('background','".$color_data['c2']."');
+    
+    $('.container_body-espace-container').css('background','linear-gradient(to right,#ffffff00, ".$color_data['c3']."35, #ffffff00)');
+    
+    $('.container_reglas').css('background','".$color_data['c6']."');
+    $('.container_integrantes').css('background','".$color_data['c6']."');
+    $('.container_message').css('background','".$color_data['c4']."98');
+    $('.header_cibb').css('background','".$color_data['c4']."98');
+    $('.container').css('background','".$color_data['c4']."30');
+
+    $('.toolbar_right-menu').html('<img src=/public/svg/menu-icon_width.svg>');
+    $('#toolbar_top').css('background','".$color_data['c4']."');
+    $('#id_toolbar_right').css('background','".$color_data['c4']."b4');
+    $('.toolbar_right-menu').css('background','".$color_data['c4']."b4');
+
+</script>
+";
+}
+?>

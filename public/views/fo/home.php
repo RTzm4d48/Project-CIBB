@@ -102,23 +102,29 @@ $_SESSION['code_f_o']=$_GET['C'];
 <!-- //PAINT -->
 <?php
 $color_data = VALIDATIONS::ctr_obtaiin_color();
+if($color_data != false){
 echo"
 <script>
     $('#id_body').css('background','".$color_data['c1']."');
     
     $('#id_btn_login').css('background','".$color_data['c2']."');
     $('#id_btn_register').css('background','".$color_data['c2']."');
+    $('#id_p_u_cerrar_btn').css('background','".$color_data['c2']."');
 
     $('.container_body-espace-container').css('background','linear-gradient(to right,#ffffff00, ".$color_data['c3']."35, #ffffff00)');
 
     $('#toolbar_top').css('background','".$color_data['c4']."');
     $('#id_toolbar_right').css('background','".$color_data['c4']."b4');
-    $('.section_2').css('background','".$color_data['c4']."98');
+    $('.section_2').css('background','".$color_data['c6']."98');
     $('.toolbar_right-menu').css('background','".$color_data['c4']."b4');
+    $('.toolbar_right-menu').html('<img src=/public/svg/menu-icon_width.svg>');
+    
+    $('.estadistic').css('background','".$color_data['c4']."10');
 
 
     $('.btn_a_a_fo').css('background','".$color_data['c5']."');
 
 </script>
 ";
+}
 ?>

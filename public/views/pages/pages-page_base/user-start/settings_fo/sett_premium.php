@@ -1,5 +1,8 @@
-<?php session_destroy(); ?>
-<link rel="stylesheet" href="/public/css/style-settings_fo_premium________.css">
+<?php
+session_destroy();
+
+?>
+<link rel="stylesheet" href="/public/css/style-settings_fo_premium.css">
 <link rel="stylesheet" href="/public/css/spectrum_.css">
 
 <div class="container_sett_premium">
@@ -24,14 +27,14 @@
                                     </div>
                                 </div>
                                 <div class="es05">
-                                    <img src="/public/img/img-fo.jpg" alt="">
+                                    <img src="/public/tmp/f_o/directori_<?php echo $_COOKIE['user_id_fo'];?>/fo_img_little.jpg" alt="">
                                     <div class="es06"></div>
                                     <div class="es07">
                                         <div class="es08"></div>
                                         <div class="es09 join"><p>Acceder a la F.O</p></div>
                                     </div>
                                 </div>
-                                <div class="es10 op-conteinn">
+                                <div class="es10 op-conteinn_p">
                                     <div class="es11"></div>
                                     <div class="es12">
                                         <div class="es13"></div>
@@ -52,8 +55,8 @@
                                 </div>
                             </div>
                             <div class="mo02">
-                                <img class="mo02_1" src="/public/img/img-fo.jpg" alt="">
-                                <img class="mo02_2" src="/public/img/img-fo.jpg" alt="">
+                                <img class="mo02_1" src="/public/tmp/f_o/directori_<?php echo $_COOKIE['user_id_fo'];?>/fo_img_little.jpg" alt="">
+                                <img class="mo02_2" src="/public/tmp/f_o/directori_<?php echo $_COOKIE['user_id_fo'];?>/fo_img_little.jpg" alt="">
                             </div>
                             <div class="mo03">
                             </div>
@@ -120,7 +123,7 @@
             <div class="secction">
                 <div class="icon_name">
                     <img src="/public/svg/premium/i04.svg" alt="">
-                    <samp>Color Containers</samp>
+                    <samp>Color Toolbars</samp>
                 </div>
                 <div class="nn">
                 <input type='text' class="colors c4" />
@@ -136,6 +139,17 @@
                 <input type='text' class="colors c5" />
                 </div>
             </div>
+             <!--  -->
+             <div class="secction">
+                <div class="icon_name">
+                    <img src="/public/svg/premium/i04.svg" alt="">
+                    <samp>Color containers</samp>
+                </div>
+                <div class="nn">
+                <input type='text' class="colors c6" />
+                </div>
+            </div>
+            <!--  -->
             <div class="btn_acept_cancel">
                 <button id="btn_acept">Guardar</button>
                 <button id="btn_apply">Aplicar</button>
@@ -166,7 +180,7 @@
     </div>
 </div>
 <script src="/public/js/spectrum_.js"></script>
-<script src="/public/js/premium_function.js"></script>
+<script src="/public/js/premium_function_.js"></script>
 <style>
     .awesome{
     background: #434544;

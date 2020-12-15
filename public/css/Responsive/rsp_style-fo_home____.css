@@ -68,15 +68,21 @@
       .container_ .section_1 .estadistic {
         height: auto;
         width: 100%;
-        /* background: #000; */
+        display: flex;
+        flex-direction: column;
         padding: 10px 0px;
-        background: rgba(0, 0, 0, 0.097); }
+        background: rgba(0, 0, 0, 0.097);
+        /* background: #000; */ }
         .container_ .section_1 .estadistic .container_estadisticas {
           height: auto;
           width: 100%;
           margin: 0px auto; }
+        .container_ .section_1 .estadistic .mis_botons {
+          /* background: salmon; */
+          display: flex; }
         .container_ .section_1 .estadistic button {
-          width: 95%; }
+          width: 100%;
+          background: #8EDF4A; }
     .container_ .section_2 {
       width: 97%;
       height: auto;
@@ -140,4 +146,4 @@
       width: 700px;
       margin: 5px auto; } }
 
-/*# sourceMappingURL=rsp_style-fo_home__.css.map */
+/*# sourceMappingURL=rsp_style-fo_home____.css.map */

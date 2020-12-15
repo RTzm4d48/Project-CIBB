@@ -35,16 +35,13 @@ if(isset($_POST['warning_sub_update_fo']))warning('Update','¿estas seguro de gu
         <div class="advert">
             <h4><?php echo$titulo;?></h4>
             <p><?php echo$especificacion;?></p>
-            <?php $url_=($_SESSION['url'])?$_SESSION['url']:'';if($texbox==true)echo"<input class='url' type='text' name='' value='".$url_."' id=''>";?>
+            <?php $url_=(isset($_SESSION['url']))?$_SESSION['url']:'';if($texbox==true)echo"<input class='url' type='text' name='' value='".$url_."' id=''>";?>
             <hr>
             <div class="buttons">
                 <?php if($btncancel_aceptar==true)echo"<input type='submit'value='Cancelar'onclick='myclose();'class='cancel'>
                 <form action='' method='POST'>
                 <input type='submit' value='Si' name='".$sub_aceptar."' class='aceptphp'>
                 </form>";if($btncancel_aceptar==false)echo"<input type='submit'value='Aceptar'class='aceptphp' onclick='myclose();'>";?>
-                
-                
-                
             </div>
             
         </div>
@@ -118,6 +115,8 @@ if(isset($_POST['warning_sub_update_fo']))warning('Update','¿estas seguro de gu
                     include "pages-page_base/create-fo.php"; 
                 }else if(isset($_GET['C'])&&isset($_GET['access'])){
                     include URL_PROJECT."/public/views/fo/access_fo.php";
+                }else if(isset($_GET['C'])&&isset($_GET['purchase'])){
+                    include URL_PROJECT."/public/views/fo/upgrade_purchase.php";
                 }else if(isset($_GET['C'])){
                     include URL_PROJECT."/public/views/fo/home.php";
                 /* }else if(isset($_GET['members'])){

@@ -5,7 +5,10 @@
   /* background: rgb(235, 12, 12); */
   color: black;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  /* new css */
+  /* btn */
+  /*  */ }
   .container_ .section_1 {
     width: 100%;
     height: 40%;
@@ -91,19 +94,67 @@
         color: white;
         /* background: salmon; */ }
       .container_ .section_1 .estadistic a {
-        margin: auto; }
+        margin: auto 2px; }
       .container_ .section_1 .estadistic button {
         padding: 10px 30px;
         color: white;
         background: radial-gradient(#A4DF4A, #8EDF4A);
         border: none;
         border-radius: 5px;
-        margin: auto;
+        margin: 0px;
         cursor: pointer; }
         .container_ .section_1 .estadistic button:hover {
           opacity: 0.8; }
         .container_ .section_1 .estadistic button:focus {
           outline: none; }
+  .container_ .a_puch {
+    position: absolute; }
+  .container_ .conteiner_btn_premium {
+    width: 60px;
+    height: 60px;
+    background: #232323;
+    position: absolute;
+    border-radius: 0px 0px 100% 0px;
+    opacity: 1;
+    transition: 0.3s;
+    display: none; }
+  .container_ .conteiner_btn_premium img {
+    width: 30px;
+    height: 30px;
+    margin: 10px; }
+  .container_ .conteiner_btn_premium:hover {
+    width: 70px;
+    height: 70px;
+    transform: scale(1.2); }
+  .container_ .mis_botons {
+    /* background: salmon; */
+    display: flex;
+    justify-content: center; }
+  .container_ .mis_botons a {
+    margin: 0px; }
+  .container_ .btn_a_a_fo {
+    margin: 0px 0px; }
+  .container_ .conteiner_btn_premium_2 {
+    width: 45px;
+    height: 35px;
+    background: #232323;
+    display: block;
+    border-radius: 5px;
+    margin: 0px;
+    display: flex;
+    cursor: pointer;
+    transition: 0.3s; }
+  .container_ .conteiner_btn_premium_2:hover {
+    background: #000; }
+  .container_ .conteiner_btn_premium_2 img {
+    width: 20px;
+    height: 20px;
+    margin: auto; }
+  @media (max-width: 1024px) {
+    .container_ .conteiner_btn_premium {
+      display: flex; }
+    .container_ .conteiner_btn_premium_2 {
+      display: none; } }
   .container_ .section_2 {
     width: 100%;
     height: 53%;
@@ -171,4 +222,4 @@
         border-radius: 4px;
         border: #3a3a3a52 solid 3px; }
 
-/*# sourceMappingURL=style-fo_home_______.css.map */
+/*# sourceMappingURL=style-fo_home.css.map */

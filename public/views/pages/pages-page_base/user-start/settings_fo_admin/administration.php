@@ -4,9 +4,17 @@ $data=CTR_ADMINISTRATION::ctr_select_user();
 /* echo'<pre>';
 print_r($data);
 echo'</pre>'; */
+
 ?>
 <link rel="stylesheet" href="css/style-administration.css">
 <div class="container_administration">
+<?php
+if($data['Row'] == 0){
+    echo"<div style='color: white;font-family:Arial;text-align:center;width:100%; transform: scale(0.7)'>";
+    echo('<h1>Listado de miembros de la Fuerza Operativa vacio <br> :(</h1>');
+    echo "</div>";
+}
+?>
     <?php for($i=0;$i<$data['Row'];$i++):?>
     <div class="container_user">
         <img src="/public/tmp/all_img_users/big_img_users/big_user_<?php echo$data['user'][$i][0]?>_img.jpg">

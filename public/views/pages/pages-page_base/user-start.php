@@ -38,7 +38,6 @@
             /* require_once(URL_PROJECT.'/app/controller/ctr_querys_event.php'); */
             $val=CTR_QUERYS_EVENT::ctr_validate_joind_event();
             $data=CTR_QUERYS_EVENT::ctr_consult_exist_event();
-            include "user-start/sale_baNner.php";
             if($data!=false||$val!=false)include "user-start/event.php";
             include "user-start/ranking.php";
             $ex=CTR_QUERYS_USER::ctr_valid_leader();if($ex==true)include "user-start/settings.php";

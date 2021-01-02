@@ -3,7 +3,8 @@ require_once(URL_PROJECT.'/app/controller/ctr_querys_fo.php');
 require_once(URL_PROJECT.'/app/controller/ctr_querys_user.php');
 ?>
 <!-- stilos generales -->
-<link rel="stylesheet" href="/css/style-settings________.css">   
+<link rel="stylesheet" href="/css/style-settings________.css">
+<link rel="stylesheet" href="/css/style-scroll.css">
 <link rel="stylesheet" href="/css/responsive/rsp_style-settings_____.css">
 <!-- style for settings fo -->
 <link rel="stylesheet"href="/public/css/style-settings_fo_.css">

@@ -25,7 +25,7 @@ else $src="/public/tmp/default/default_big.jpg";
             <textarea name="description" maxlength="250" rows="3" cols="5"><?php if(isset($_POST['description']))echo$_POST['description'];?></textarea>
         </div>
         <div class="section">
-            <p>Tag</p>
+            <p>Eslogan</p>
             <input type="text" maxlength="5" name="tag" id="txtTag" value="<?php if(isset($_POST['tag']))echo$_POST['tag'];?>">
         </div>
         <div class="explication">
@@ -33,14 +33,14 @@ else $src="/public/tmp/default/default_big.jpg";
         </div>
         <div class="section">
             <p>URL de web<br>alternativa</p>
-            <input type="text" maxlength="60" name="UrlWebAlternative" id="txtUrlWebAlternative" value="<?php if(isset($_POST['UrlWebAlternative']))echo$_POST['UrlWebAlternative'];?>">
+            <input type="text" maxlength="40" name="UrlWebAlternative" id="txtUrlWebAlternative" value="<?php if(isset($_POST['UrlWebAlternative']))echo$_POST['UrlWebAlternative'];?>">
         </div>
         <div class="explication">
             <p>si se tiene un sitio web adicional no estaria nada mal, y si no es el caso esta opcion no es obligatoria.</p>
         </div>
         <div class="section">
             <p>URL direccion<br>boom beach F.O*</p>
-            <input type="text" maxlength="60" name="UrlFo" id="txtUrlFo" value="<?php if(isset($_POST['UrlFo']))echo$_POST['UrlFo'];?>" required>
+            <input type="text" name="UrlFo" id="txtUrlFo" value="<?php if(isset($_POST['UrlFo']))echo$_POST['UrlFo'];?>" required>
         </div>
         <div class="explication">
             <p>Para que la gente pueda acceder a traves de esta web al juego, comcretamente a la F.O.<br>
@@ -48,7 +48,7 @@ else $src="/public/tmp/default/default_big.jpg";
         </div>
         <div class="section">
             <p>URL musica o <br>audio</p>
-            <input type="text" maxlength="60" name="UrlMusic" id="txtUrlMusic" value="<?php if(isset($_POST['UrlMusic']))echo$_POST['UrlMusic'];?>">
+            <input type="text" name="UrlMusic" id="txtUrlMusic" value="<?php if(isset($_POST['UrlMusic']))echo$_POST['UrlMusic'];?>">
         </div>
         <div class="explication">
             <p>Esta opcion no es obligatoria, pero si tienes un audio o musica que quieres que la gente pueda escuchar al visitar tu F.O, puedes hacerlo</p>

@@ -26,7 +26,7 @@ if(isset($_POST['sb_data'])){
           else{
                echo"<script>
                var data = '$data';
-               messagebox_1('Crear F.O','¿Estas seguro de crear esta fuerza operativa?','CreateFo(data)');
+               messagebox_1('Crear F.O','¿Estas seguro de crear esta fuerza operativa?_','CreateFo(data)');
                </script>";
           }
      }
@@ -37,7 +37,7 @@ if(isset($_POST['sb_data'])){
 </div>
 <script>
      function CreateFo(data){
-          closet_();
+          
           $.ajax({
                url: '/public/ajax/ajax_create_fo.php',
                type: 'POST',
@@ -47,7 +47,6 @@ if(isset($_POST['sb_data'])){
                     if(rpt == true){closet_();actualizar();}
                     else messagebox_2('error','ocurrio un error, intentalo nuevamente mas tarde.');
                     /* alert(rpt); */
-                    
                }
           });
      }

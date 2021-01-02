@@ -1,7 +1,7 @@
 <?php
 
 ?>
-<link rel="stylesheet" href="/public/css/style-purchase___.css">
+<link rel="stylesheet" href="/public/css/style-purchase_____.css">
 <!-- FUENTES -->
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap" rel="stylesheet">
@@ -10,12 +10,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
 
 <div class="container_purchase">
-    
-        <svg id="Capa_1" data-name="Capa 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 135.43"><defs><style>.cls-1{fill:#232323;}</style></defs><path class="cls-1" d="M0,117.61V0H380V135.43c-56.86-9.47-121.48-14.82-190-14.82S56.86,126,0,135.43Z"/></svg>
+    <div class="header_box">
+        <img src="/public/svg/premium/header.svg" alt="">
         <div class="icon_tittle">
             <img src="/public/svg/premium/premium_icon.svg" alt="">
             <h4>DISEÑA LA INTERFAZ DE TU FUERZA OPERATIVA</h4>
         </div>
+    </div>
+        
         <div class="delimited">
         <div class="tittle_Description">
             <div class="tittle">
@@ -117,14 +119,7 @@
         </div>
         <div class="part_5">
             <div class="precios">
-                <div class="precio">
-                    <div class="space_premium_1">
-                        <img src="/public/svg/premium/premium_icon.svg" alt="">
-                        <p>Diseña tu interfaz</p>
-                    </div>
-                    <h1>$1,39</h1>
-                    <button>Coprar ahora</button>
-                </div>
+                
                 <div class="precio">
                     <div class="space_premium_1">
                         <img src="/public/svg/premium/premium_icon.svg" alt="">

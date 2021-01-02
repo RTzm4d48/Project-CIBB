@@ -78,5 +78,15 @@ class CRUD_STYLES_PREMIUM extends Connection{
             return false;
         }
     }
+    function crud_default_styles($id_fo){
+        $pr=$this->conn->prepare("DELETE FROM `styles_premium_fo` WHERE fo_id=".$id_fo.";");
+        if($pr->execute()){
+            $pr->close();
+            return true;
+        }else{
+            $pr->close();
+            return false;
+        }
+    }
 }
 ?>

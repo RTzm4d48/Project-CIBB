@@ -1,0 +1,64 @@
+@media (max-width: 1024px) {
+  .container {
+    /* property in styles-general.scss */ }
+    .container-perfil {
+      width: calc(100% - 10px);
+      height: 250px;
+      margin: 10px auto;
+      display: flex;
+      flex-direction: column; }
+      .container-perfil img {
+        margin: 10px auto;
+        width: 100px;
+        height: 100px; }
+      .container-perfil-data {
+        width: 95%;
+        height: auto;
+        margin: auto 10px;
+        text-align: center;
+        /* border: 1px solid rgb(63, 245, 54); */ }
+        .container-perfil-data h3 {
+          margin: 0px; }
+        .container-perfil-data p {
+          margin: 0px; }
+    .container-date .area {
+      display: flex;
+      margin: auto 10px;
+      font-size: 10px; }
+
+  .box {
+    width: calc(100% - 10px); }
+
+  /*  */
+  .event {
+    width: calc(100% - 10px); }
+
+  .ranking {
+    width: calc(100% - 10px); }
+
+  .fo {
+    width: calc(100% - 10px); }
+    .fo .container_principal {
+      width: auto;
+      /* background: rgb(235, 28, 28); */ }
+      .fo .container_principal .badge {
+        width: 50px;
+        height: 50px;
+        margin: auto 5px auto 10px; }
+        .fo .container_principal .badge-img {
+          width: 50px;
+          height: 50px; }
+        .fo .container_principal .badge-ornaments {
+          width: 50px;
+          height: 50px; }
+      .fo .container_principal a {
+        width: 30px;
+        height: 30px;
+        margin: auto 10px auto 10px; }
+      .fo .container_principal .setings {
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        margin: auto; } }
+
+/*# sourceMappingURL=rsp_style-user-start___.css.map */

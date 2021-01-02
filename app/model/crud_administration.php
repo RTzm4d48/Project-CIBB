@@ -9,7 +9,7 @@ class CRUD_ADMINISTRATION extends Connection{
         $this->connect();
     }
     function crud_select_user(){
-        $pr=$this->conn->prepare("SELECT us_id,us_user,us_img_big,us_rank FROM the_user WHERE fo_id=".$_COOKIE['user_id_fo']." AND us_rank != 'líder';");
+        $pr=$this->conn->prepare("SELECT us_id,us_user,us_img_big,us_rank FROM the_user WHERE fo_id=".$_COOKIE['user_id_fo']." AND us_rank != 'lider';");
         if($pr->execute()){
             $pr->store_result();
             $Row=$pr->num_rows();

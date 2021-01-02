@@ -24,7 +24,7 @@
             <p>Correo Electroonico</p>
             <input type="email"pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"name="email"value="<?php echo$ex['gmail'];?>"id=""required>
         </div>
-        <?php require_once(URL_PROJECT.'/app/controller/ctr_querys_user.php');if(isset($_POST['sb_guardar_cambios'])){$data=CTR_QUERYS_USER::ctr_uptade_data_user();echo $data;}?>
+        <?php require_once(URL_PROJECT.'/app/controller/ctr_querys_user.php');if(isset($_POST['sb_guardar_cambios'])){$data=CTR_QUERYS_USER::ctr_uptade_data_user();echo "<div style='background:green;display:block;width: 300px;text-align:center;padding: 10px 0px;margin:10px 10px 0px 10px;'>Cambios Guardados</div>";}?>
     </div>
     <input type="submit"name="sb_guardar_cambios"value="Guardar Cambios">
     </form>

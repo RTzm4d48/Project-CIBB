@@ -11,7 +11,7 @@ echo'</pre>'; */
 <?php
 if($data['Row'] == 0){
     echo"<div style='color: white;font-family:Arial;text-align:center;width:100%; transform: scale(0.7)'>";
-    echo('<h1>Listado de miembros de la Fuerza Operativa vacio <br> :(</h1>');
+    echo('<h1>La lista de miembros de la Fuerza Operativa esta vacio. <br> :(</h1>');
     echo "</div>";
 }
 ?>

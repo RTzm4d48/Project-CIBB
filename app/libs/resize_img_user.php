@@ -24,7 +24,7 @@ class Resize_user{
             $alto_nuevo=round($ancho_nuevo*$alto_original/$ancho_original);
             //crear una lienzo vacio (foto destino 750400)
             $copia=imagecreatetruecolor($alto_nuevo,$alto_nuevo);
-            echo"imagen ancha";
+            /* echo"imagen ancha"; */
         }else{
             $c=$alto_original-$ancho_original;
             $centrador=$c/2;
@@ -32,7 +32,7 @@ class Resize_user{
             $ancho_nuevo=round($alto_nuevo*$ancho_original/$alto_original);
             //crear una lienzo vacio (foto destino 750400)
             $copia=imagecreatetruecolor($ancho_nuevo,$ancho_nuevo);
-            echo"imagen alta";   
+            /* echo"imagen alta";  */  
         }
         //copia original -> copia
         //1-2 destino-original
@@ -72,7 +72,7 @@ class Resize_user{
             $alto_nuevo=round($ancho_nuevo*$alto_original/$ancho_original);
             //crear una lienzo vacio (foto destino 750400)
             $copia=imagecreatetruecolor($alto_nuevo,$alto_nuevo);
-            echo"imagen ancha";
+            /* echo"imagen ancha"; */
         }else{
             $c=$alto_original-$ancho_original;
             $centrador=$c/2;
@@ -80,7 +80,7 @@ class Resize_user{
             $ancho_nuevo=round($alto_nuevo*$ancho_original/$alto_original);
             //crear una lienzo vacio (foto destino 750400)
             $copia=imagecreatetruecolor($ancho_nuevo,$ancho_nuevo);
-            echo"imagen alta";
+            /* echo"imagen alta"; */
         }
         //copia original -> copia
         //1-2 destino-original

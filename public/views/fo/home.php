@@ -7,8 +7,12 @@ echo'</pre>'; */
 $_SESSION['code_f_o']=$_GET['C'];
 ?>
 
-<link rel="stylesheet" href= "/public/css/style-fo_home.css">
+<link rel="stylesheet" href= "/public/css/style-fo_home__.css">
 <link rel="stylesheet" href= "/public/css/Responsive/rsp_style-fo_home____.css">
+<!-- link fo name -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+<!-- end -->
 <div id="container_c_" class="container_">
     <div class="section_1">
     <!-- "/public/views/fo/default_big.jpg" -->
@@ -17,10 +21,10 @@ $_SESSION['code_f_o']=$_GET['C'];
             <img class="fondo" src="<?php echo "/public/tmp/f_o/directori_".$Row['fo_id']."/fo_img_big.jpg" ?>" alt="">
             <img class="fo_i_m_g" src="<?php echo "/public/tmp/f_o/directori_".$Row['fo_id']."/fo_img_big.jpg" ?>" alt="">
         </div>
-        <a class="a_puch" href=""><div class="conteiner_btn_premium"><img src="/public/svg/premium_icon.svg" alt=""></div></a>
+        <a class="a_puch" href="/h.php?C=<?php echo $_GET['C'];?>&purchase=get"><div class="conteiner_btn_premium"><img src="/public/svg/premium_icon.svg" alt=""></div></a>
         <div class="info">
             <p class='title'>Fuerza Operativa</p>
-            <h1 class="tag_fo"><?php echo $Row['name'] ?></h1>
+            <P class="tag_fo"><?php echo $Row['name'] ?></P>
             <div class="leadfor">
                 <p>Liderado por:</p>
                 <img id="img_leader" src="<?php echo "/public/tmp/f_o/directori_".$Row['fo_id']."/leader_img.jpg" ?>" alt="">
@@ -89,8 +93,9 @@ $_SESSION['code_f_o']=$_GET['C'];
                 <div class="line"></div><p><?php echo $Row['description'] ?></p>
                 </span>
             </div>
-
-            <video controls="" name="media"><source src="/public/img/Feet_YKVGVU.mp3" type="audio/mpeg"></video>
+            <?php if($Row['fo_url_m']!=''):?>
+            <video controls="" name="media"><source src="<?php echo$Row['fo_url_m'];?>" type="audio/mpeg"></video>
+            <?php endif;?>
             
         </div>
         <div class="bisection_2">

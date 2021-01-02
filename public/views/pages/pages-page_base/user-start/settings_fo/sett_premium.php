@@ -2,7 +2,7 @@
 session_destroy();
 
 ?>
-<link rel="stylesheet" href="/public/css/style-settings_fo_premium.css">
+<link rel="stylesheet" href="/public/css/style-settings_fo_premium_.css">
 <link rel="stylesheet" href="/public/css/spectrum_.css">
 
 <div class="container_sett_premium">
@@ -180,7 +180,7 @@ session_destroy();
     </div>
 </div>
 <script src="/public/js/spectrum_.js"></script>
-<script src="/public/js/premium_function_.js"></script>
+<script src="/public/js/premium_function__.js"></script>
 <style>
     .awesome{
     background: #434544;

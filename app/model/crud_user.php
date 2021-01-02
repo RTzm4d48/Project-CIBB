@@ -83,9 +83,8 @@ class CRUD_U extends Connection{
                 //creamos la cookie
                 /* setcookie('id_user',$us_id,strtotime('+360 days'),'/');
                 setcookie('user_id_fo',$fo_id,strtotime('+360 days'),'/'); */
-
-                echo
-                "
+                if($fo_id == null)$fo_id = 'null';
+                echo"
                 <script>
                 var cname_1='id_user';
                 var cname_2='user_id_fo';
@@ -99,7 +98,6 @@ class CRUD_U extends Connection{
                 document.cookie = cname_2 + '=' + cvalue_2 + ';' + expires +'; path=/';
                 </script>
                 ";
-
                 echo "<script> location.href='/'; </script>";
             }
             $pr->close();

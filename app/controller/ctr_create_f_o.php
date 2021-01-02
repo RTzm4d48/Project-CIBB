@@ -9,7 +9,7 @@ class CTR_CREATE_F_O{
         //prepare data7
         $name=(isset($_POST['namee'])&& $_POST['namee'] != '') ? $_POST['namee'] : '';
         $description=(isset($_POST['description']) && $_POST['description'] != '') ? $_POST['description'] : '¡Siempre Unidos!';
-        $tag=(isset($_POST['tag']) && $_POST['tag'] != '') ? $_POST['tag'] : 'null';
+        $tag=(isset($_POST['tag']) && $_POST['tag'] != '') ? $_POST['tag'] : '';
         $url_w_a=(isset($_POST['UrlWebAlternative']) && $_POST['UrlWebAlternative'] != '') ? $_POST['UrlWebAlternative'] : '';
         $url_b_b_f=(isset($_POST['UrlFo']) && $_POST['UrlFo'] != '') ? $_POST['UrlFo'] : '';
         $url_m=(isset($_POST['UrlMusic']) && $_POST['UrlMusic'] != '') ? $_POST['UrlMusic'] : '';
@@ -20,7 +20,7 @@ class CTR_CREATE_F_O{
         else if($prev==true)return 'prev';
         else return $data;
     }
-    public function val_insert_fo($data){
+    static function val_insert_fo($data){
             $ex = new CRUD_CREATE_F_O();
             if($ex->insert_fo($data)){
                 return true;//todo bien

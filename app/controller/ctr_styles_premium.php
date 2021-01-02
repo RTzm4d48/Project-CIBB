@@ -22,5 +22,11 @@ class CTR_STYLES_PREMIUM{
         $rpt=$ex->crud_valid_style_fo($co1,$co2,$co3,$co4,$co5,$co6);
         return true;
     }
+    static function ctr_default_styles(){
+        $id_fo = $_COOKIE['user_id_fo'];
+        $ex=new CRUD_STYLES_PREMIUM();
+        $rpt=$ex->crud_default_styles($id_fo);
+        return $rpt;
+    }
 }
 ?>

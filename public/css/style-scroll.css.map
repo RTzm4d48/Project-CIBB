@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAEA,0BAAyB;EAErB,mBAAoB;IAChB,KAAK,EAAE,GAAG;IACV,MAAM,EAAE,GAAG;;EAGb,WAAW;EACX,yBAA0B;IACxB,UAAU,EAAE,kBAAkB;IAC9B,aAAa,EAAE,IAAI;;EAGrB,YAAY;EACZ,yBAA0B;IACxB,UAAU,EAAE,OAAkB;IAC9B,aAAa,EAAE,IAAI;;EAGrB,wBAAwB;IACtB,QAAQ,EAAC,MAAM",
+"sources": ["../sass/style-scroll.scss"],
+"names": [],
+"file": "style-scroll.css"
+}

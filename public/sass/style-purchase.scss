@@ -480,12 +480,13 @@ $width_delimited: 380px;
                 h1{
                     margin: auto auto 20px auto;
                 }
-                button{
+                .btn_comprar{
                     margin: 20px auto;
                     padding: 10px 20px;
                     border: none;
                     border-radius: 5px;
                     background: $light-green-02;
+                    text-decoration: none;
                     color: white;
                     cursor: pointer;
                     transition-duration: 0.5s;

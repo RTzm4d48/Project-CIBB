@@ -154,4 +154,19 @@ class CRUD_QUERYS_F_O extends Connection{
             exit('Error al realizar la consulta:'.$pr->close());
         }
     }
+    function crud_valid_premium_fo(){
+        $pr=$this->conn->prepare("SELECT `fp_id_fo` FROM `fo_premium` WHERE fp_id_fo=?;");
+        $pr->bind_param("i",$_COOKIE['user_id_fo']);
+        if($pr->execute()){
+            $pr->store_result();
+            $pr->bind_result($fo_code);
+            //listamos todos los resultados
+            while($pr->fetch()){
+            return $fo_code;
+            }
+            $pr->close();
+        }else{
+            exit('Error al realizar la consulta:'.$pr->close());
+        }
+    }
 }

@@ -133,7 +133,8 @@ class CRUD_U extends Connection{
     }
     function crud_select_name_user(){
         $pr=$this->conn->prepare("SELECT us_user FROM the_user WHERE us_id=?");
-        $pr->bind_param("i",$_COOKIE['id_user']);
+        $id_user=(isset($_COOKIE['id_user']))?$_COOKIE['id_user']:0;
+        $pr->bind_param("i",$id_user);
         if($pr->execute()){
             $pr->store_result();
             $pr->bind_result($us_user);

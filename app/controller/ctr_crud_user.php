@@ -31,7 +31,8 @@ class VALIDATIONS_U{
     }
     static function ctr_select_name_user(){
         $ex = new CRUD_U();
-        $name=$ex->crud_select_name_user();
+        $rpt=$ex->crud_select_name_user();
+        $name=($rpt!='')?" - ".$rpt:'';
         return$name;
     }
     static function val_verificate_f_o_of_user(){

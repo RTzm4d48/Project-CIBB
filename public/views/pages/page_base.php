@@ -14,7 +14,7 @@ $name = VALIDATIONS_U::ctr_select_name_user();
     <link rel="stylesheet" href="/css/responsive/rsp_style-general__.css">
     <link rel="stylesheet" href="/css/style-advert___.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <title>@<?php echo$name;?></title>
+    <title><?php echo"CIBB".$name;?></title>
 </head>
 <body id="id_body">
 <?php if(isset($_POST['warning_unirse']))warning('Unirse','¿Estas seguro de querer unirte a esta fuerza operativa? <br><br> Copia el link por si no se te redirecciona.','sb_unirse',true,true);

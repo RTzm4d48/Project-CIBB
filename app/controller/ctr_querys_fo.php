@@ -81,4 +81,10 @@ class CTR_QUERYS_F_O{
         return true;
         else return false;
     }
+    static function ctr_valid_premium_fo(){
+        $ex=new CRUD_QUERYS_F_O();
+        $rpt=$ex->crud_valid_premium_fo();
+        if($rpt=='')return false;
+        else return true;
+    }
 }?>

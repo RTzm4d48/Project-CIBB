@@ -360,16 +360,17 @@
             margin: auto 0px; }
         .container_purchase .part_5 .precios .precio h1 {
           margin: auto auto 20px auto; }
-        .container_purchase .part_5 .precios .precio button {
+        .container_purchase .part_5 .precios .precio .btn_comprar {
           margin: 20px auto;
           padding: 10px 20px;
           border: none;
           border-radius: 5px;
           background: #8EDF4A;
+          text-decoration: none;
           color: white;
           cursor: pointer;
           transition-duration: 0.5s; }
-          .container_purchase .part_5 .precios .precio button:hover {
+          .container_purchase .part_5 .precios .precio .btn_comprar:hover {
             transform: scale(1.1); }
     .container_purchase .part_5 .terminos {
       width: 100%;
@@ -407,4 +408,4 @@
   .container_purchase {
     width: 100%; } }
 
-/*# sourceMappingURL=style-purchase_____.css.map */
+/*# sourceMappingURL=style-purchase.css.map */

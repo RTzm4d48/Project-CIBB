@@ -1,6 +1,6 @@
 <?php $ex = VALIDATIONS_U::val_select_data_user();?>
-<link rel="stylesheet" href="/css/style-user-start_.css">
-<link rel="stylesheet" href="/css/Responsive/rsp_style-user-start___.css">
+<link rel="stylesheet" href="/css/style-user-start__.css">
+<link rel="stylesheet" href="/css/Responsive/rsp_style-user-start____.css">
 <div class="container">
     <div class="container-perfil font_containers">
         <img src="<?php echo "/public/tmp/users/directori_". $_COOKIE['id_user'] ."/img_perfil_big.jpg" ?>" alt="">

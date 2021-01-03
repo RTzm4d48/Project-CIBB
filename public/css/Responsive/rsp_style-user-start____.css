@@ -51,14 +51,10 @@
         .fo .container_principal .badge-ornaments {
           width: 50px;
           height: 50px; }
-      .fo .container_principal a {
-        width: 30px;
-        height: 30px;
-        margin: auto 10px auto 10px; }
       .fo .container_principal .setings {
         cursor: pointer;
         width: 30px;
         height: 30px;
-        margin: auto; } }
+        margin: auto 10px auto 10px; } }
 
-/*# sourceMappingURL=rsp_style-user-start___.css.map */
+/*# sourceMappingURL=rsp_style-user-start____.css.map */

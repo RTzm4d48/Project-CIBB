@@ -94,16 +94,11 @@
                 }
             }
             $medida2: 30px;
-            a{
-                width: $medida2;
-                height: $medida2;
-                margin: auto 10px auto 10px;
-            }
             .setings{
                 cursor: pointer ;
                 width: $medida2;
                 height: $medida2;
-                margin: auto;
+                margin: auto 10px auto 10px;
             }
         }
     }

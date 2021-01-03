@@ -62,5 +62,20 @@ class VALIDATIONS{
         $data_color=$ex->crud_obtain_color($fo_id);
         return $data_color;
     }
+    static function ctr_obtain_code_my_fo(){
+        $ex=new CRUD();
+        $rpt=$ex->crud_obtain_code_my_fo();
+        if($rpt=='')return false;
+        else{
+            if($rpt == $_GET['C'])return true;
+            else return false;
+        }
+    }
+    static function ctr_valid_premium_fo(){
+        $ex=new CRUD();
+        $rpt=$ex->crud_valid_premium_fo();
+        if($rpt=='')return false;
+        else return true;
+    }
 }
 ?>

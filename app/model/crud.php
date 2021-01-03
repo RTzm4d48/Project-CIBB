@@ -177,4 +177,37 @@ class CRUD extends Connection{
                 
             }
 }
+function crud_obtain_code_my_fo(){
+    $pr=$this->conn->prepare("SELECT fo_code FROM `f_o` WHERE fo_id=?;");
+    $id_fo=(isset($_COOKIE['user_id_fo']))?$_COOKIE['user_id_fo']:0;
+    $id_fo_=($id_fo=='none')?0:$_COOKIE['user_id_fo'];
+    $pr->bind_param("i",$id_fo_);
+    if($pr->execute()){
+        $pr->store_result();
+        $pr->bind_result($fo_code);
+        //listamos todos los resultados
+        while($pr->fetch()){
+        return $fo_code;
+        }
+        $pr->close();
+    }else{
+        exit('Error al realizar la consulta:'.$pr->close());
+    }
+}
+function crud_valid_premium_fo(){
+    $pr=$this->conn->prepare("SELECT `fp_fo_code` FROM `fo_premium` WHERE fp_fo_code=?;");
+    $code_fo=(isset($_GET['C']))?$_GET['C']:'';
+    $pr->bind_param("s",$code_fo);
+    if($pr->execute()){
+        $pr->store_result();
+        $pr->bind_result($fo_code);
+        //listamos todos los resultados
+        while($pr->fetch()){
+        return $fo_code;
+        }
+        $pr->close();
+    }else{
+        exit('Error al realizar la consulta:'.$pr->close());
+    }
+}
 }

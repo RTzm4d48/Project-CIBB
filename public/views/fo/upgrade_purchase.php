@@ -1,7 +1,7 @@
 <?php
 
 ?>
-<link rel="stylesheet" href="/public/css/style-purchase_____.css">
+<link rel="stylesheet" href="/public/css/style-purchase.css">
 <!-- FUENTES -->
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap" rel="stylesheet">
@@ -28,7 +28,7 @@
                 <div class="cont_line">
                     <img src="/public/svg/premium/purchase/line01.svg" alt="">
                 </div>
-                <p>TEN UNA IDENTIDAD PROPIA CON UN ASPECTO MAS LLAMATIVO</p>
+                <p>Dale a tu Fuerza Operativa la posibilidad de tener un aspecto mas llamativo!</p>
             </div>
 
         </div>
@@ -119,26 +119,35 @@
         </div>
         <div class="part_5">
             <div class="precios">
-                
                 <div class="precio">
                     <div class="space_premium_1">
                         <img src="/public/svg/premium/premium_icon.svg" alt="">
-                        <p>Diseña tu interfaz</p>
+                        <h4 style="margin: 5px auto">Diseña tu interfaz</h4>
+                        <br>
+                        <p style="font-size:12px; width: 58%;text-align:center;opacity:0.8;">si ya eres usuario premium, la mejor opción es esta.</p>
+                    </div>
+                    <h1>$1,39</h1>
+                    <a class="btn_comprar" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TEU77YLVVAARW">Coprar ahora</a>
+                </div>
+                <div class="precio">
+                    <div class="space_premium_1">
+                        <img src="/public/svg/premium/premium_icon.svg" alt="">
+                        <h4 style="margin: 5px auto">Diseña tu interfaz</h4>
                     </div>
                     <h2>+</h2>
                     <div class="space_premium_2">
                         <img src="/public/img/img04.png" alt="">
-                        <p>User premium</p>
+                        <h4 style="">User premium</h4>
                     </div>
                     <h1>$1,95</h1>
-                    <button>Coprar ahora</button>
+                    <a class="btn_comprar" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=W5TQMQCFMLDLE">Coprar ahora</a>
                 </div>
             </div>
             <div class="terminos">
                     <p>Este sitio está protegido por reCAPTCHA
                     y por la Política de Privacidad de <a href="https://www.paypal.com/es/webapps/mpp/ua/ceagreement-full">PayPal</a> 
                     y se aplican los Términos del Servicio.</p>
-                    <img src="/public/img/premium/purchase/paypal.png" alt="">
+                    <img src="/public/img/premium/purchase/paypal_img.png" alt="">
             </div>
         </div>
     </div>

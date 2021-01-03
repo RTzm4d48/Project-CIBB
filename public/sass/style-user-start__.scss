@@ -483,17 +483,19 @@
             margin: auto 0px;
             font-size: 20px;
         }
-        a{
-            cursor: pointer ;
-            width: 40px;
-            height: 40px;
-            margin: auto 40px auto 10px;
-        }
+        
         .setings{
             cursor: pointer ;
-            width: 40px;
-            height: 40px;
+            width: 30px;
+            height: 30px;
             margin: auto;
+            margin: auto 40px auto 10px;
+        }
+        .btn_create_join{
+            cursor: pointer;
+            width: auto;
+            height: auto;
+            margin: 5px auto;
         }
     }
     /*  */

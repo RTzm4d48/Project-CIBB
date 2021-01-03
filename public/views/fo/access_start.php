@@ -80,10 +80,10 @@ $valid_mi_fo=CTR_MESSAGE::ctr_valid_my_fo($_GET['C']);
             <?php endif;?>
         </form>
         <?php
+        $_SESSION['url']=$Row['fo_url_b_b_f'];
         if(isset($_POST['warning_unirse'])){
             $ex=CTR_QUERYS_F_O::ctr_obtain_id_fo();
             $_SESSION['fo_id']=$ex;
-            $_SESSION['url']=$Row['fo_url_b_b_f'];
         }
         if(isset($_POST['sb_unirse'])){
             if(!isset($_COOKIE['id_user'])){

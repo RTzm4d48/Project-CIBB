@@ -32,7 +32,9 @@ $_SESSION['code_f_o']=$_GET['C'];
             <div class="leadfor">
                 <p>Liderado por:</p>
                 <img id="img_leader" src="<?php echo "/public/tmp/f_o/directori_".$Row['fo_id']."/leader_img.jpg" ?>" alt="">
-                <div class="conatiner_leader" onclick="box_user(<?php echo $Row[0]['us_id'];?>);"><h1 id="name_leader"><?php echo $Row[0]['user_leader'];?></h1></div>
+                <div class="conatiner_leader" onclick="box_user(<?php echo $Row[0]['us_id'];?>);"><h1 id="name_leader"><?php echo $Row[0]['user_leader'];?></h1>
+                    <?php if($Row[0]['us_premium']=='yes')echo"<img style='width:auto;height:15px;margin:auto 2px;' src='/public/img/img04.png'>";?>
+                </div>
             </div>
             <script src="/js/perfil_user__.js"></script>
            <script>
@@ -83,7 +85,7 @@ $_SESSION['code_f_o']=$_GET['C'];
             </div>
             <div class="mis_botons">
                 <a href="/h.php?C=<?php echo $_GET['C'];?>&access=get&start=get"><button class="btn_a_a_fo_"><?php if($this_ismi_fo==true)echo'Acceder a mi F.O';else echo'Acceder a la F.O';?></button></a>
-                <?php if($this_ismi_fo==true):?>
+                <?php if($this_ismi_fo==true and $fo_premium==false):?>
                 <a  href="/h.php?C=<?php echo $_GET['C'];?>&purchase=get"><div class="conteiner_btn_premium_2"><img src="/public/svg/premium_icon.svg" alt=""></div></a>
                 <?php endif?>
             </div>

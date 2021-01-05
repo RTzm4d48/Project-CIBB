@@ -121,12 +121,12 @@ class CRUD extends Connection{
         fclose($ifp);
     }
     function select_user_leader($id_fo){   
-        $pr=$this->conn->prepare("SELECT us_id,us_user, us_img_little FROM the_user WHERE fo_id = ? and us_rank = ?");
+        $pr=$this->conn->prepare("SELECT us_id,us_user,us_img_little,us_premium FROM the_user WHERE fo_id = ? and us_rank = ?");
         $rank='Lider';
         $pr->bind_param("is",$id_fo,$rank);
         if($pr->execute()){
             $pr->store_result();
-            $pr->bind_result($us_id,$leader_user,$img_user);
+            $pr->bind_result($us_id,$leader_user,$img_user,$us_premium);
             if($pr->num_rows==0){		
                 console('nonee');
             }
@@ -137,7 +137,7 @@ class CRUD extends Connection{
                 //creamos la imagen
                 $ruta=URL_PROJECT."/public/tmp/f_o/directori_".$id_fo."/leader_img.jpg";
                 $this->base64_to_jpeg($img,$ruta);
-                $Row=['us_id'=>$us_id,'user_leader'=>$leader_user];
+                $Row=['us_id'=>$us_id,'user_leader'=>$leader_user,'us_premium'=>$us_premium];
                 return $Row;
             }
             $pr->close();

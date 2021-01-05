@@ -45,19 +45,19 @@ class CRUD_MESSAGE extends Connection{
     }
     function crud_select_message($id_fo){
         
-        $pr=$this->conn->prepare("SELECT U.us_img_little, U.us_user, M.ms_text, M.us_id  FROM messages M, the_user U WHERE M.us_id = U.us_id and M.fo_id =".$id_fo.";");
+        $pr=$this->conn->prepare("SELECT U.us_img_little,U.us_user,U.us_premium,M.ms_text,M.us_id  FROM messages M, the_user U WHERE M.us_id = U.us_id and M.fo_id =".$id_fo.";");
         $pr->execute();
         $pr->store_result();
         $all_data=[];
         $Row=$pr->num_rows();
-        $pr->bind_result($img,$us_user,$text,$us_id);
+        $pr->bind_result($img,$us_user,$us_premium,$text,$us_id);
         //listamos todos los resultados
         while($pr->fetch()){
             $img_little=stripslashes(base64_decode($img));
             $ruta=URL_PROJECT."/public/tmp/all_img_users/user_".$us_id."_img.jpg";
             $this->base64_to_jpeg($img_little,$ruta);
 
-            $data=[$us_user,$text,$us_id];
+            $data=[$us_user,$text,$us_id,$us_premium];
             array_push($all_data,$data);
         }
         $all=['Row'=>$Row,'data'=>$all_data];

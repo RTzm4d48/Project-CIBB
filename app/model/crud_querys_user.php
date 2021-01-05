@@ -138,15 +138,16 @@ class CRUD_QUERYS_USER extends Connection{
         }
     }
     function crud_select_user_ranking(){
-        $pr=$this->conn->prepare("SELECT `us_user`,`us_img_little`,`us_point`,`us_participation`FROM `the_user` WHERE fo_id=? ORDER BY us_point DESC LIMIT 5");
+        $pr=$this->conn->prepare("SELECT `us_user`,`us_img_little`,`us_point`,`us_participation`,`us_premium`FROM `the_user` WHERE fo_id=? ORDER BY us_point DESC LIMIT 5");
         $pr->bind_param("i",$_COOKIE['user_id_fo']);
         if($pr->execute()){
             $pr->store_result();    
             $row=$pr->num_rows();
-            $pr->bind_result($us_user,$us_img_little,$us_point,$us_participation);
+            $pr->bind_result($us_user,$us_img_little,$us_point,$us_participation,$us_premium);
             $name=[];
             $point=[];
             $participation=[];
+            $premium=[];
             $data=[];
             $ruta=URL_PROJECT."/public/tmp/users/directori_".$_COOKIE['id_user']."/ranking";
             if(!file_exists($ruta)) {
@@ -158,12 +159,13 @@ class CRUD_QUERYS_USER extends Connection{
                 array_push($name,$us_user);
                 array_push($point,$us_point);
                 array_push($participation,$us_participation);
+                array_push($premium,$us_premium);
                 //escribimos la imagen
                 $img=stripslashes(base64_decode($us_img_little));
                 $ruta=URL_PROJECT."/public/tmp/users/directori_".$_COOKIE['id_user']."/ranking/top_".$i."_img_user.jpg";
                 $this->base64_to_jpeg($img,$ruta);
             }
-            array_push($data,$name,$point,$participation,$row);
+            array_push($data,$name,$point,$participation,$row,$premium);
             $pr->close();
             return$data;
         }else{

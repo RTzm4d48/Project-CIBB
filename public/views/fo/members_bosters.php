@@ -16,7 +16,8 @@ echo'</pre>'; */
                 <img src="/public/tmp/all_img_users/user_<?php echo$data['lider'][0];?>_img.jpg" alt="">
                 <div class="data">
                 <div class="space_name">
-                    <h2 class="name C_leader"><?php echo$data['lider'][1]?></h2><img class="img_pink" src="/public/img/img04.png">
+                    <h2 class="name C_leader"><?php echo$data['lider'][1]?></h2>
+                    <?php if($data['lider'][5]=='yes')echo"<img style='width:auto;height:15px;margin:auto 2px;' src='/public/img/img04.png'>";?>
                     <div class="points"><img class="img_blue" src="/public/img/img05.png"><p><?php echo$data['lider'][4]?></p></div>
                 </div>
                     <samp class="estado"><?php echo substr($data['lider'][2],0,38);?></samp>
@@ -56,7 +57,8 @@ echo'</pre>'; */
                 <img src="/public/tmp/all_img_users/user_<?php echo$data['legends'][$i][0];?>_img.jpg" alt="">
                 <div class="data">
                 <div class="space_name">
-                    <h2 class="name C_legend"><?php echo$data['legends'][$i][1];?></h2><img class="img_pink" src="/public/img/img04.png">
+                    <h2 class="name C_legend"><?php echo$data['legends'][$i][1];?></h2>
+                    <?php if($data['legends'][$i][5]=='yes')echo"<img style='width:auto;height:15px;margin:auto 2px;' src='/public/img/img04.png'>";?>
                     <div class="points"><img class="img_blue" src="/public/img/img05.png"><p><?php echo$data['legends'][$i][4];?></p></div>
                 </div>
                     <samp class="estado"><?php echo substr($data['legends'][$i][2],0,38);?></samp>
@@ -83,6 +85,7 @@ echo'</pre>'; */
                 <div class="data">
                 <div class="space_name">
                     <h2 class="name C_i_oficer"><?php echo$data['officers'][$i][1];?></h2>
+                    <?php if($data['officers'][$i][5]=='yes')echo"<img style='width:auto;height:15px;margin:auto 2px;' src='/public/img/img04.png'>";?>
                     <div class="points"><img class="img_blue" src="/public/img/img05.png"><p><?php echo$data['officers'][$i][4];?></p></div>
                 </div>
                     <samp class="estado"><?php echo substr($data['officers'][$i][2],0,38);?></samp>

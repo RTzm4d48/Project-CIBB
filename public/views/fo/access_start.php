@@ -51,7 +51,7 @@ $valid_mi_fo=CTR_MESSAGE::ctr_valid_my_fo($_GET['C']);
             <div class="commentary" >
                 <img src="/public/tmp/all_img_users/user_<?php echo$data['data'][$i][2]?>_img.jpg" alt="" onclick="box_user(<?php echo$data['data'][$i][2];?>);">
                 <div class="name_commentary">
-                    <h1><?php echo$data['data'][$i][0]?></h1>
+                    <h1 style=""><?php echo$data['data'][$i][0];if($data['data'][$i][3]=='yes')echo"<img style='width:auto;height:15px;position:relative;top:2px;margin:auto 2px;background:none;' src='/public/img/img04.png'>";?></h1>
                     <p><?php echo$data['data'][$i][1]?></p>
                 </div>
             </div>

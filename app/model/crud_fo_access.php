@@ -55,10 +55,10 @@ class CRUD_FO_ACCESS extends Connection{
         $pr->close();return $num;
     }
     function crud_select_users($id_fo){
-        $pr=$this->conn->prepare("SELECT us_id,us_user,us_state,us_rank,us_point,us_img_little FROM `the_user` WHERE fo_id=".$id_fo.";");
+        $pr=$this->conn->prepare("SELECT us_id,us_user,us_state,us_rank,us_point,us_img_little,us_premium FROM `the_user` WHERE fo_id=".$id_fo.";");
         $pr->execute();
         $pr->store_result();
-        $pr->bind_result($id_user,$us_user,$us_state,$us_rank,$us_point,$us_img_little);
+        $pr->bind_result($id_user,$us_user,$us_state,$us_rank,$us_point,$us_img_little,$us_premium);
         
         $data_officer=[];
         $data_legend=[];
@@ -77,9 +77,9 @@ class CRUD_FO_ACCESS extends Connection{
 
         while($pr->fetch())
         {
-            if($us_rank=='Oficial'){$data_officer=[$id_user,$us_user,$us_state,$us_rank,$us_point];array_push($data_officer_all,$data_officer);$i_officer++;}
-            else if($us_rank=='Leyenda'){$data_legend=[$id_user,$us_user,$us_state,$us_rank,$us_point];array_push($data_legend_all,$data_legend);$i_legend++;}
-            else array_push($data_lider,$id_user,$us_user,$us_state,$us_rank,$us_point);
+            if($us_rank=='Oficial'){$data_officer=[$id_user,$us_user,$us_state,$us_rank,$us_point,$us_premium];array_push($data_officer_all,$data_officer);$i_officer++;}
+            else if($us_rank=='Leyenda'){$data_legend=[$id_user,$us_user,$us_state,$us_rank,$us_point,$us_premium];array_push($data_legend_all,$data_legend);$i_legend++;}
+            else array_push($data_lider,$id_user,$us_user,$us_state,$us_rank,$us_point,$us_premium);
 
             $img_little=stripslashes(base64_decode($us_img_little));
             $ruta=URL_PROJECT."/public/tmp/all_img_users/user_".$id_user."_img.jpg";

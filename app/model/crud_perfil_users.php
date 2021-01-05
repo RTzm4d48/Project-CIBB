@@ -9,11 +9,11 @@ class CRUD_PERFIL_USERS extends Connection{
         $this->connect();
     }
     function crud_select_peril_user($id_user){
-        $pr=$this->conn->prepare("SELECT us_user,us_img_big,us_state,us_rank,us_point,us_participation FROM the_user WHERE us_id=?");
+        $pr=$this->conn->prepare("SELECT us_user,us_img_big,us_state,us_rank,us_point,us_participation,us_premium FROM the_user WHERE us_id=?");
         $pr->bind_param("i",$id_user);
         if($pr->execute()){
             $pr->store_result();
-            $pr->bind_result($us_user,$us_img_big,$us_state,$us_rank,$us_point,$us_participation);
+            $pr->bind_result($us_user,$us_img_big,$us_state,$us_rank,$us_point,$us_participation,$us_premium);
             //crear la carpeta
             $ruta=URL_PROJECT."/public/tmp/all_img_users/big_img_users";
             if(!file_exists($ruta)){
@@ -26,7 +26,7 @@ class CRUD_PERFIL_USERS extends Connection{
                $ruta_big=URL_PROJECT."/public/tmp/all_img_users/big_img_users/big_user_".$id_user."_img.jpg";
                $this->base64_to_jpeg($image_big,$ruta_big);
 
-               return$data=['id_user'=>$id_user,'name_user'=>$us_user,'state'=>$us_state,'rank'=>$us_rank,'point'=>$us_point,'participation'=>$us_participation];
+               return$data=['id_user'=>$id_user,'name_user'=>$us_user,'state'=>$us_state,'rank'=>$us_rank,'point'=>$us_point,'participation'=>$us_participation,'its_premium'=>$us_premium];
             }
             $pr->close();
         }else{

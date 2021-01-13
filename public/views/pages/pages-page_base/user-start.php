@@ -2,6 +2,12 @@
 <link rel="stylesheet" href="/css/style-user-start__.css">
 <link rel="stylesheet" href="/css/Responsive/rsp_style-user-start____.css">
 <div class="container">
+<?php
+/* echo"<pre>";
+print_r($ex);
+echo"</pre>"; */
+if($ex['accound_active']=='not')echo "<script> location.href='/views/pages/code'; </script>";
+?>
     <div class="container-perfil font_containers">
         <img src="<?php echo "/public/tmp/users/directori_". $_COOKIE['id_user'] ."/img_perfil_big.jpg" ?>" alt="">
         <div class="container-perfil-data">

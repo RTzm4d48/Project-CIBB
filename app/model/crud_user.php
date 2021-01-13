@@ -30,7 +30,7 @@ class CRUD_U extends Connection{
         $pass='12345678';
         $pr->bind_param("sss",$_POST['gmail'],$_POST['user'],$hash_pass);
         if($pr->execute()){
-            $this->obtain_id();
+           $this->obtain_id();
         }else{
             exit('Error al realizar la consulta:'.$pr->close());
         }
@@ -106,11 +106,11 @@ class CRUD_U extends Connection{
         }
     }
     function select_data_user(){
-        $pr=$this->conn->prepare("SELECT us_user,us_img_big,us_img_little,us_state,us_rank,us_point,us_participation,us_position,fo_id FROM the_user WHERE us_id=?");
+        $pr=$this->conn->prepare("SELECT us_user,us_img_big,us_img_little,us_state,us_rank,us_point,us_participation,us_position,fo_id,us_accound_active,us_gmail,us_id FROM the_user WHERE us_id=?");
         $pr->bind_param("i",$_COOKIE['id_user']);
         if($pr->execute()){
             $pr->store_result();
-            $pr->bind_result($us_user,$img_big,$us_img_little,$us_state,$us_rank,$us_point,$us_participation,$us_position,$fo_id);
+            $pr->bind_result($us_user,$img_big,$us_img_little,$us_state,$us_rank,$us_point,$us_participation,$us_position,$fo_id,$us_accound_active,$us_gmail,$us_id);
             //listamos todos los resultados
 	        while($pr->fetch()){
                $image_big=stripslashes(base64_decode($img_big));
@@ -124,7 +124,7 @@ class CRUD_U extends Connection{
                if($fo_id==null)$fo_id='none';
                setcookie('user_id_fo',$fo_id,strtotime('+360 days'),'/');
                //retornar data
-               return$data=['name_user'=>$us_user,'state'=>$us_state,'rank'=>$us_rank,'point'=>$us_point,'participation'=>$us_participation,'position'=>$us_position,'fo_id'=>$fo_id];
+               return$data=['name_user'=>$us_user,'state'=>$us_state,'rank'=>$us_rank,'point'=>$us_point,'participation'=>$us_participation,'position'=>$us_position,'fo_id'=>$fo_id,'accound_active'=>$us_accound_active,'gmail'=>$us_gmail,'id'=>$us_id];
             }
             $pr->close();
         }else{
@@ -132,14 +132,14 @@ class CRUD_U extends Connection{
         }
     }
     function crud_select_name_user(){
-        $pr=$this->conn->prepare("SELECT us_user FROM the_user WHERE us_id=?");
+        $pr=$this->conn->prepare("SELECT us_user,us_accound_active FROM the_user WHERE us_id=?");
         $id_user=(isset($_COOKIE['id_user']))?$_COOKIE['id_user']:0;
         $pr->bind_param("i",$id_user);
         if($pr->execute()){
             $pr->store_result();
-            $pr->bind_result($us_user);
+            $pr->bind_result($us_user,$us_accound_active);
             while($pr->fetch()){
-                return $us_user;
+                return $data=[$us_user,$us_accound_active];
             }
         }else{
             exit('Error al realizar la consulta:'.$pr->close());

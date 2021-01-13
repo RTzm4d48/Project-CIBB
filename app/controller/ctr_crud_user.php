@@ -10,7 +10,7 @@ class VALIDATIONS_U{
         if($Row != 'error'){
             $ex->register_user();
             setcookie('id_user', $_SESSION['us_id'], strtotime( '+360 days' ), '/');
-            echo "<script> location.href='/'; </script>";
+            echo "<script> location.href='/views/pages/code'; </script>";
         }else{
             echo 'La cuenta de gmail ya esta afiliada';
         }
@@ -32,7 +32,7 @@ class VALIDATIONS_U{
     static function ctr_select_name_user(){
         $ex = new CRUD_U();
         $rpt=$ex->crud_select_name_user();
-        $name=($rpt!='')?" - ".$rpt:'';
+        $name=($rpt!='')?$rpt:'';
         return$name;
     }
     static function val_verificate_f_o_of_user(){

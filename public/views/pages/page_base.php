@@ -3,7 +3,8 @@ session_start();
 include_once ($_SERVER['DOCUMENT_ROOT']. '/app/config/config.php');
 require_once(URL_PROJECT.'/app/controller/ctr_crud_user.php');
 require_once(URL_PROJECT.'/app/controller/crud.controller.php');
-$name = VALIDATIONS_U::ctr_select_name_user();
+$data = VALIDATIONS_U::ctr_select_name_user();
+$name=" - ".$data[0];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -130,7 +131,8 @@ if(isset($_POST['warning_sub_update_fo']))warning('Update','¿estas seguro de gu
                 }else if(isset($_GET['search'])){
                     include "pages-page_base/search.php";
                 }else{
-                    include "pages-page_base/user-start.php"; 
+                    if($data[1]='not')echo "<script> location.href='/views/pages/code'; </script>";
+                    else include "pages-page_base/user-start.php";
                 }
                 ?>
             </div>

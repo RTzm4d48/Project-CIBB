@@ -1,9 +1,5 @@
 <?php
-
-$x = false;
-if(isset($_COOKIE["id_user"])) $x = true;
-if($x == true) header('Location: '.'/');
-
+if(isset($_COOKIE["id_user"]))header('Location: '.'/');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +24,7 @@ if($x == true) header('Location: '.'/');
                     <div class="container-register-login_body_titulo register-size"><h1>Crear Cuenta</h1></div>
                     <div class="container-register-login_body_space-box">
                         <p>CORREO ELECTRONICO</p>
-                        <input type="email"pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"name="gmail"id="" maxlength="50" required>
+                        <input type="email"pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"name="gmail" id="txt_gmail" maxlength="50" required>
                     </div>
                     <div class="container-register-login_body_space-box">
                         <p>NOMBRE DE USUARIO</p>
@@ -50,8 +46,27 @@ if($x == true) header('Location: '.'/');
                     ?>
 
                     </p>
-                    <button type="submit" name="registrar_user" id="btn-continuar">Continuar</button>
+                    <button type="submit" name="registrar_user" id="btn-continuar" onclick="code();">Continuar</button>
                     <a href="/views/pages/login.php">¿ya tienes una cuenta?</a>
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                    <script src="/public/js/random_caracters_makeid.js"></script>
+                    <script>
+                    function code(){
+                        var gmail = document.getElementById("txt_gmail").value;
+                        var code = makeid(5);
+                        var mydata = 'gmail='+gmail+'&code='+code;                   
+                        $.ajax({
+                            url: '/public/ajax/codes/ajax_code_verification_accound.php',
+                            type: 'POST',
+                            data: mydata,
+                            /* dataType: "json", */
+                            success:function(rpt){
+                                alert(rpt);
+                            }
+                        });
+                        alert('hola');
+                    }
+                    </script>
                 </div>
             </div>
         </div>

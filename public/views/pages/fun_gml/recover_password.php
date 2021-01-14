@@ -10,10 +10,10 @@ if($x == true) header('Location: '.'/');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style-register-login_.css">
     <link rel="stylesheet" href="/css/responsive/rsp_style-register-login_.css">
-    <title>Registrarse</title>
+    <title>Chanel pass</title>
 </head>
 <body> 
-<form action="" method="POST">
+<!-- <form action="" method="POST"> -->
     <div class="container">
         <img src="/svg/fondo.svg" class="container_img"alt="">
         <div class="container_body">
@@ -23,35 +23,40 @@ if($x == true) header('Location: '.'/');
             <div class="container-register-login">
                 <img src="/svg/login.svg" alt="">
                 <div class="container-register-login_body">
-                    <div class="container-register-login_body_titulo"><h1>¡Hola, bienvenido!</h1></div>
+                    <div class="container-register-login_body_titulo"><h1>Cambiar de contraseña</h1></div>
                     <div class="container-register-login_body_space-box">
-                        <p>NOMBRE DE USUARIO</p>
-                        <input type="text" name="user">
+                        <p>NUEVO PASSWORD</p>
+                        <input type="password" maxlength="20" name="password1" id="password1">
                     </div>
                     <div class="container-register-login_body_space-box">
-                        <p>CONTRASEÑA</p>
-                        <input type="password" maxlength="20" name="password">
-                        <a href="/views/pages/fun_gml/chanel_pass">¿Has olvidado tu contraseña?</a>
+                        <p>REPITE EL NUEVO PASSWORD</p>
+                        <input type="password" maxlength="20" name="password2" id="password2">
                     </div>
-                    <p class="container-register-login_body_alert">
+                    <p id="m_alert" class="container-register-login_body_alert">
 
                     <?php
                     require_once ($_SERVER['DOCUMENT_ROOT']. '/app/config/config.php');
                     require_once(URL_PROJECT.'/app/controller/ctr_crud_user.php');
                     if(isset($_POST['login_user'])){
-                        $ex = VALIDATIONS_U::val_login_user();
+                        
                     }else{}
                     ?>
                     </p>
-                    <button type="submit" name="login_user" id="btn-continuar">Continuar</button>
-                    
-                    <p class="container-register-login_body_question">¿Necesitas una cuenta? <a href="/views/pages/register">Registrarse</a></p>
+                    <button onclick="chanel_pass();" type="submit" name="login_user" id="btn-continuar">Confirmar</button>
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                    <script src="/public/js/random_caracters_makeid_.js"></script>
+                    <script>
+                    function chanel_pass(){
+                        var pass1 = document.getElementById('password1').value;
+                        var pass2 = document.getElementById('password2').value;
+                        if(pass1 != pass2)$('#m_alert').html('las contraseñas no coinsiden');
+                        else $('#m_alert').html('todo correcto');
+                    }
+                    </script>
                 </div>
             </div>
         </div>
-
-            
     </div>
-    </form>
+    <!-- </form> -->
 </body>
 </html>

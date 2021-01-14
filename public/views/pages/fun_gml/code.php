@@ -3,6 +3,7 @@
 <?php
 include_once ($_SERVER['DOCUMENT_ROOT']. '/app/config/config.php');
 require_once(URL_PROJECT.'/app/controller/ctr_crud_user.php');
+require_once(URL_PROJECT.'/app/controller/ctr_querys_code_validations.php');
 $ex = VALIDATIONS_U::val_select_data_user();
 /* echo"<pre>";
 print_r($ex);
@@ -47,9 +48,6 @@ if(!isset($_COOKIE["id_user"]))header('Location: '.'/');
                     </div>
                     <p class="container-register-login_body_alert">
                     <?php
-                    require_once ($_SERVER['DOCUMENT_ROOT']. '/app/config/config.php');
-                    require_once(URL_PROJECT.'/app/controller/ctr_querys_code_validations.php');
-                     
                     if(isset($_POST['valid_code'])){
                         $ex = CTR_QUERYS_CODE_VALIDATIONS::ctr_code_comparison($ex['gmail']);
                         echo $ex;    

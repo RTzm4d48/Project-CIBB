@@ -10,7 +10,7 @@ class VALIDATIONS_U{
         if($Row != 'error'){
             $ex->register_user();
             setcookie('id_user', $_SESSION['us_id'], strtotime( '+360 days' ), '/');
-            echo "<script> location.href='/views/pages/code'; </script>";
+            echo "<script> location.href='/views/pages/fun_gml/code'; </script>";
         }else{
             echo 'La cuenta de gmail ya esta afiliada';
         }

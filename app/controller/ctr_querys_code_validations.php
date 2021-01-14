@@ -15,5 +15,18 @@ class CTR_QUERYS_CODE_VALIDATIONS{
             return'corecto';
         }else return'El codigo es incorrecto';
     }
+    static function ctr_compare_gmail($gmail,$code){
+        $ex = new CRUD_QUERYS_CODE_VALIDATIONS();
+        $rpt=$ex->crud_compare_gmail($gmail);
+        if($rpt==true){
+            $ex->crud_code_chanelpass_code($gmail,$code);
+            return true;
+        }else return 'el gmail '.$gmail.' no esta registrado en ninguna cuenta.';
+    }
+    static function ctr_select_gmail(){
+        $ex = new CRUD_QUERYS_CODE_VALIDATIONS();
+        $gmail=$ex->crud_select_gmail();
+        return $gmail;
+    }
 }
 ?>

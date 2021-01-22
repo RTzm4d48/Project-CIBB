@@ -22,7 +22,7 @@ require_once(URL_PROJECT.'/app/controller/ctr_querys_code_validations.php');
     }
 </style>
 <body> 
-<form action="" method="POST">
+<!-- <form action="" method="POST"> -->
     <div class="container">
         <img src="/svg/fondo.svg" class="container_img"alt="">
         <div class="container_body">
@@ -36,15 +36,15 @@ require_once(URL_PROJECT.'/app/controller/ctr_querys_code_validations.php');
                     <div style="height:auto;" class="container-register-login_body_space-box">
                         <p>Ingrese el gmail afiliado a tu cuenta para poder cambiar la contraseña</p>
                     </div>
-                    <div style="height:auto" class="container-register-login_body_space-box">
-                        <input type="text" name='code' id="text_code" value="">
+                    <div style="height:auto;" class="container-register-login_body_space-box">
+                        <input type="text" name='code' id="text_code" style="height:30px;width:100%" value="">
                     </div>
                     <p id="txt_alert" class="container-register-login_body_alert" style="width: 80%; text-align:center;">
                     <?php
                     /* echo $ex = CTR_QUERYS_CODE_VALIDATIONS::ctr_compare_gmail('laurai@gmail.com'); */
                     ?>
                     </p>
-                    <button onclick="code_chanel_pass();" type="submit" name="valid_code"  id="btn-continuar">Continuar</button>
+                    <button onclick="code_chanel_pass();" type="submit" name="valid_code"  id="btn-continuar">Cosntinuar</button>
                     <script>
                     function salir(){
                         var expiry = new Date();
@@ -53,8 +53,7 @@ require_once(URL_PROJECT.'/app/controller/ctr_querys_code_validations.php');
                         document.cookie='user_id_fo'+'=; expires='+expiry.toGMTString()+'; path=/';
                     }
                     function code_chanel_pass(){
-                        //var gmail = document.getElementById('text_code').value;
-                        var gmail='Rubius@gmail.com';
+                        var gmail = document.getElementById('text_code').value;
                         var code = 'Ch_'+makeid(5);
                         var mydata = 'gmail='+gmail+'&code='+code;
                         $.ajax({
@@ -64,7 +63,7 @@ require_once(URL_PROJECT.'/app/controller/ctr_querys_code_validations.php');
                             dataType: 'json',
                             success:function(rpt){
                                 if(rpt==true){
-                                    location.href='/views/pages/fun_gml/chanel_pass_wait';
+                                    location.href='/views/pages/fun_gml/change_pass_wait';
                                 }else{
                                     $('#txt_alert').html(rpt);
                                 }
@@ -76,6 +75,6 @@ require_once(URL_PROJECT.'/app/controller/ctr_querys_code_validations.php');
             </div>
         </div>
     </div>
-    </form>
+    <!-- </form> -->
 </body>
 </html>

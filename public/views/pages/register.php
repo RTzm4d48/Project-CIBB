@@ -49,22 +49,21 @@ if(isset($_COOKIE["id_user"]))header('Location: '.'/');
                     <button type="submit" name="registrar_user" id="btn-continuar" onclick="code();">Continuar</button>
                     <a href="/views/pages/login.php">¿ya tienes una cuenta?</a>
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-                    <script src="/public/js/random_caracters_makeid.js"></script>
+                    <script src="/public/js/random_caracters_makeid_.js"></script>
                     <script>
                     function code(){
-                        var gmail = document.getElementById("txt_gmail").value;
+                        var gmail = document.getElementById('txt_gmail').value;
                         var code = makeid(5);
-                        var mydata = 'gmail='+gmail+'&code='+code;                   
+                        var mydata = 'gmail='+gmail+'&code='+code;
                         $.ajax({
                             url: '/public/ajax/codes/ajax_code_verification_accound.php',
                             type: 'POST',
                             data: mydata,
-                            /* dataType: "json", */
+                            dataType: "json",
                             success:function(rpt){
-                                alert(rpt);
+                                /* alert(rpt); */
                             }
                         });
-                        alert('hola');
                     }
                     </script>
                 </div>

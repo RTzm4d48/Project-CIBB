@@ -131,7 +131,7 @@ if(isset($_POST['warning_sub_update_fo']))warning('Update','¿estas seguro de gu
                 }else if(isset($_GET['search'])){
                     include "pages-page_base/search.php";
                 }else{
-                    if($data[1]='not')echo "<script> location.href='/views/pages/code'; </script>";
+                    if($data[1]=='not')echo"<script> location.href='/views/pages/fun_gml/code'; </script>";
                     else include "pages-page_base/user-start.php";
                 }
                 ?>

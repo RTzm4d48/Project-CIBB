@@ -1,9 +1,4 @@
-<?php
-include_once ($_SERVER['DOCUMENT_ROOT']. '/app/config/config.php');
-require_once(URL_PROJECT.'/app/controller/ctr_querys_code_validations.php');
-$ex=CTR_QUERYS_CODE_VALIDATIONS::ctr_select_gmail();
-$gmail=(isset($ex))?$ex:'unnamed';
-?>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="/public/js/random_caracters_makeid_.js"></script>
 <!DOCTYPE html>
@@ -35,7 +30,7 @@ $gmail=(isset($ex))?$ex:'unnamed';
                 <div class="container-register-login_body">
                     <div class="container-register-login_body_titulo register-size"><h1>Exito</h1></div>
                     <div style="height:auto;" class="container-register-login_body_space-box">
-                        <p>Se envio un enlace a tu gmail <?php echo $gmail;?> en donde podras cambiar tu contrasena de una forma segura.</p>
+                        <p>Se envio un enlace a tu gmail en donde podras cambiar tu contrasena de una forma segura.</p>
                     </div>
                     
                     <p id="txt_alert" class="container-register-login_body_alert" style="width: 80%; text-align:center;">

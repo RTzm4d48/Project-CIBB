@@ -31,7 +31,7 @@ if($x == true) header('Location: '.'/');
                     <div class="container-register-login_body_space-box">
                         <p>CONTRASEÑA</p>
                         <input type="password" maxlength="20" name="password">
-                        <a href="/views/pages/fun_gml/chanel_pass">¿Has olvidado tu contraseña?</a>
+                        <a href="/views/pages/fun_gml/change_pass">¿Has olvidado tu contraseña?</a>
                     </div>
                     <p class="container-register-login_body_alert">
 
